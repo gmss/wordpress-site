@@ -1,0 +1,59 @@
+@import 'sass/sizing';
+@import 'sass/colours';
+@import 'sass/header';
+
+$body-margin: 2em;
+
+body {
+	background: $black;
+	font-family: 'Calibri', sans-serif;
+	> div.body {
+		@include box-glow(1.2em);
+		@extend %fixed-width;
+		background: $white;
+		color: $black;
+		padding: 1em $body-margin;
+		border-radius: 1em;
+		a {
+			text-decoration: none;
+			font-weight: bold;
+			color: $red;
+			@include hover-text-glow(.5em);
+			&:hover {
+				color: $black;
+			}
+		}
+	}
+}
+
+%all-caps {
+	text-transform: uppercase;
+	font-weight: bold;
+	line-height: 1.5em;
+}
+
+%full-width {
+	position: relative;
+	width: calc(100% + #{$body-margin * 2});
+}
+%full-width-background {
+	@extend %full-width;
+	padding-left: $body-margin;
+	padding-right: $body-margin;
+}
+
+article {
+	h1 {
+		@extend %all-caps;
+		font-size: 1.5em;
+		color: $black;
+		margin: 0;
+	}
+	.date {
+		font-size: .75em;
+		color: $orange;
+	}
+	line-height: 1.5;
+	text-align: justify;
+	font-weight: lighter;
+}

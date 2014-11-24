@@ -1,0 +1,27 @@
+$red: #f00;
+$orange: rgb(255, 158, 91);
+$yellow: #ff0;
+$white: #fff;
+$black: #000;
+
+@mixin box-glow($radius) {
+    box-shadow: 0 0 ($radius / 2.5) $red, 0 0 $radius $yellow;
+}
+@mixin text-glow($radius) {
+    text-shadow: 0 0 ($radius / 2.5) $red, 0 0 $radius $yellow;
+}
+
+@mixin hover-text-glow($radius, $delay: .25s) {
+	transition: color $delay, text-shadow $delay;
+	-webkit-transition: color $delay, text-shadow $delay;
+	&:hover {
+		@include text-glow($radius);
+	}
+}
+@mixin hover-box-glow($radius, $delay: .25s) {
+	transition: background $delay, border $delay, box-shadow $delay;
+	-webkit-transition: background $delay, border $delay, box-shadow $delay;
+	&:hover {
+		@include box-glow($radius);
+	}
+}

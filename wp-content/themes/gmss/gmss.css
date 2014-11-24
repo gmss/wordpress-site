@@ -1,0 +1,86 @@
+/*
+	This file decides the page width and applies margins. It should handle 90% of the responsivity. Other files should use ems wherever possible to best respond to changes here.
+*/
+header.site, body > div.body {
+  position: relative;
+  left: calc(50% - 43.75vw);
+  display: block;
+  width: 87.5vw;
+  box-sizing: border-box; }
+
+body {
+  font-size: 2.5vw;
+  padding: 1em 0 5em 0; }
+
+header.site {
+  padding: 0; }
+  header.site > * {
+    margin: 0;
+    display: inline-block;
+    vertical-align: top; }
+  header.site .logo {
+    text-decoration: none;
+    background: url("img/logo.jpg") no-repeat;
+    background-size: contain;
+    color: transparent;
+    overflow: hidden;
+    user-select: no-select;
+    -webkit-user-select: no-select;
+    width: 60%;
+    min-height: 21vw; }
+  header.site nav {
+    width: 40%; }
+    header.site nav ul {
+      padding: 0 0 1em 0; }
+    header.site nav li {
+      list-style: none;
+      text-align: right; }
+    header.site nav a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 2em;
+      color: #ff9e5b;
+      transition: all .5s;
+      -webkit-transition: all .5s; }
+      header.site nav a:hover {
+        color: #fff;
+        text-shadow: 0 0 0.12em #f00, 0 0 0.3em #ff0; }
+
+body {
+  background: #000;
+  font-family: 'Calibri', sans-serif; }
+  body > div.body {
+    box-shadow: 0 0 0.48em #f00, 0 0 1.2em #ff0;
+    background: #fff;
+    color: #000;
+    padding: 1em 2em;
+    border-radius: 1em; }
+    body > div.body a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #f00;
+      transition: color 0.25s, text-shadow 0.25s;
+      -webkit-transition: color 0.25s, text-shadow 0.25s; }
+      body > div.body a:hover {
+        text-shadow: 0 0 0.2em #f00, 0 0 0.5em #ff0; }
+      body > div.body a:hover {
+        color: #000; }
+
+header.site nav ul, article h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1.5em; }
+
+article {
+  line-height: 1.5;
+  text-align: justify;
+  font-weight: lighter; }
+  article h1 {
+    font-size: 1.5em;
+    color: #000;
+    margin: 0; }
+  article .date {
+    font-size: .75em;
+    color: #ff9e5b; }
+
+/*# sourceMappingURL=gmss.css.map */

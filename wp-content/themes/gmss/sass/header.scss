@@ -1,0 +1,46 @@
+$logo-ratio: 630 / 252;
+$header-split: 0.6;
+
+header.site {
+	@extend %fixed-width;
+	padding: 0;
+	> * {
+		margin: 0;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.logo {
+		text-decoration: none;
+		background: url('img/logo.jpg') no-repeat;
+		background-size: contain;
+		color: transparent;
+		overflow: hidden;
+		user-select: no-select;
+		-webkit-user-select: no-select;
+		width: $header-split * 100%;
+		min-height: $header-split * $page-width / $logo-ratio;
+	}
+	nav {
+		width: (1 - $header-split) * 100%;
+		ul {
+			@extend %all-caps;
+			padding: 0 0 1em 0;
+		}
+		li {
+			list-style: none;
+			text-align: right;
+		}
+		a {
+			text-decoration: none;
+			font-weight: bold;
+			font-size: 2em;
+			color: $orange;
+			transition: all .5s;
+			-webkit-transition: all .5s;
+			&:hover {
+				color: $white;
+				@include text-glow(.3em);
+			}
+		}
+	}
+}
