@@ -7,6 +7,9 @@ $black: #000;
 @mixin box-glow($radius) {
     box-shadow: 0 0 ($radius / 2.5) $red, 0 0 $radius $yellow;
 }
+@mixin inner-glow($radius) {
+    box-shadow: 0 0 ($radius / 2.5) $red inset, 0 0 $radius $yellow inset;
+}
 @mixin text-glow($radius) {
     text-shadow: 0 0 ($radius / 2.5) $red, 0 0 $radius $yellow;
 }
@@ -19,9 +22,16 @@ $black: #000;
 	}
 }
 @mixin hover-box-glow($radius, $delay: .25s) {
-	transition: background $delay, border $delay, box-shadow $delay;
-	-webkit-transition: background $delay, border $delay, box-shadow $delay;
+	transition: color $delay, background $delay, border $delay, box-shadow $delay;
+	-webkit-transition: color $delay, background $delay, border $delay, box-shadow $delay;
 	&:hover {
 		@include box-glow($radius);
+	}
+}
+@mixin hover-inner-glow($radius, $delay: .25s) {
+	transition: color $delay, background $delay, border $delay, box-shadow $delay;
+	-webkit-transition: color $delay, background $delay, border $delay, box-shadow $delay;
+	&:hover {
+		@include inner-glow($radius);
 	}
 }

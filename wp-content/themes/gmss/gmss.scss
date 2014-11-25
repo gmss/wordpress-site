@@ -1,12 +1,13 @@
 @import 'sass/sizing';
 @import 'sass/colours';
 @import 'sass/header';
+@import 'sass/fonts';
+@import 'sass/tabs';
 
 $body-margin: 2em;
 
 body {
 	background: $black;
-	font-family: 'Calibri', sans-serif;
 	> div.body {
 		@include box-glow(1.2em);
 		@extend %fixed-width;
@@ -26,12 +27,6 @@ body {
 	}
 }
 
-%all-caps {
-	text-transform: uppercase;
-	font-weight: bold;
-	line-height: 1.5em;
-}
-
 %full-width {
 	position: relative;
 	width: calc(100% + #{$body-margin * 2});
@@ -44,12 +39,11 @@ body {
 
 article {
 	h1 {
-		@extend %all-caps;
 		font-size: 1.5em;
 		color: $black;
 		margin: 0;
 	}
-	.date {
+	.date, footer {
 		font-size: .75em;
 		color: $orange;
 	}

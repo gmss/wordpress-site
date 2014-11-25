@@ -1,0 +1,39 @@
+.tabs {
+	@extend %all-caps;
+	font-size: 1.5em;
+	background: $orange;
+	position: relative;
+	top: -.25em;
+	ul {
+		@extend %fixed-width;
+		list-style: none;
+		padding: 0;
+		margin: 0 0 .5em 0;
+		li {
+			display: inline-block;
+			padding: 0;
+			margin: 0;
+			border-right: 1px solid $black;
+			&:first-child {
+				border-left: 1px solid $black;
+			}
+			a {
+				text-decoration: none;
+				display: inline-block;
+				padding: .25em 1em;
+				margin: 0;
+				color: $black;
+				@include hover-text-glow(.3em);
+				@include hover-inner-glow(.3em);
+				&.active {
+					background: $red;
+					color: $white;
+				}
+				&:hover {
+					background: $black;
+					color: $white;
+				}
+			}
+		}
+	}
+}

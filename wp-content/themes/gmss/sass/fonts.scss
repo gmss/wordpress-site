@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "Calibri Web";
+    src: url("fonts/calibri-bold.woff") format('woff');
+    font-weight: bold;
+}
+
+/* Not currently used:
+@font-face {
+    font-family: "Calibri Web";
+    src: url("fonts/calibri.woff") format('woff');
+}
+@font-face {
+    font-family: "Calibri Italic";
+    src: url("fonts/calibri-italic.woff") format('woff');
+    font-weight: italic;
+}*/
+
+%all-caps {
+    text-transform: uppercase;
+    font-family: 'Calibri Web', 'Calibri', sans-serif;
+    font-weight: bold;
+}
+
+body {
+	font-family: 'Calibri', sans-serif;
+}
+h1 {
+    @extend %all-caps;
+    line-height: 1.5em;
+}

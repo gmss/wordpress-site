@@ -13,8 +13,8 @@
 		</header>
 		<?php the_content(); ?>
 		<footer>
-			..comments?
-			<?php comment_form(); ?>
+			This post has <?php comments_number('no comments', 'one comment', '% comments'); ?>.
+			<?php //comment_form(); ?>
 		</footer>
 	</article>
 
