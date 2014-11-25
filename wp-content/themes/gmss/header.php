@@ -20,11 +20,12 @@
 				<li><a href="http://www.facebook.com/GMSkeptics">Facebook</a></li>
 				<li><a href="http://www.meetup.com/GMSkeptics">Meetup</a></li>
 				<li><a href="http://www.twitter.com/GMSkeptics">Twitter</a></li>
-				<li><a href="events">Events</a></li>
 			</ul>
 		</nav></header>
 		<nav class="tabs"><ul>
 			<li>
+				<a href="/">About</a>
+			</li><li>
 				<a href="/" class="active">Blog</a>
 			</li><li>
 				<a href="/events">Events</a>

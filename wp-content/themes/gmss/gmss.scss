@@ -4,17 +4,15 @@
 @import 'sass/fonts';
 @import 'sass/tabs';
 
-$body-margin: 2em;
+$body-margin: 2rem;
 
 body {
 	background: $black;
 	> div.body {
-		@include box-glow(1.2em);
-		@extend %fixed-width;
+		padding: 1em calc(50% - #{$page-width / 2});
 		background: $white;
 		color: $black;
-		padding: 1em $body-margin;
-		border-radius: 1em;
+		min-height: 100vh;
 		a {
 			text-decoration: none;
 			font-weight: bold;
@@ -25,16 +23,6 @@ body {
 			}
 		}
 	}
-}
-
-%full-width {
-	position: relative;
-	width: calc(100% + #{$body-margin * 2});
-}
-%full-width-background {
-	@extend %full-width;
-	padding-left: $body-margin;
-	padding-right: $body-margin;
 }
 
 article {

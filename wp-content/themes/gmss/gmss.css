@@ -1,7 +1,7 @@
 /*
 	This file decides the page width and applies margins. It should handle 90% of the responsivity. Other files should use ems wherever possible to best respond to changes here.
 */
-header.site, .tabs ul, body > div.body {
+header.site, .tabs ul {
   position: relative;
   left: calc(50% - 43.75vw);
   display: block;
@@ -10,7 +10,7 @@ header.site, .tabs ul, body > div.body {
 
 body {
   font-size: 2.5vw;
-  padding: 1em 0 5em 0;
+  padding: 0;
   margin: 0; }
 
 header.site {
@@ -61,7 +61,7 @@ header.site {
     width: 40%;
     font-size: 1.2em; }
     header.site nav ul {
-      padding: 0 0 1em 0; }
+      padding: .7em 0 1em 0; }
     header.site nav li {
       list-style: none;
       text-align: right;
@@ -104,12 +104,11 @@ h1 {
 .tabs {
   font-size: 1.5em;
   background: #ff9e5b;
-  position: relative;
-  top: -.25em; }
+  position: relative; }
   .tabs ul {
     list-style: none;
     padding: 0;
-    margin: 0 0 .5em 0; }
+    margin: 0; }
     .tabs ul li {
       display: inline-block;
       padding: 0;
@@ -141,11 +140,10 @@ h1 {
 body {
   background: #000; }
   body > div.body {
-    box-shadow: 0 0 0.48em #f00, 0 0 1.2em #ff0;
+    padding: 1em calc(50% - 43.75vw);
     background: #fff;
     color: #000;
-    padding: 1em 2em;
-    border-radius: 1em; }
+    min-height: 100vh; }
     body > div.body a {
       text-decoration: none;
       font-weight: bold;

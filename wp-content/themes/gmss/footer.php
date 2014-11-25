@@ -1,7 +1,7 @@
 		</div>
-		<footer>
+		<!--footer>
 			TODO: Create footer.
-		</footer>
+		</footer-->
 		<?php wp_footer(); ?>
 	</body>
 </html>

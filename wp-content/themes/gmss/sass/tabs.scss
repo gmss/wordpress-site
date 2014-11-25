@@ -3,12 +3,11 @@
 	font-size: 1.5em;
 	background: $orange;
 	position: relative;
-	top: -.25em;
 	ul {
 		@extend %fixed-width;
 		list-style: none;
 		padding: 0;
-		margin: 0 0 .5em 0;
+		margin: 0;
 		li {
 			display: inline-block;
 			padding: 0;
