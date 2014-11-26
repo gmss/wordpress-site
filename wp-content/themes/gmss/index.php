@@ -7,7 +7,7 @@
 			<a href="<?php the_permalink(); ?>">
 				<h1><?php the_title(); ?></h1>
 			</a>
-			<div class="date">
+			<div class="meta">
 				Originally posted on <?php the_time('j F Y'); ?>
 			</div>
 		</header>

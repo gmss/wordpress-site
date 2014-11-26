@@ -3,6 +3,7 @@
 @import 'sass/header';
 @import 'sass/fonts';
 @import 'sass/tabs';
+@import 'sass/events';
 
 $body-margin: 2rem;
 
@@ -30,10 +31,11 @@ body {
 article {
 	h1 {
 		font-size: 1.5em;
+		line-height: 1.1em;
 		color: $black;
 		margin: 0;
 	}
-	.date, footer {
+	.meta, footer {
 		font-size: .75em;
 		color: $orange;
 	}

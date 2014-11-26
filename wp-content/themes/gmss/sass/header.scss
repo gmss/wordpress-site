@@ -1,4 +1,4 @@
-$header-split: 0.6;
+$header-split: 0.8;
 
 @mixin logo($width) {
 	width: $width;
@@ -22,22 +22,6 @@ $header-split: 0.6;
 			top: 0.27000 * $width;
 			font-size: 0.05500 * $width;
 			right: 0.37000 * $width;
-		}
-	}
-}
-
-@media (max-width: $max-screen-width) {
-	header.site {
-		.logo {
-		@include logo($header-split * $fluid-page-width);
-		}
-	}
-}
-
-@media (min-width: $max-screen-width) {
-	header.site {
-		.logo {
-		@include logo($header-split * $max-page-width);
 		}
 	}
 }
@@ -96,12 +80,47 @@ header.site {
 			text-decoration: none;
 			font-weight: bold;
 			color: $orange;
-			transition: all .5s;
-			-webkit-transition: all .5s;
+			@include hover-text-glow(.3em);
 			&:hover {
 				color: $white;
-				@include text-glow(.3em);
 			}
+		}
+	}
+}
+
+@media (max-width: $max-screen-width) {
+	header.site {
+		.logo {
+			@include logo($header-split * $fluid-page-width);
+		}
+	}
+}
+
+@media (max-width: $min-screen-width) {
+	header.site {
+		.logo {
+			@include logo($header-split * $min-page-width);
+		}
+		nav {
+			width: 100%;
+			display: block;
+			text-align: center;
+			ul {
+				padding: 0;
+				margin: 0 0 1em 0;
+				li {
+					display: inline-block;
+					padding: 0 1em;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $max-screen-width) {
+	header.site {
+		.logo {
+			@include logo($header-split * $max-page-width);
 		}
 	}
 }
