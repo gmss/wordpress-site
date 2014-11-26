@@ -16,27 +16,34 @@ $default-delay: .5s;
     text-shadow: 0 0 ($radius / 2.5) $red, 0 0 $radius $yellow;
 }
 
-@mixin hover-glow-transition($delay) {
+@mixin glow-transition($delay) {
 	// Probably bad practice really, using 'all', but so far it's the best thing to do.
 	transition: all $delay;
 	-webkit-transition: all $delay;
 }
 
 @mixin hover-text-glow($radius, $delay: $default-delay) {
-	@include hover-glow-transition($delay);
+	@include glow-transition($delay);
 	&:hover {
 		@include text-glow($radius);
 	}
 }
 @mixin hover-box-glow($radius, $delay: $default-delay) {
-	@include hover-glow-transition($delay);
+	@include glow-transition($delay);
 	&:hover {
 		@include box-glow($radius);
 	}
 }
 @mixin hover-inner-glow($radius, $delay: $default-delay) {
-	@include hover-glow-transition($delay);
+	@include glow-transition($delay);
 	&:hover {
 		@include inner-glow($radius);
+	}
+}
+
+@mixin focus-box-glow($radius, $delay: $default-delay) {
+	@include glow-transition($delay);
+	&:focus {
+		@include box-glow($radius);
 	}
 }

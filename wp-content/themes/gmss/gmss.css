@@ -173,12 +173,12 @@ header.site {
     src: url("fonts/calibri-italic.woff") format('woff');
     font-weight: italic;
 }*/
-header.site .logo span, header.site nav ul, h1, .tabs, .comments-area ol li .reply a.comment-reply-link, .comments-area .comment-reply-title small a, .comments-area form #submit {
+header.site .logo span, header.site nav ul, h1, .tabs, .comments-area ol li .reply a.comment-reply-link, .comments-area .comment-reply-title small a, .comments-area form .form-submit #submit {
   text-transform: uppercase;
   font-family: 'Calibri Web', 'Calibri', sans-serif;
   font-weight: bold; }
 
-body {
+body, input, textarea {
   font-family: 'Calibri', sans-serif; }
 
 h1 {
@@ -225,7 +225,10 @@ h1 {
     .compact ul.eo-event-meta > li::before {
       content: '/ '; }
 
-.comments-area ol li .reply::after, .comments-area .comment-reply-title small::after, .comments-area form::after {
+.comments-area ol li .reply::after, .comments-area .comment-reply-title small::after, .comments-area form .comment-form-author::after,
+.comments-area form .comment-form-email::after,
+.comments-area form .comment-form-url::after,
+.comments-area form .comment-form-comment::after, .comments-area form .form-submit::after {
   content: ' ';
   clear: both;
   display: block;
@@ -234,7 +237,8 @@ h1 {
 .comments-area {
   background: #000;
   padding-top: 1em;
-  padding-bottom: 1em; }
+  padding-bottom: 1em;
+  font-size: 1.3333em; }
   .comments-area h1 {
     color: #fff;
     font-size: 2em; }
@@ -296,7 +300,40 @@ h1 {
       border-bottom: 0 solid #f46400; }
   .comments-area p.form-allowed-tags {
     display: none; }
-  .comments-area form #submit {
+  .comments-area form .comment-form-author label,
+  .comments-area form .comment-form-email label,
+  .comments-area form .comment-form-url label,
+  .comments-area form .comment-form-comment label {
+    display: inline-block;
+    padding: .5em 0;
+    font-size: 1em; }
+  .comments-area form .comment-form-author input, .comments-area form .comment-form-author textarea,
+  .comments-area form .comment-form-email input,
+  .comments-area form .comment-form-email textarea,
+  .comments-area form .comment-form-url input,
+  .comments-area form .comment-form-url textarea,
+  .comments-area form .comment-form-comment input,
+  .comments-area form .comment-form-comment textarea {
+    font-size: 1em;
+    background: #fff;
+    border-radius: 1em;
+    border: none;
+    border-top: 0.2em solid #cccccc;
+    padding: .3em 1em .5em 1em;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    float: right;
+    width: 70%;
+    resize: none; }
+    .comments-area form .comment-form-author input:focus, .comments-area form .comment-form-author textarea:focus,
+    .comments-area form .comment-form-email input:focus,
+    .comments-area form .comment-form-email textarea:focus,
+    .comments-area form .comment-form-url input:focus,
+    .comments-area form .comment-form-url textarea:focus,
+    .comments-area form .comment-form-comment input:focus,
+    .comments-area form .comment-form-comment textarea:focus {
+      box-shadow: 0 0 0.4em #f00, 0 0 1em #ff0; }
+  .comments-area form .form-submit #submit {
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
     background: #f00;
@@ -308,12 +345,12 @@ h1 {
     border-radius: 1em;
     font-size: 2em;
     color: #000; }
-    .comments-area form #submit:hover {
+    .comments-area form .form-submit #submit:hover {
       box-shadow: 0 0 0.4em #f00, 0 0 1em #ff0; }
-    .comments-area form #submit:hover {
+    .comments-area form .form-submit #submit:hover {
       background: #fff;
       border-bottom: 0.1em solid #cccccc; }
-    .comments-area form #submit:active {
+    .comments-area form .form-submit #submit:active {
       background: #ff9e5b;
       border-top: 0.1em solid #ff9e5b;
       border-bottom: 0 solid #f46400; }

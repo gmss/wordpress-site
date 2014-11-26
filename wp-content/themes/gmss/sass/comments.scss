@@ -30,6 +30,7 @@
 	background: $black;
 	padding-top: 1em;
 	padding-bottom: 1em;
+	font-size: 1.3333em;
 	h1 {
 		color: $white;
 		font-size: 2em;
@@ -88,13 +89,40 @@
 		display: none;
 	}
 	form {
-		#submit {
-			@include button();
-			font-size: 2em;
-			color: $black;
+		.comment-form-author,
+		.comment-form-email,
+		.comment-form-url,
+		.comment-form-comment {
+			label {
+				display: inline-block;
+				padding: .5em 0;
+				font-size: 1em;
+			}
+			input, textarea {
+				font-size: 1em;
+				background: $white;
+				border-radius: 1em;
+				border: none;
+				border-top: .2em solid darken($white, 20%);
+				padding: .3em 1em .5em 1em;
+				@include focus-box-glow(1em);
+				float: right;
+				width: 70%;
+				resize: none;
+			}
+			&::after {
+				@extend %button-clearer;
+			}
 		}
-		&::after {
-			@extend %button-clearer;
+		.form-submit {
+			#submit {
+				@include button();
+				font-size: 2em;
+				color: $black;
+			}
+			&::after {
+				@extend %button-clearer;
+			}
 		}
 	}
 }
