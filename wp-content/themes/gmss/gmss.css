@@ -333,6 +333,14 @@ h1 {
     .comments-area form .comment-form-comment input:focus,
     .comments-area form .comment-form-comment textarea:focus {
       box-shadow: 0 0 0.4em #f00, 0 0 1em #ff0; }
+    .comments-area form .comment-form-author input:focus, .comments-area form .comment-form-author textarea:focus,
+    .comments-area form .comment-form-email input:focus,
+    .comments-area form .comment-form-email textarea:focus,
+    .comments-area form .comment-form-url input:focus,
+    .comments-area form .comment-form-url textarea:focus,
+    .comments-area form .comment-form-comment input:focus,
+    .comments-area form .comment-form-comment textarea:focus {
+      outline: none; }
   .comments-area form .form-submit #submit {
     transition: all 0.5s;
     -webkit-transition: all 0.5s;

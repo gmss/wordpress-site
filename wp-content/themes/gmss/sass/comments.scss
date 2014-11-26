@@ -109,6 +109,10 @@
 				float: right;
 				width: 70%;
 				resize: none;
+				&:focus {
+					// Focus is indicated by glow.
+					outline: none;
+				}
 			}
 			&::after {
 				@extend %button-clearer;
