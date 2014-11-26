@@ -2,20 +2,49 @@
 	This file decides the page width and applies margins. It should handle 90% of the responsivity. Other files should use ems wherever possible to best respond to changes here.
 */
 
-$font-size: 2.5vw;
+$margin: .1;
+$fluid-page-width: 100vw * (1 - 2 * $margin);
+$margin-width: 100vw * $margin;
+$max-page-width: 20cm;
 $line-length: 35;
-$page-width: $line-length * $font-size;
+$max-screen-width: $max-page-width * (1 + 2 * $margin);
 
 %fixed-width {
 	position: relative;
-	left: calc(50% - #{$page-width / 2});
 	display: block;
-	width: $page-width;
 	box-sizing: border-box;
 }
-
 body {
-    font-size: $font-size;
     padding: 0;
     margin: 0;
+}
+
+@media (max-width: $max-screen-width) {
+	%fixed-width {
+		left: $margin-width;
+		width: $fluid-page-width;
+	}
+	%fixed-width-background {
+		padding-left: $margin-width;
+		padding-right: $margin-width;
+		width: $fluid-page-width;
+	}
+	body {
+	    font-size: $fluid-page-width / $line-length;
+	}
+}
+
+@media (min-width: $max-screen-width) {
+	%fixed-width {
+		left: calc(50% - #{$max-page-width / 2});
+		width: $max-page-width;
+	}
+	%fixed-width-background {
+		padding-left: calc(50% - #{$max-page-width / 2});
+		padding-right: calc(50% - #{$max-page-width / 2});
+		width: $max-page-width;
+	}
+	body {
+	    font-size: $max-page-width / $line-length;
+	}
 }

@@ -19,15 +19,33 @@ $header-split: 0.6;
 			font-size: 0.16666 * $width;
 		}
 		&.society {
-			top: 0.27500 * $width;
+			top: 0.26500 * $width;
 			font-size: 0.05500 * $width;
-			right: 0.36667 * $width;
+			right: 0.37000 * $width;
+		}
+	}
+}
+
+@media (max-width: $max-screen-width) {
+	header.site {
+		.logo {
+		@include logo($header-split * $fluid-page-width);
+		}
+	}
+}
+
+@media (min-width: $max-screen-width) {
+	header.site {
+		.logo {
+		@include logo($header-split * $max-page-width);
 		}
 	}
 }
 
 header.site {
 	@extend %fixed-width;
+	position: relative;
+	top: .5em;
 	padding: 0;
 	> * {
 		margin: 0;
@@ -35,7 +53,6 @@ header.site {
 		vertical-align: top;
 	}
 	.logo {
-		@include logo($header-split * $page-width);
 		text-decoration: none;
 		background: url('img/logo.jpg') no-repeat 95% 50%;
 		background-size: contain;

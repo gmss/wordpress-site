@@ -3,26 +3,84 @@
 */
 header.site, .tabs ul {
   position: relative;
-  left: calc(50% - 43.75vw);
   display: block;
-  width: 87.5vw;
   box-sizing: border-box; }
 
 body {
-  font-size: 2.5vw;
   padding: 0;
   margin: 0; }
 
+@media (max-width: 24cm) {
+  header.site, .tabs ul {
+    left: 10vw;
+    width: 80vw; }
+
+  body > div.body {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    width: 80vw; }
+
+  body {
+    font-size: 2.28571vw; } }
+@media (min-width: 24cm) {
+  header.site, .tabs ul {
+    left: calc(50% - 10cm);
+    width: 20cm; }
+
+  body > div.body {
+    padding-left: calc(50% - 10cm);
+    padding-right: calc(50% - 10cm);
+    width: 20cm; }
+
+  body {
+    font-size: 0.57143cm; } }
+@media (max-width: 24cm) {
+  header.site .logo {
+    width: 48vw;
+    min-height: 19.2vw;
+    left: -0.288vw; }
+    header.site .logo span.greater {
+      left: 0.144vw;
+      top: 0.39984vw;
+      font-size: 2.64vw; }
+    header.site .logo span.manchester {
+      top: 1.776vw;
+      font-size: 5.19984vw; }
+    header.site .logo span.skeptics {
+      top: 4.8vw;
+      font-size: 7.99968vw; }
+    header.site .logo span.society {
+      top: 12.72vw;
+      font-size: 2.64vw;
+      right: 17.76vw; } }
+@media (min-width: 24cm) {
+  header.site .logo {
+    width: 12cm;
+    min-height: 4.8cm;
+    left: -0.072cm; }
+    header.site .logo span.greater {
+      left: 0.036cm;
+      top: 0.09996cm;
+      font-size: 0.66cm; }
+    header.site .logo span.manchester {
+      top: 0.444cm;
+      font-size: 1.29996cm; }
+    header.site .logo span.skeptics {
+      top: 1.2cm;
+      font-size: 1.99992cm; }
+    header.site .logo span.society {
+      top: 3.18cm;
+      font-size: 0.66cm;
+      right: 4.44cm; } }
 header.site {
+  position: relative;
+  top: .5em;
   padding: 0; }
   header.site > * {
     margin: 0;
     display: inline-block;
     vertical-align: top; }
   header.site .logo {
-    width: 52.5vw;
-    min-height: 21vw;
-    left: -0.315vw;
     text-decoration: none;
     background: url("img/logo.jpg") no-repeat 95% 50%;
     background-size: contain;
@@ -32,20 +90,6 @@ header.site {
     &:hover span {
     	color: $white !important;
     }*/ }
-    header.site .logo span.greater {
-      left: 0.1575vw;
-      top: 0.43733vw;
-      font-size: 2.8875vw; }
-    header.site .logo span.manchester {
-      top: 1.9425vw;
-      font-size: 5.68733vw; }
-    header.site .logo span.skeptics {
-      top: 5.25vw;
-      font-size: 8.74965vw; }
-    header.site .logo span.society {
-      top: 14.4375vw;
-      font-size: 2.8875vw;
-      right: 19.25017vw; }
     header.site .logo span {
       line-height: 1.5em;
       position: absolute; }
@@ -140,10 +184,11 @@ h1 {
 body {
   background: #000; }
   body > div.body {
-    padding: 1em calc(50% - 43.75vw);
     background: #fff;
     color: #000;
-    min-height: 100vh; }
+    min-height: 100vh;
+    padding-top: 1em;
+    padding-bottom: 1em; }
     body > div.body a {
       text-decoration: none;
       font-weight: bold;
