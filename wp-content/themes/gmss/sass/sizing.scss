@@ -33,6 +33,10 @@ body {
 		padding-left: $margin-width;
 		padding-right: $margin-width;
 		width: $fluid-page-width;
+		%fixed-width-background {
+			position: relative;
+			left: -$margin-width;
+		}
 	}
 	body {
 	    font-size: $fluid-font-size;
@@ -51,9 +55,13 @@ body {
 		width: $max-page-width;
 	}
 	%fixed-width-background {
-		padding-left: calc(50% - #{$max-page-width / 2});
-		padding-right: calc(50% - #{$max-page-width / 2});
+		padding-left: calc(50vw - #{$max-page-width / 2});
+		padding-right: calc(50vw - #{$max-page-width / 2});
 		width: $max-page-width;
+		%fixed-width-background {
+			position: relative;
+			left: calc(#{$max-page-width / 2} - 50vw);
+		}
 	}
 	body {
 	    font-size: $max-font-size;

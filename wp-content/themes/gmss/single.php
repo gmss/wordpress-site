@@ -13,7 +13,6 @@
 		</header>
 		<?php the_content(); ?>
 		<footer>
-			This post has <?php comments_number('no comments', 'one comment', '% comments'); ?>.
 			<?php comments_template(); ?>
 		</footer>
 	</article>

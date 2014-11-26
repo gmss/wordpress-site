@@ -17,8 +17,9 @@ $default-delay: .5s;
 }
 
 @mixin hover-glow-transition($delay) {
-	transition: color $delay, background $delay, border $delay, box-shadow $delay, text-shadow $delay;
-	-webkit-transition: color $delay, background $delay, border $delay, box-shadow $delay, text-shadow $delay;
+	// Probably bad practice really, using 'all', but so far it's the best thing to do.
+	transition: all $delay;
+	-webkit-transition: all $delay;
 }
 
 @mixin hover-text-glow($radius, $delay: $default-delay) {

@@ -1,0 +1,100 @@
+@mixin button($bg: $red, $hover-bg: $white, $active-bg: $orange) {
+	@include hover-box-glow(1em);
+	@extend %all-caps;
+	background: $bg;
+	border: none;
+	border-bottom: .1em solid darken($bg, 20%);
+	padding: .2em 1em;
+	cursor: pointer;
+	float: right;
+	border-radius: 1em;
+	&:hover {
+		background: $hover-bg;
+		border-bottom: .1em solid darken($hover-bg, 20%);
+	}
+	&:active {
+		background: $active-bg;
+		border-top: .1em solid $active-bg;
+		border-bottom: 0 solid darken($active-bg, 20%);
+	}
+}
+%button-clearer {
+	content: ' ';
+	clear: both;
+	display: block;
+	height: 0;
+}
+
+.comments-area {
+	@extend %fixed-width-background;
+	background: $black;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	h1 {
+		color: $white;
+		font-size: 2em;
+	}
+	a:hover {
+		// I don't care what anyone says, this is way more semantic than inserting spurious specificity:
+		color: $white !important;
+	}
+
+	ol {
+		list-style: none;
+		padding: 0;
+		li {
+			.comment-meta {
+				float: right;
+			}
+			.avatar {
+				float: left;
+				margin: 0 1em 1em 0;
+				&.avatar-default {
+					display: none;
+				}
+			}
+			.reply {
+				a.comment-reply-link {
+					@include button();
+					font-size: 1em;
+					color: $black !important;
+					text-shadow: none !important;
+				}
+				&::after {
+					@extend %button-clearer;
+				}
+			}
+		}
+	}
+
+	// Posting form
+	.comment-reply-title {
+		// This is the 'cancel reply' button.
+		// TODO - make a more semantic DOM with PHP
+		small {
+			a {
+				@include button();
+				font-size: 1em;
+				color: $black !important;
+				text-shadow: none !important;
+			}
+			&::after {
+				@extend %button-clearer;
+			}
+		}
+	}
+	p.form-allowed-tags {
+		// TODO: Remove from DOM with PHP.
+		display: none;
+	}
+	form {
+		#submit {
+			@include button();
+			font-size: 2em;
+			color: $black;
+		}
+		&::after {
+			@extend %button-clearer;
+		}
+	}
+}

@@ -15,10 +15,13 @@ body {
     left: 10vw;
     width: 80vw; }
 
-  body > div.body {
+  .comments-area, body > div.body {
     padding-left: 10vw;
     padding-right: 10vw;
     width: 80vw; }
+    .comments-area .comments-area, body > div.body .comments-area, .comments-area body > div.body, body > div.body body > div.body {
+      position: relative;
+      left: -10vw; }
 
   body {
     font-size: 2.28571vw; } }
@@ -30,10 +33,13 @@ body {
     left: calc(50% - 10cm);
     width: 20cm; }
 
-  body > div.body {
-    padding-left: calc(50% - 10cm);
-    padding-right: calc(50% - 10cm);
+  .comments-area, body > div.body {
+    padding-left: calc(50vw - 10cm);
+    padding-right: calc(50vw - 10cm);
     width: 20cm; }
+    .comments-area .comments-area, body > div.body .comments-area, .comments-area body > div.body, body > div.body body > div.body {
+      position: relative;
+      left: calc(10cm - 50vw); }
 
   body {
     font-size: 0.57143cm; } }
@@ -79,8 +85,8 @@ header.site {
       text-decoration: none;
       font-weight: bold;
       color: #ff9e5b;
-      transition: color 0.5s, background 0.5s, border 0.5s, box-shadow 0.5s, text-shadow 0.5s;
-      -webkit-transition: color 0.5s, background 0.5s, border 0.5s, box-shadow 0.5s, text-shadow 0.5s; }
+      transition: all 0.5s;
+      -webkit-transition: all 0.5s; }
       header.site nav a:hover {
         text-shadow: 0 0 0.12em #f00, 0 0 0.3em #ff0; }
       header.site nav a:hover {
@@ -167,7 +173,7 @@ header.site {
     src: url("fonts/calibri-italic.woff") format('woff');
     font-weight: italic;
 }*/
-header.site .logo span, header.site nav ul, h1, .tabs {
+header.site .logo span, header.site nav ul, h1, .tabs, .comments-area ol li .reply a.comment-reply-link, .comments-area .comment-reply-title small a, .comments-area form #submit {
   text-transform: uppercase;
   font-family: 'Calibri Web', 'Calibri', sans-serif;
   font-weight: bold; }
@@ -198,8 +204,8 @@ h1 {
         padding: .25em 1em;
         margin: 0;
         color: #000;
-        transition: color 0.5s, background 0.5s, border 0.5s, box-shadow 0.5s, text-shadow 0.5s;
-        -webkit-transition: color 0.5s, background 0.5s, border 0.5s, box-shadow 0.5s, text-shadow 0.5s; }
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s; }
         .tabs ul li a:hover {
           text-shadow: 0 0 0.12em #f00, 0 0 0.3em #ff0; }
         .tabs ul li a.active {
@@ -219,6 +225,99 @@ h1 {
     .compact ul.eo-event-meta > li::before {
       content: '/ '; }
 
+.comments-area ol li .reply::after, .comments-area .comment-reply-title small::after, .comments-area form::after {
+  content: ' ';
+  clear: both;
+  display: block;
+  height: 0; }
+
+.comments-area {
+  background: #000;
+  padding-top: 1em;
+  padding-bottom: 1em; }
+  .comments-area h1 {
+    color: #fff;
+    font-size: 2em; }
+  .comments-area a:hover {
+    color: #fff !important; }
+  .comments-area ol {
+    list-style: none;
+    padding: 0; }
+    .comments-area ol li .comment-meta {
+      float: right; }
+    .comments-area ol li .avatar {
+      float: left;
+      margin: 0 1em 1em 0; }
+      .comments-area ol li .avatar.avatar-default {
+        display: none; }
+    .comments-area ol li .reply a.comment-reply-link {
+      transition: all 0.5s;
+      -webkit-transition: all 0.5s;
+      background: #f00;
+      border: none;
+      border-bottom: 0.1em solid #990000;
+      padding: .2em 1em;
+      cursor: pointer;
+      float: right;
+      border-radius: 1em;
+      font-size: 1em;
+      color: #000 !important;
+      text-shadow: none !important; }
+      .comments-area ol li .reply a.comment-reply-link:hover {
+        box-shadow: 0 0 0.4em #f00, 0 0 1em #ff0; }
+      .comments-area ol li .reply a.comment-reply-link:hover {
+        background: #fff;
+        border-bottom: 0.1em solid #cccccc; }
+      .comments-area ol li .reply a.comment-reply-link:active {
+        background: #ff9e5b;
+        border-top: 0.1em solid #ff9e5b;
+        border-bottom: 0 solid #f46400; }
+  .comments-area .comment-reply-title small a {
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    background: #f00;
+    border: none;
+    border-bottom: 0.1em solid #990000;
+    padding: .2em 1em;
+    cursor: pointer;
+    float: right;
+    border-radius: 1em;
+    font-size: 1em;
+    color: #000 !important;
+    text-shadow: none !important; }
+    .comments-area .comment-reply-title small a:hover {
+      box-shadow: 0 0 0.4em #f00, 0 0 1em #ff0; }
+    .comments-area .comment-reply-title small a:hover {
+      background: #fff;
+      border-bottom: 0.1em solid #cccccc; }
+    .comments-area .comment-reply-title small a:active {
+      background: #ff9e5b;
+      border-top: 0.1em solid #ff9e5b;
+      border-bottom: 0 solid #f46400; }
+  .comments-area p.form-allowed-tags {
+    display: none; }
+  .comments-area form #submit {
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    background: #f00;
+    border: none;
+    border-bottom: 0.1em solid #990000;
+    padding: .2em 1em;
+    cursor: pointer;
+    float: right;
+    border-radius: 1em;
+    font-size: 2em;
+    color: #000; }
+    .comments-area form #submit:hover {
+      box-shadow: 0 0 0.4em #f00, 0 0 1em #ff0; }
+    .comments-area form #submit:hover {
+      background: #fff;
+      border-bottom: 0.1em solid #cccccc; }
+    .comments-area form #submit:active {
+      background: #ff9e5b;
+      border-top: 0.1em solid #ff9e5b;
+      border-bottom: 0 solid #f46400; }
+
 body {
   background: #000; }
   body > div.body {
@@ -231,8 +330,8 @@ body {
       text-decoration: none;
       font-weight: bold;
       color: #f00;
-      transition: color 0.5s, background 0.5s, border 0.5s, box-shadow 0.5s, text-shadow 0.5s;
-      -webkit-transition: color 0.5s, background 0.5s, border 0.5s, box-shadow 0.5s, text-shadow 0.5s; }
+      transition: all 0.5s;
+      -webkit-transition: all 0.5s; }
       body > div.body a:hover {
         text-shadow: 0 0 0.2em #f00, 0 0 0.5em #ff0; }
       body > div.body a:hover {
