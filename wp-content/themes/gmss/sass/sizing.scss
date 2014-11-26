@@ -7,7 +7,7 @@ $fluid-page-width: 100vw * (1 - 2 * $margin);
 $margin-width: 100vw * $margin;
 $max-page-width: 20cm;
 $line-length: 35;
-$max-screen-width: $max-page-width * (1 + 2 * $margin);
+$max-screen-width: $max-page-width / (1 - 2 * $margin);
 
 %fixed-width {
 	position: relative;

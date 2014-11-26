@@ -23,10 +23,10 @@
 				margin: 0;
 				color: $black;
 				@include hover-text-glow(.3em);
-				@include hover-inner-glow(.3em);
+				//@include hover-inner-glow(.3em);
 				&.active {
-					background: $red;
-					color: $white;
+					background: $white;
+					color: $black;
 				}
 				&:hover {
 					background: $black;

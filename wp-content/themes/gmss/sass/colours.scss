@@ -4,6 +4,8 @@ $yellow: #ff0;
 $white: #fff;
 $black: #000;
 
+$default-delay: .5s;
+
 @mixin box-glow($radius) {
     box-shadow: 0 0 ($radius / 2.5) $red, 0 0 $radius $yellow;
 }
@@ -14,23 +16,25 @@ $black: #000;
     text-shadow: 0 0 ($radius / 2.5) $red, 0 0 $radius $yellow;
 }
 
-@mixin hover-text-glow($radius, $delay: .25s) {
-	transition: color $delay, text-shadow $delay;
-	-webkit-transition: color $delay, text-shadow $delay;
+@mixin hover-glow-transition($delay) {
+	transition: color $delay, background $delay, border $delay, box-shadow $delay, text-shadow $delay;
+	-webkit-transition: color $delay, background $delay, border $delay, box-shadow $delay, text-shadow $delay;
+}
+
+@mixin hover-text-glow($radius, $delay: $default-delay) {
+	@include hover-glow-transition($delay);
 	&:hover {
 		@include text-glow($radius);
 	}
 }
-@mixin hover-box-glow($radius, $delay: .25s) {
-	transition: color $delay, background $delay, border $delay, box-shadow $delay;
-	-webkit-transition: color $delay, background $delay, border $delay, box-shadow $delay;
+@mixin hover-box-glow($radius, $delay: $default-delay) {
+	@include hover-glow-transition($delay);
 	&:hover {
 		@include box-glow($radius);
 	}
 }
-@mixin hover-inner-glow($radius, $delay: .25s) {
-	transition: color $delay, background $delay, border $delay, box-shadow $delay;
-	-webkit-transition: color $delay, background $delay, border $delay, box-shadow $delay;
+@mixin hover-inner-glow($radius, $delay: $default-delay) {
+	@include hover-glow-transition($delay);
 	&:hover {
 		@include inner-glow($radius);
 	}

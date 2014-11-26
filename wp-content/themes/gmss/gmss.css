@@ -10,7 +10,7 @@ body {
   padding: 0;
   margin: 0; }
 
-@media (max-width: 24cm) {
+@media (max-width: 25cm) {
   header.site, .tabs ul {
     left: 10vw;
     width: 80vw; }
@@ -22,7 +22,7 @@ body {
 
   body {
     font-size: 2.28571vw; } }
-@media (min-width: 24cm) {
+@media (min-width: 25cm) {
   header.site, .tabs ul {
     left: calc(50% - 10cm);
     width: 20cm; }
@@ -34,7 +34,7 @@ body {
 
   body {
     font-size: 0.57143cm; } }
-@media (max-width: 24cm) {
+@media (max-width: 25cm) {
   header.site .logo {
     width: 48vw;
     min-height: 19.2vw;
@@ -50,10 +50,10 @@ body {
       top: 4.8vw;
       font-size: 7.99968vw; }
     header.site .logo span.society {
-      top: 12.72vw;
+      top: 12.96vw;
       font-size: 2.64vw;
       right: 17.76vw; } }
-@media (min-width: 24cm) {
+@media (min-width: 25cm) {
   header.site .logo {
     width: 12cm;
     min-height: 4.8cm;
@@ -69,7 +69,7 @@ body {
       top: 1.2cm;
       font-size: 1.99992cm; }
     header.site .logo span.society {
-      top: 3.18cm;
+      top: 3.24cm;
       font-size: 0.66cm;
       right: 4.44cm; } }
 header.site {
@@ -166,17 +166,13 @@ h1 {
         padding: .25em 1em;
         margin: 0;
         color: #000;
-        transition: color 0.25s, text-shadow 0.25s;
-        -webkit-transition: color 0.25s, text-shadow 0.25s;
-        transition: color 0.25s, background 0.25s, border 0.25s, box-shadow 0.25s;
-        -webkit-transition: color 0.25s, background 0.25s, border 0.25s, box-shadow 0.25s; }
+        transition: color 0.5s, background 0.5s, border 0.5s, box-shadow 0.5s, text-shadow 0.5s;
+        -webkit-transition: color 0.5s, background 0.5s, border 0.5s, box-shadow 0.5s, text-shadow 0.5s; }
         .tabs ul li a:hover {
           text-shadow: 0 0 0.12em #f00, 0 0 0.3em #ff0; }
-        .tabs ul li a:hover {
-          box-shadow: 0 0 0.12em #f00 inset, 0 0 0.3em #ff0 inset; }
         .tabs ul li a.active {
-          background: #f00;
-          color: #fff; }
+          background: #fff;
+          color: #000; }
         .tabs ul li a:hover {
           background: #000;
           color: #fff; }
@@ -193,8 +189,8 @@ body {
       text-decoration: none;
       font-weight: bold;
       color: #f00;
-      transition: color 0.25s, text-shadow 0.25s;
-      -webkit-transition: color 0.25s, text-shadow 0.25s; }
+      transition: color 0.5s, background 0.5s, border 0.5s, box-shadow 0.5s, text-shadow 0.5s;
+      -webkit-transition: color 0.5s, background 0.5s, border 0.5s, box-shadow 0.5s, text-shadow 0.5s; }
       body > div.body a:hover {
         text-shadow: 0 0 0.2em #f00, 0 0 0.5em #ff0; }
       body > div.body a:hover {
