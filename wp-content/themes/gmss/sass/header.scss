@@ -1,27 +1,27 @@
-$header-split: 0.8;
+$header-split: 0.76;
 
 @mixin logo($width) {
 	width: $width;
 	min-height: $width * 252 / 630;
-	left: -0.00600 * $width;
+	left: -0.00632 * $width;
 	span {
 		&.greater {
-			left: 0.00300 * $width;
-			top: 0.00833 * $width;
-			font-size: 0.05500 * $width;
+			left: 0.00316 * $width;
+			top: 0.00877 * $width;
+			font-size: 0.05789 * $width;
 		}
 		&.manchester {
-			top: 0.03700 * $width;
-			font-size: 0.10833 * $width;
+			top: 0.03895 * $width;
+			font-size: 0.11403 * $width;
 		}
 		&.skeptics {
-			top: 0.10000 * $width;
-			font-size: 0.16666 * $width;
+			top: 0.10526 * $width;
+			font-size: 0.17543 * $width;
 		}
 		&.society {
-			top: 0.27000 * $width;
-			font-size: 0.05500 * $width;
-			right: 0.37000 * $width;
+			top: 0.28421 * $width;
+			font-size: 0.05789 * $width;
+			right: 0.38947 * $width;
 		}
 	}
 }
@@ -38,7 +38,7 @@ header.site {
 	}
 	.logo {
 		text-decoration: none;
-		background: url('img/logo.jpg') no-repeat 95% 50%;
+		background: url('img/logo.jpg') no-repeat 100% 50%;
 		background-size: contain;
 		overflow: hidden;
 		position: relative;
@@ -66,18 +66,18 @@ header.site {
 	}
 	nav {
 		width: (1 - $header-split) * 100%;
-		font-size: 1.8rem;
+		font-size: 1.4em;
 		ul {
 			@extend %all-caps;
-			padding: .7em 0 1em 0;
+			padding: 0;
 		}
 		li {
 			&.long {
-				font-size: 1.2rem;
+				font-size: .67em;
 			}
 			list-style: none;
 			text-align: right;
-			margin: 1rem 0;
+			margin: .5em 0;
 			color: $red;
 			&:first-child {
 				margin-top: 0;
@@ -98,7 +98,8 @@ header.site {
 	}
 }
 
-@media (max-width: $max-screen-width) {
+// The 'fluid' page
+@media (max-width: $max-screen-width) and (max-width: $max-screen-width) {
 	header.site {
 		.logo {
 			@include logo($header-split * $fluid-page-width);
@@ -106,27 +107,36 @@ header.site {
 	}
 }
 
+// The 'too-narrow-for-fluid' page
 @media (max-width: $min-screen-width) {
 	header.site {
 		.logo {
-			@include logo($header-split * $min-page-width);
+			@include logo(87vw);
 		}
 		nav {
 			width: 100%;
 			display: block;
-			text-align: center;
+			text-align: right;
 			ul {
 				padding: 0;
 				margin: 0 0 1em 0;
-				li {
+				li, li.long {
 					display: inline-block;
-					padding: 0 1em;
+					padding: 0 0 0 1em;
+					font-size: 0.8em;
+					br {
+						display: none;
+					}
+					&:first-child {
+						padding: 0;
+					}
 				}
 			}
 		}
 	}
 }
 
+// The 'too wide for fluid' page
 @media (min-width: $max-screen-width) {
 	header.site {
 		.logo {
