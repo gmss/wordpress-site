@@ -10,6 +10,7 @@ $body-margin: 2rem;
 
 body {
 	background: $black;
+    	overflow-x: hidden;
 	> div.body {
 		@extend %fixed-width-background;
 		background: $white;
