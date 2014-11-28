@@ -43,4 +43,49 @@ article {
 	line-height: 1.5;
 	text-align: justify;
 	font-weight: lighter;
+
+	// This is mainly for the constitution, minutes etc.
+	// It may well come in handy elsewhere.
+	.legalese {
+		margin-top: 1em;
+		line-height: 1.2rem;
+		font-family: serif;
+		font-size: 1rem;
+		counter-reset: section;
+		> section {
+			padding-left: 1.5rem;
+		}
+		div {
+			counter-reset: section;
+			padding-left: 1.5rem;
+		}
+		p, section {
+			counter-increment: section;
+		}
+		p {
+			&::before {
+				content: counters(section, ".");
+			}
+		}
+		h1 {
+			text-transform: none;
+			font-family: serif;
+			font-size: 1em;
+			&::before {
+				content: counters(section, ".") ".";
+			}
+		}
+		h1, p {
+			&::before {
+				margin-right: .5rem;
+			}
+			text-indent: -1.5rem;
+			margin: .5rem 0;
+			clear: left;
+		}
+		footer {
+			font-size: 1rem;
+			color: black;
+		}
+	}
 }

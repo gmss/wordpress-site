@@ -17,7 +17,8 @@
 			<span class="society">Society</span>
 		</h1></a><nav>
 			<ul>
-				<li><a href="http://www.facebook.com/GMSkeptics">Facebook</a></li>
+				<li class="long"><a href="http://www.facebook.com/GMSkeptics">Facebook Page</a><br>
+					and <a href="https://www.facebook.com/groups/725096960872233">Group</a></li>
 				<li><a href="http://www.meetup.com/GMSkeptics">Meetup</a></li>
 				<li><a href="http://www.twitter.com/GMSkeptics">Twitter</a></li>
 			</ul>
@@ -25,10 +26,11 @@
 		<nav class="tabs"><ul><?php
 			$found = false;
 			foreach (array(
-							(object) array('url' => '/about', 'name' => 'About', 'active' => is_page(16)),
+							(object) array('url' => '/about', 'name' => 'About',
+								'active' => preg_match('/^\/about($|\/)/i', $_SERVER['REQUEST_URI'])),
 							(object) array('url' => '/events', 'name' => 'Events',
 								'active' => preg_match('/^\/events($|\/)/i', $_SERVER['REQUEST_URI'])),
-							(object) array('url' => '/podcast', 'name' => 'Podcast', 'active' => false),
+							//(object) array('url' => '/podcast', 'name' => 'Podcast', 'active' => false),
 							(object) array('url' => '/', 'name' => 'Blog', 'active' => true)
 						) as $tab) {
 				$active = $tab->active && !$found;

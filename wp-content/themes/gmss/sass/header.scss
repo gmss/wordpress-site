@@ -66,21 +66,31 @@ header.site {
 	}
 	nav {
 		width: (1 - $header-split) * 100%;
-		font-size: 1.2em;
+		font-size: 1.8rem;
 		ul {
 			@extend %all-caps;
 			padding: .7em 0 1em 0;
 		}
 		li {
+			&.long {
+				font-size: 1.2rem;
+			}
 			list-style: none;
 			text-align: right;
-			margin: 0;
+			margin: 1rem 0;
+			color: $red;
+			&:first-child {
+				margin-top: 0;
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 		a {
 			text-decoration: none;
 			font-weight: bold;
 			color: $orange;
-			@include hover-text-glow(.3em);
+			@include hover-text-glow(.6rem);
 			&:hover {
 				color: $white;
 			}
