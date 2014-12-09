@@ -75,6 +75,11 @@ header.site {
 			&.long {
 				font-size: .67em;
 			}
+			&.gogle-plus {
+				// We don't care about this one at the moment
+				// but the DOM is useful for metadata, so just hide it.
+				display: none;
+			}
 			list-style: none;
 			text-align: right;
 			margin: .5em 0;
