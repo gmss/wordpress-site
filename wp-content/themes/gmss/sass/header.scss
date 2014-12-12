@@ -38,7 +38,7 @@ header.site {
 	}
 	.logo {
 		text-decoration: none;
-		background: url('img/logo.jpg') no-repeat 100% 50%;
+		background: url('img/logo.png') no-repeat 100% 50%;
 		background-size: contain;
 		overflow: hidden;
 		position: relative;
@@ -75,7 +75,7 @@ header.site {
 			&.long {
 				font-size: .67em;
 			}
-			&.gogle-plus {
+			&.google-plus {
 				// We don't care about this one at the moment
 				// but the DOM is useful for metadata, so just hide it.
 				display: none;
