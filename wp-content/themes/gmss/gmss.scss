@@ -98,3 +98,19 @@ a.button {
 	padding: .3em 1em .2em 1em;
 	margin: .5em;
 }
+
+#nav-below, #nav-above {
+	padding: 1em 0;
+	.nav-next {
+		display: inline;
+		float: right;
+	}
+	.nav-previous {
+		display: inline;
+		float: left;
+	}
+	&:after {
+		content: ' ';
+		clear: both;
+	}
+}

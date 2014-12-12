@@ -487,4 +487,16 @@ a.button {
     border-top: 0.1em solid #ff8f61;
     border-bottom: 0 solid #fa4900; }
 
+#nav-below, #nav-above {
+  padding: 1em 0; }
+  #nav-below .nav-next, #nav-above .nav-next {
+    display: inline;
+    float: right; }
+  #nav-below .nav-previous, #nav-above .nav-previous {
+    display: inline;
+    float: left; }
+  #nav-below:after, #nav-above:after {
+    content: ' ';
+    clear: both; }
+
 /*# sourceMappingURL=gmss.css.map */
