@@ -7,6 +7,9 @@
 		?></title>
 		<link rel="stylesheet" type="text/css"
 		      href="<?php bloginfo('template_url'); ?>/gmss.css">
+		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/wheelguard/guard.js"></script>
+		<meta name="theme-color" content="#000000">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 		<?php wp_head(); ?>
 	</head>
 	<body>

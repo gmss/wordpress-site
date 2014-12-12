@@ -10,3 +10,12 @@
 		}
 	}
 }
+
+.venue-map,
+.eo-event-venue-map {
+	@extend %full-width;
+	height: 75vh;
+	.eo-venue-map {
+		height: 100% !important;
+	}
+}

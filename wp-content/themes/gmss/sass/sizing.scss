@@ -19,6 +19,10 @@ $min-page-width: $min-screen-width * (1 - 2 * $margin);
 	display: block;
 	box-sizing: border-box;
 }
+%full-width {
+	position: relative;
+	width: 100vw;
+}
 body {
     padding: 0;
     margin: 0;
@@ -37,6 +41,9 @@ body {
 			position: relative;
 			left: -$margin-width;
 		}
+	}
+	%full-width {
+		left: -$margin-width;
 	}
 	body {
 	    font-size: $fluid-font-size;
@@ -62,6 +69,9 @@ body {
 			position: relative;
 			left: calc(#{$max-page-width / 2} - 50vw);
 		}
+	}
+	%full-width {
+		left: calc(#{$max-page-width / 2} - 50vw);
 	}
 	body {
 	    font-size: $max-font-size;

@@ -1,11 +1,6 @@
 <?php get_header(); ?>
 
-<!-- This template follows the TwentyTwelve theme-->
-<div id="primary" class="site-content">
-	<div id="content" role="main">
-
-	<!-- Page header, display venue title-->
-	<header class="page-header">	
+	<header class="page">	
 		
 		<?php $venue_id = get_queried_object_id(); ?>
 		
@@ -15,23 +10,21 @@
 			 echo '<div class="venue-archive-meta">'.$venue_description.'</div>';
 		} ?>
 		
-		<!-- Display the venue map. If you specify a class, ensure that class has height/width dimensions-->
-		<?php echo eo_get_venue_map( $venue_id, array('width'=>"100%") ); ?>
-	</header><!-- end header -->
+		<div class="wheelguard venue-map">
+			<?php echo eo_get_venue_map( $venue_id ); ?>
+		</div>
+	</header>
 
 	<?php if ( have_posts() ) : ?>
 
-		<!-- Navigate between pages -->
-		<!-- In TwentyEleven theme this is done by twentyeleven_content_nav -->
 		<?php 
 			if ( $wp_query->max_num_pages > 1 ) : ?>
 				<nav id="nav-above">
 					<div class="nav-next events-nav-newer"><?php next_posts_link( __( 'Later events <span class="meta-nav">&rarr;</span>' , 'eventorganiser' ) ); ?></div>
 					<div class="nav-previous events-nav-newer"><?php previous_posts_link( __( ' <span class="meta-nav">&larr;</span> Newer events', 'eventorganiser' ) ); ?></div>
-				</nav><!-- #nav-above -->
+				</nav>
 		<?php endif; ?>
 
-		<!-- This is the usual loop, familiar in WordPress templates-->
 		<?php while ( have_posts()) : the_post(); ?>
 	
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -52,7 +45,6 @@
 		
 				<div class="event-entry-meta">
 
-					<!-- Output the date of the occurrence-->
 					<?php
 					//Format date/time according to whether its an all day event.
 					//Use microdata https://support.google.com/webmasters/bin/answer.py?hl=en&answer=176035
@@ -65,43 +57,39 @@
 					}?>
 					<time itemprop="startDate" datetime="<?php eo_the_start($microformat); ?>"><?php eo_the_start($format); ?></time>
 
-					<!-- Display event meta list -->
 					<?php echo eo_get_event_meta_list(); ?>
 
-					<!-- Show Event text as 'the_excerpt' or 'the_content' -->
 					<?php the_excerpt(); ?>
 			
-				</div><!-- .event-entry-meta -->
+				</div>
 		
 				<div style="clear:both;"></div>
-			</header><!-- .entry-header -->
-			</article><!-- #post-<?php the_ID(); ?> -->
+			</header>
+			</article>
 
-    		<?php endwhile; ?><!--The Loop ends-->
+    		<?php endwhile; ?>
 
-			<!-- Navigate between pages-->
 			<?php 
 			if ( $wp_query->max_num_pages > 1 ) : ?>
 				<nav id="nav-below">
 					<div class="nav-next events-nav-newer"><?php next_posts_link( __( 'Later events <span class="meta-nav">&rarr;</span>' , 'eventorganiser' ) ); ?></div>
 					<div class="nav-previous events-nav-newer"><?php previous_posts_link( __( ' <span class="meta-nav">&larr;</span> Newer events', 'eventorganiser' ) ); ?></div>
-				</nav><!-- #nav-below -->
+				</nav>
 			<?php endif; ?>
 
 
 	<?php else : ?>
-			<!-- If there are no events -->
 			<article id="post-0" class="post no-results not-found">
 				<header class="entry-header">
 					<h1 class="entry-title"><?php _e( 'Nothing Found', 'eventorganiser' ); ?></h1>
-				</header><!-- .entry-header -->
+				</header>
 				<div class="entry-content">
 					<p><?php _e( 'Apologies, but no events were found for the requested venue. ', 'eventorganiser' ); ?></p>
-				</div><!-- .entry-content -->
-			</article><!-- #post-0 -->
+				</div>
+			</article>
 	<?php endif; ?>
 
-	</div><!-- #content -->
-</div><!-- #primary -->
+	</div>
+</div>
 
 <?php get_footer(); ?>
