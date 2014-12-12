@@ -80,7 +80,7 @@ header.site {
       header.site .logo span.greater {
         color: #f00; }
       header.site .logo span.manchester {
-        color: #ff9e5b; }
+        color: #ff8f61; }
       header.site .logo span.skeptics {
         color: #fff; }
       header.site .logo span.society {
@@ -106,7 +106,7 @@ header.site {
     header.site nav a {
       text-decoration: none;
       font-weight: bold;
-      color: #ff9e5b;
+      color: #ff8f61;
       transition: color 0.5s, border 0.5s, text-shadow 0.5s, box-shadow 0.5s, background 0.5s;
       -webkit-transition: color 0.5s, border 0.5s, text-shadow 0.5s, box-shadow 0.5s, background 0.5s; }
       header.site nav a:hover {
@@ -200,7 +200,7 @@ header.site {
     src: url("fonts/calibri-italic.woff") format('woff');
     font-weight: italic;
 }*/
-header.site .logo span, header.site nav ul, h1, .tabs, .comments-area ol li .reply a.comment-reply-link, .comments-area .comment-reply-title small a, .comments-area form .form-submit #submit {
+header.site .logo span, header.site nav ul, h1, .tabs, .comments-area ol li .reply a.comment-reply-link, .comments-area .comment-reply-title small a, .comments-area form .form-submit #submit, a.button {
   text-transform: uppercase;
   font-family: 'Calibri Web', 'Calibri', sans-serif;
   font-weight: bold; }
@@ -213,7 +213,7 @@ h1 {
 
 .tabs {
   font-size: 1.5em;
-  background: #ff9e5b;
+  background: #ff8f61;
   position: relative; }
   .tabs ul {
     list-style: none;
@@ -259,6 +259,10 @@ h1 {
   .eo-event-venue-map .eo-venue-map {
     height: 100% !important; }
 
+.event-feed-buttons {
+  text-align: center;
+  margin: .5em 0 1em 0; }
+
 .comments-area ol li .reply::after, .comments-area .comment-reply-title small::after, .comments-area form .comment-form-author::after,
 .comments-area form .comment-form-email::after,
 .comments-area form .comment-form-url::after,
@@ -296,8 +300,8 @@ h1 {
       border-bottom: 0.1em solid #990000;
       padding: .2em 1em;
       cursor: pointer;
-      float: right;
       border-radius: 1em;
+      float: right;
       font-size: 1em;
       color: #000 !important;
       text-shadow: none !important; }
@@ -307,9 +311,9 @@ h1 {
         background: #fff;
         border-bottom: 0.1em solid #cccccc; }
       .comments-area ol li .reply a.comment-reply-link:active {
-        background: #ff9e5b;
-        border-top: 0.1em solid #ff9e5b;
-        border-bottom: 0 solid #f46400; }
+        background: #ff8f61;
+        border-top: 0.1em solid #ff8f61;
+        border-bottom: 0 solid #fa4900; }
   .comments-area .comment-reply-title small a {
     transition: color 0.5s, border 0.5s, text-shadow 0.5s, box-shadow 0.5s, background 0.5s;
     -webkit-transition: color 0.5s, border 0.5s, text-shadow 0.5s, box-shadow 0.5s, background 0.5s;
@@ -318,8 +322,8 @@ h1 {
     border-bottom: 0.1em solid #990000;
     padding: .2em 1em;
     cursor: pointer;
-    float: right;
     border-radius: 1em;
+    float: right;
     font-size: 1em;
     color: #000 !important;
     text-shadow: none !important; }
@@ -329,9 +333,9 @@ h1 {
       background: #fff;
       border-bottom: 0.1em solid #cccccc; }
     .comments-area .comment-reply-title small a:active {
-      background: #ff9e5b;
-      border-top: 0.1em solid #ff9e5b;
-      border-bottom: 0 solid #f46400; }
+      background: #ff8f61;
+      border-top: 0.1em solid #ff8f61;
+      border-bottom: 0 solid #fa4900; }
   .comments-area p.form-allowed-tags {
     display: none; }
   .comments-area form .comment-form-author label,
@@ -383,8 +387,8 @@ h1 {
     border-bottom: 0.1em solid #990000;
     padding: .2em 1em;
     cursor: pointer;
-    float: right;
     border-radius: 1em;
+    float: right;
     font-size: 2em;
     color: #000; }
     .comments-area form .form-submit #submit:hover {
@@ -393,9 +397,9 @@ h1 {
       background: #fff;
       border-bottom: 0.1em solid #cccccc; }
     .comments-area form .form-submit #submit:active {
-      background: #ff9e5b;
-      border-top: 0.1em solid #ff9e5b;
-      border-bottom: 0 solid #f46400; }
+      background: #ff8f61;
+      border-top: 0.1em solid #ff8f61;
+      border-bottom: 0 solid #fa4900; }
 
 body {
   background: #000;
@@ -406,15 +410,15 @@ body {
     min-height: 100vh;
     padding-top: 1em;
     padding-bottom: 1em; }
-    body > div.body a {
+    body > div.body a:not(.button) {
       text-decoration: none;
       font-weight: bold;
       color: #f00;
       transition: color 0.5s, border 0.5s, text-shadow 0.5s, box-shadow 0.5s, background 0.5s;
       -webkit-transition: color 0.5s, border 0.5s, text-shadow 0.5s, box-shadow 0.5s, background 0.5s; }
-      body > div.body a:hover {
+      body > div.body a:not(.button):hover {
         text-shadow: 0 0 0.2em #f00, 0 0 0.5em #ff0; }
-      body > div.body a:hover {
+      body > div.body a:not(.button):hover {
         color: #000; }
 
 article {
@@ -428,7 +432,7 @@ article {
     margin: 0; }
   article .meta, article footer {
     font-size: .75em;
-    color: #ff9e5b; }
+    color: #ff8f61; }
   article .legalese {
     margin-top: 1em;
     line-height: 1.2rem;
@@ -459,5 +463,28 @@ article {
     article .legalese footer {
       font-size: 1rem;
       color: black; }
+
+a.button {
+  transition: color 0.5s, border 0.5s, text-shadow 0.5s, box-shadow 0.5s, background 0.5s;
+  -webkit-transition: color 0.5s, border 0.5s, text-shadow 0.5s, box-shadow 0.5s, background 0.5s;
+  background: #f00;
+  border: none;
+  border-bottom: 0.1em solid #990000;
+  padding: .2em 1em;
+  cursor: pointer;
+  border-radius: 1em;
+  color: #000;
+  text-decoration: none;
+  padding: .3em 1em .2em 1em;
+  margin: .5em; }
+  a.button:hover {
+    box-shadow: 0 0 0.4em #f00, 0 0 1em #ff0; }
+  a.button:hover {
+    background: #fff;
+    border-bottom: 0.1em solid #cccccc; }
+  a.button:active {
+    background: #ff8f61;
+    border-top: 0.1em solid #ff8f61;
+    border-bottom: 0 solid #fa4900; }
 
 /*# sourceMappingURL=gmss.css.map */

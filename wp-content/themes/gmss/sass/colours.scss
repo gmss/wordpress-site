@@ -46,3 +46,23 @@ $default-delay: .5s;
 		@include box-glow($radius);
 	}
 }
+
+@mixin button($bg: $red, $hover-bg: $white, $active-bg: $orange) {
+	@include hover-box-glow(1em);
+	@extend %all-caps;
+	background: $bg;
+	border: none;
+	border-bottom: .1em solid darken($bg, 20%);
+	padding: .2em 1em;
+	cursor: pointer;
+	border-radius: 1em;
+	&:hover {
+		background: $hover-bg;
+		border-bottom: .1em solid darken($hover-bg, 20%);
+	}
+	&:active {
+		background: $active-bg;
+		border-top: .1em solid $active-bg;
+		border-bottom: 0 solid darken($active-bg, 20%);
+	}
+}

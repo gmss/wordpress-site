@@ -64,6 +64,10 @@ document.addEventListener('DOMContentLoaded', function() {
 			guards.forEach(function(guard) {
 				guard.style.display = 'block';
 			});
+			if (clearTimer) {
+				clearTimeout(clearTimer);
+				clearTimer = undefined;
+			}
 			lastWheel = new Date().getTime();
 		}
 	});

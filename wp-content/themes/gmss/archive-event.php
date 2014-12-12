@@ -15,14 +15,13 @@
 		if ($header)
 			echo '<h1>' . $header . '</h1>';
 	?>
+	<div class="event-feed-buttons">
+		<a href="webcal://www.gmss.uk/feed/eo-events/"
+		   class="button">Subscribe</a>
+		<a href="http://www.google.com/calendar/render?cid=http%3A%2F%2Fwww.gmss.uk%2Ffeed%2Feo-events%2F"
+		   class="button">in Google Calendar</a>
+	</div>
 </header>
-
-<?php global $wp_query; if ($wp_query->max_num_pages > 1) : ?>
-	<nav id="nav-above">
-		<div class="nav-next events-nav-newer"><?php next_posts_link( __( 'Later events <span class="meta-nav">&rarr;</span>' , 'eventorganiser' ) ); ?></div>
-		<div class="nav-previous events-nav-newer"><?php previous_posts_link( __( ' <span class="meta-nav">&larr;</span> Newer events', 'eventorganiser' ) ); ?></div>
-	</nav><!-- #nav-above -->
-<?php endif; ?>
 
 <?php while (have_posts()) :
 	the_post();
