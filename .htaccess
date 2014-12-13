@@ -2,7 +2,7 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
-RewriteRule ^events/upcoming(/|$) /index.php?page=409 [L]
+RewriteRule ^events/upcoming(/|$) /index.php?page_id=409 [L]
 </IfModule>
 
 
