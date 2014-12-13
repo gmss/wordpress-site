@@ -1,3 +1,10 @@
+# GMSS Stuff
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^events/upcoming(/|$) /index.php?page=409 [L]
+</IfModule>
+
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
