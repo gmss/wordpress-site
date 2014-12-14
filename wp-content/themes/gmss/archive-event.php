@@ -16,6 +16,8 @@
 			echo '<h1>' . $header . '</h1>';
 	?>
 	<div class="event-feed-buttons">
+		<a href="/upcoming-events"
+		   class="button">Upcoming events</a>
 		<a href="webcal://www.gmss.uk/feed/eo-events/"
 		   class="button">Subscribe</a>
 		<a href="http://www.google.com/calendar/render?cid=http%3A%2F%2Fwww.gmss.uk%2Ffeed%2Feo-events%2F"
