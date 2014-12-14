@@ -33,7 +33,7 @@
 			foreach (array(
 							(object) array('url' => '/about', 'name' => 'About',
 								'active' => preg_match('/^\/about($|\/)/i', $_SERVER['REQUEST_URI'])),
-							(object) array('url' => '/events', 'name' => 'Events',
+							(object) array('url' => '/upcoming-events', 'name' => 'Events',
 								'active' => preg_match('/^\/(upcoming-)?events($|\/)/i', $_SERVER['REQUEST_URI'])),
 							//(object) array('url' => '/podcast', 'name' => 'Podcast', 'active' => false),
 							(object) array('url' => '/', 'name' => 'Blog', 'active' => true)
