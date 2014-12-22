@@ -1,7 +1,6 @@
-.tabs {
+.tabs,
+header.page > nav.subtabs {
 	@extend %all-caps;
-	font-size: 1.5em;
-	background: $orange;
 	position: relative;
 	ul {
 		@extend %fixed-width;
@@ -31,6 +30,37 @@
 					color: $white;
 				}
 			}
+			&.non-tab {
+				float: right;
+				border: none;
+				a {
+					padding-right: 0;
+					background: none !important;
+					transition: none;
+					-webkit-transition: none;
+					&:hover {
+						@extend %no-glow;
+					}
+				}
+			}
 		}
 	}
+}
+
+.tabs {
+	font-size: 1.5em;
+	background: $red;
+}
+
+$subtab-font-size: 1.5rem;
+.subtabs {
+	@extend %full-width;
+	ul {
+		font-size: 0;
+		li {
+			font-size: $subtab-font-size;
+		}
+	}
+	background: $orange;
+	top: -1em;
 }

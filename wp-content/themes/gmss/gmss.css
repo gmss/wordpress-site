@@ -1,12 +1,13 @@
 /*
 	This file decides the page width and applies margins. It should handle 90% of the responsivity. Other files should use ems wherever possible to best respond to changes here.
 */
-header.site, .tabs ul {
+header.site, .tabs ul,
+header.page > nav.subtabs ul {
   position: relative;
   display: block;
   box-sizing: border-box; }
 
-.venue-map,
+.subtabs, .venue-map,
 .eo-event-venue-map {
   position: relative;
   width: 100vw; }
@@ -16,7 +17,8 @@ body {
   margin: 0; }
 
 @media (max-width: 25cm) {
-  header.site, .tabs ul {
+  header.site, .tabs ul,
+  header.page > nav.subtabs ul {
     left: 10vw;
     width: 80vw; }
 
@@ -28,7 +30,7 @@ body {
       position: relative;
       left: -10vw; }
 
-  .venue-map,
+  .subtabs, .venue-map,
   .eo-event-venue-map {
     left: -10vw; }
 
@@ -38,7 +40,8 @@ body {
   body {
     font-size: 0.3cm; } }
 @media (min-width: 25cm) {
-  header.site, .tabs ul {
+  header.site, .tabs ul,
+  header.page > nav.subtabs ul {
     left: calc(50% - 10cm);
     width: 20cm; }
 
@@ -50,12 +53,17 @@ body {
       position: relative;
       left: calc(10cm - 50vw); }
 
-  .venue-map,
+  .subtabs, .venue-map,
   .eo-event-venue-map {
     left: calc(10cm - 50vw); }
 
   body {
     font-size: 0.57143cm; } }
+.tabs ul li.non-tab a:hover,
+header.page > nav.subtabs ul li.non-tab a:hover {
+  box-shadow: none;
+  text-shadow: none; }
+
 header.site {
   position: relative;
   top: .5em;
@@ -200,7 +208,8 @@ header.site {
     src: url("fonts/calibri-italic.woff") format('woff');
     font-weight: italic;
 }*/
-header.site .logo span, header.site nav ul, h1, .tabs, .comments-area ol li .reply a.comment-reply-link, .comments-area .comment-reply-title small a, .comments-area form .form-submit #submit, a.button {
+header.site .logo span, header.site nav ul, h1, .tabs,
+header.page > nav.subtabs, .comments-area ol li .reply a.comment-reply-link, .comments-area .comment-reply-title small a, .comments-area form .form-submit #submit, a.button {
   text-transform: uppercase;
   font-family: 'Calibri Web', 'Calibri', sans-serif;
   font-weight: bold; }
@@ -211,21 +220,23 @@ body, input, textarea {
 h1 {
   line-height: 1.5em; }
 
-.tabs {
-  font-size: 1.5em;
-  background: #ff8f61;
+.tabs,
+header.page > nav.subtabs {
   position: relative; }
-  .tabs ul {
+  .tabs ul,
+  header.page > nav.subtabs ul {
     list-style: none;
     padding: 0;
     margin: 0; }
-    .tabs ul li {
+    .tabs ul li,
+    header.page > nav.subtabs ul li {
       display: inline-block;
       padding: 0;
       margin: 0 0 0 -1px;
       border-right: 1px solid #000;
       border-left: 1px solid #000; }
-      .tabs ul li a {
+      .tabs ul li a,
+      header.page > nav.subtabs ul li a {
         text-decoration: none;
         display: inline-block;
         padding: .25em 1em;
@@ -233,14 +244,39 @@ h1 {
         color: #000;
         transition: color 0.5s, border 0.5s, text-shadow 0.5s, box-shadow 0.5s, background 0.5s;
         -webkit-transition: color 0.5s, border 0.5s, text-shadow 0.5s, box-shadow 0.5s, background 0.5s; }
-        .tabs ul li a:hover {
+        .tabs ul li a:hover,
+        header.page > nav.subtabs ul li a:hover {
           text-shadow: 0 0 0.12em #f00, 0 0 0.3em #ff0; }
-        .tabs ul li a.active {
+        .tabs ul li a.active,
+        header.page > nav.subtabs ul li a.active {
           background: #fff;
           color: #000; }
-        .tabs ul li a:hover {
+        .tabs ul li a:hover,
+        header.page > nav.subtabs ul li a:hover {
           background: #000;
           color: #fff; }
+      .tabs ul li.non-tab,
+      header.page > nav.subtabs ul li.non-tab {
+        float: right;
+        border: none; }
+        .tabs ul li.non-tab a,
+        header.page > nav.subtabs ul li.non-tab a {
+          padding-right: 0;
+          background: none !important;
+          transition: none;
+          -webkit-transition: none; }
+
+.tabs {
+  font-size: 1.5em;
+  background: #f00; }
+
+.subtabs {
+  background: #ff8f61;
+  top: -1em; }
+  .subtabs ul {
+    font-size: 0; }
+    .subtabs ul li {
+      font-size: 1.5rem; }
 
 .compact ul.eo-event-meta {
   list-style: none;
