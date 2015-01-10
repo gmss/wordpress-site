@@ -570,7 +570,8 @@ article {
     float: right; }
   article .wp-caption.aligncenter {
     text-align: center;
-    display: block; }
+    display: block;
+    max-width: 100%; }
   article .wp-caption > a {
     font-size: 0; }
     article .wp-caption > a > img {
