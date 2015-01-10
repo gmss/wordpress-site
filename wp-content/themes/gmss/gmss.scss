@@ -89,6 +89,32 @@ article {
 			color: black;
 		}
 	}
+
+	.wp-caption {
+		&.alignleft {
+			text-align: left;
+			float: left;
+		}
+		&.alignright {
+			text-align: right;
+			float: right;
+		}
+		&.aligncenter {
+			text-align: center;
+			display: block;
+		}
+		> a {
+			font-size: 0;
+			> img {
+				max-width: 100%;
+			}
+		}
+		> p {
+			color: $orange;
+			font-style: italic;
+			text-align: center;
+		}
+	}
 }
 
 a.button {

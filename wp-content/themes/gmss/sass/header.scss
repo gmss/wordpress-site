@@ -11,7 +11,7 @@ $header-split: 0.76;
 			font-size: 0.05789 * $width;
 		}
 		&.manchester {
-			top: 0.03795 * $width;
+			top: 0.03750 * $width;
 			font-size: 0.11403 * $width;
 		}
 		&.skeptics {
@@ -24,6 +24,27 @@ $header-split: 0.76;
 			right: 0.33684 * $width;
 		}
 	}
+	/*&:hover {
+		background: url('img/icon.png') no-repeat #{0.693 * $width} #{0.074 * $width} / #{0.2383 * $width},
+					radial-gradient(
+						0.18 * $width at 0.81 * $width 0.20 * $width,
+						#ff5030 20%,
+						#ee6030 35%,
+						#885020 50%,
+						#705520 65%,
+						#20130c 80%,
+						#000000 100%);
+		background: url('img/icon.png') no-repeat #{0.693 * $width} #{0.074 * $width} / #{0.2383 * $width},
+					-webkit-gradient(radial,
+						50 50,
+						0,
+						50 50,
+						100,
+						from($red),
+						to(1, rgba($orange, 0)),
+						color-stop(0.5, rgba($orange, 0.75)))
+						#{0.82 * $width} #{0.13 * $width} / #{0.25 * $width};
+	}*/
 }
 
 header.site {

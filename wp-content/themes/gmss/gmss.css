@@ -126,13 +126,34 @@ header.site {
   header.site .logo {
     width: 60.8vw;
     min-height: 24.32vw;
-    left: -0.38426vw; }
+    left: -0.38426vw;
+    /*&:hover {
+    	background: url('img/icon.png') no-repeat 42.1344vw 4.4992vw / 14.48864vw,
+    				radial-gradient(
+    					0.18 * $width at 0.81 * $width 0.20 * $width,
+    					#ff5030 20%,
+    					#ee6030 35%,
+    					#885020 50%,
+    					#705520 65%,
+    					#20130c 80%,
+    					#000000 100%);
+    	background: url('img/icon.png') no-repeat 42.1344vw 4.4992vw / 14.48864vw,
+    				-webkit-gradient(radial,
+    					50 50,
+    					0,
+    					50 50,
+    					100,
+    					from($red),
+    					to(1, rgba($orange, 0)),
+    					color-stop(0.5, rgba($orange, 0.75)))
+    					49.856vw 7.904vw / 15.2vw;
+    }*/ }
     header.site .logo span.greater {
       left: 0.19213vw;
       top: 0.47242vw;
       font-size: 3.51971vw; }
     header.site .logo span.manchester {
-      top: 2.30736vw;
+      top: 2.28vw;
       font-size: 6.93302vw; }
     header.site .logo span.skeptics {
       top: 6.15661vw;
@@ -145,13 +166,34 @@ header.site {
   header.site .logo {
     width: 87vw;
     min-height: 34.8vw;
-    left: -0.54984vw; }
+    left: -0.54984vw;
+    /*&:hover {
+    	background: url('img/icon.png') no-repeat 60.291vw 6.438vw / 20.7321vw,
+    				radial-gradient(
+    					0.18 * $width at 0.81 * $width 0.20 * $width,
+    					#ff5030 20%,
+    					#ee6030 35%,
+    					#885020 50%,
+    					#705520 65%,
+    					#20130c 80%,
+    					#000000 100%);
+    	background: url('img/icon.png') no-repeat 60.291vw 6.438vw / 20.7321vw,
+    				-webkit-gradient(radial,
+    					50 50,
+    					0,
+    					50 50,
+    					100,
+    					from($red),
+    					to(1, rgba($orange, 0)),
+    					color-stop(0.5, rgba($orange, 0.75)))
+    					71.34vw 11.31vw / 21.75vw;
+    }*/ }
     header.site .logo span.greater {
       left: 0.27492vw;
       top: 0.67599vw;
       font-size: 5.03643vw; }
     header.site .logo span.manchester {
-      top: 3.30165vw;
+      top: 3.2625vw;
       font-size: 9.92061vw; }
     header.site .logo span.skeptics {
       top: 8.80962vw;
@@ -179,13 +221,34 @@ header.site {
   header.site .logo {
     width: 15.2cm;
     min-height: 6.08cm;
-    left: -0.09606cm; }
+    left: -0.09606cm;
+    /*&:hover {
+    	background: url('img/icon.png') no-repeat 10.5336cm 1.1248cm / 3.62216cm,
+    				radial-gradient(
+    					0.18 * $width at 0.81 * $width 0.20 * $width,
+    					#ff5030 20%,
+    					#ee6030 35%,
+    					#885020 50%,
+    					#705520 65%,
+    					#20130c 80%,
+    					#000000 100%);
+    	background: url('img/icon.png') no-repeat 10.5336cm 1.1248cm / 3.62216cm,
+    				-webkit-gradient(radial,
+    					50 50,
+    					0,
+    					50 50,
+    					100,
+    					from($red),
+    					to(1, rgba($orange, 0)),
+    					color-stop(0.5, rgba($orange, 0.75)))
+    					12.464cm 1.976cm / 3.8cm;
+    }*/ }
     header.site .logo span.greater {
       left: 0.04803cm;
       top: 0.1181cm;
       font-size: 0.87993cm; }
     header.site .logo span.manchester {
-      top: 0.57684cm;
+      top: 0.57cm;
       font-size: 1.73326cm; }
     header.site .logo span.skeptics {
       top: 1.53915cm;
@@ -499,6 +562,23 @@ article {
     article .legalese footer {
       font-size: 1rem;
       color: black; }
+  article .wp-caption.alignleft {
+    text-align: left;
+    float: left; }
+  article .wp-caption.alignright {
+    text-align: right;
+    float: right; }
+  article .wp-caption.aligncenter {
+    text-align: center;
+    display: block; }
+  article .wp-caption > a {
+    font-size: 0; }
+    article .wp-caption > a > img {
+      max-width: 100%; }
+  article .wp-caption > p {
+    color: #ff8f61;
+    font-style: italic;
+    text-align: center; }
 
 a.button {
   transition: color 0.5s, border 0.5s, text-shadow 0.5s, box-shadow 0.5s, background 0.5s;
