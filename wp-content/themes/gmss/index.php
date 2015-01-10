@@ -13,8 +13,7 @@
 		</header>
 		<?php the_content(); ?>
 		<footer>
-			This post has <?php comments_number('no comments', 'one comment', '% comments'); ?>.
-			<?php //comment_form(); ?>
+			<a href="<?php the_permalink(); ?>">This post</a> has <?php comments_number('no comments', 'one comment', '% comments'); ?>.
 		</footer>
 	</article>
 
