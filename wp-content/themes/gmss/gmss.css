@@ -285,7 +285,8 @@ h1 {
 
 .tabs,
 header.page > nav.subtabs {
-  position: relative; }
+  position: relative;
+  line-height: 1; }
   .tabs ul,
   header.page > nav.subtabs ul {
     list-style: none;

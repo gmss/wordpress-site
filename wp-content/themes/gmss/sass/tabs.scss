@@ -2,6 +2,7 @@
 header.page > nav.subtabs {
 	@extend %all-caps;
 	position: relative;
+	line-height: 1;
 	ul {
 		@extend %fixed-width;
 		list-style: none;

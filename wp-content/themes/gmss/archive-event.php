@@ -1,6 +1,17 @@
 <?php get_header(); ?>
 
 <header class="page">
+	<nav class="subtabs">
+		<ul>
+			<li><a href="/upcoming-events">Upcoming</a></li>
+			<li><a href="/other-events">Other</a></li>
+			<li><a href="/events" class="active">All</a></li>
+			<li class="non-tab"><a href="webcal://www.gmss.uk/feed/eo-events/"
+				title="Subscribe to our events as an iCal feed">iCal</a></li>
+			<li class="non-tab"><a href="http://www.google.com/calendar/render?cid=http%3A%2F%2Fwww.gmss.uk%2Ffeed%2Feo-events%2F"
+				title="Subscribe to our events feed in Google Calendar">Google</a></li>
+		</ul>
+	</nav>
 	<?php
 		$header = false;
 		if( eo_is_event_archive('day') )
@@ -15,17 +26,6 @@
 		if ($header)
 			echo '<h1>' . $header . '</h1>';
 	?>
-	<nav class="subtabs">
-		<ul>
-			<li><a href="/upcoming-events">Upcoming</a></li>
-			<li><a href="/other-events">Other</a></li>
-			<li><a href="/events" class="active">All</a></li>
-			<li class="non-tab"><a href="webcal://www.gmss.uk/feed/eo-events/"
-				title="Subscribe to our events as an iCal feed">iCal</a></li>
-			<li class="non-tab"><a href="http://www.google.com/calendar/render?cid=http%3A%2F%2Fwww.gmss.uk%2Ffeed%2Feo-events%2F"
-				title="Subscribe to our events feed in Google Calendar">Google</a></li>
-		</ul>
-	</nav>
 </header>
 
 <?php while (have_posts()) :
