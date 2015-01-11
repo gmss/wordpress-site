@@ -1,3 +1,6 @@
 [submodule "wp-content/themes/gmss/mudguard"]
 	path = wp-content/themes/gmss/mudguard
 	url = https://github.com/andrew-t/mudguard.git
+[submodule "wp-content/themes/gmss/phidias"]
+	path = wp-content/themes/gmss/phidias
+	url = https://github.com/andrew-t/phidias.git
