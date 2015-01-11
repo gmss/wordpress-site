@@ -7,7 +7,7 @@
 		?></title>
 		<link rel="stylesheet" type="text/css"
 		      href="<?php bloginfo('template_url'); ?>/gmss.css">
-		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/wheelguard/guard.js"></script>
+		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/mudguard/guard.js"></script>
 		<meta name="theme-color" content="#000000">
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 		<link rel="icon" type="image/ico" href="<?php bloginfo('template_url'); ?>/img/icon.png"/>

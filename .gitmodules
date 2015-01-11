@@ -1,0 +1,3 @@
+[submodule "wp-content/themes/gmss/mudguard"]
+	path = wp-content/themes/gmss/mudguard
+	url = https://github.com/andrew-t/mudguard.git
