@@ -42,5 +42,5 @@
 				$found = $found || $active;
 				echo '<li><a href="' . $tab->url . '"' . ($active ? ' class="active"' : '') . '>' . $tab->name . '</a></li>';
 			}
-		?></ul></nav>
+		?><li class="non-tab search-box"><form method="GET" action="/"><input type="text" name="s"></form></li></ul></nav>
 		<div class="body">

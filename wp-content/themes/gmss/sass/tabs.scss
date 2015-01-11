@@ -65,3 +65,26 @@ $subtab-font-size: 1.5rem;
 	background: $orange;
 	top: -1em;
 }
+
+.search-box input {
+	border-radius: .5em;
+	font-size: .7em;
+	padding: .4em .25em .1em .25em;
+	margin-top: .15em;
+	width: 2em;
+	border: none;
+	background: url('img/search.svg') 100% 50% no-repeat;
+	background-size: contain;
+	transition: all 400ms;
+	-webkit-transition: all 400ms;
+	color: transparent;
+	cursor: pointer;
+	&:focus {
+		background: white;
+		width: 10em;
+		color: $black;
+		outline: none;
+		@include box-glow(.3em);
+		cursor: text;
+	}
+}

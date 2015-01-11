@@ -342,6 +342,27 @@ header.page > nav.subtabs {
     .subtabs ul li {
       font-size: 1.5rem; }
 
+.search-box input {
+  border-radius: .5em;
+  font-size: .7em;
+  padding: .4em .25em .1em .25em;
+  margin-top: .15em;
+  width: 2em;
+  border: none;
+  background: url("img/search.svg") 100% 50% no-repeat;
+  background-size: contain;
+  transition: all 400ms;
+  -webkit-transition: all 400ms;
+  color: transparent;
+  cursor: pointer; }
+  .search-box input:focus {
+    background: white;
+    width: 10em;
+    color: #000;
+    outline: none;
+    box-shadow: 0 0 0.12em #f00, 0 0 0.3em #ff0;
+    cursor: text; }
+
 .compact ul.eo-event-meta {
   list-style: none;
   display: inline;
