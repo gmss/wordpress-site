@@ -375,7 +375,7 @@ header.page > nav.subtabs {
 
 .venue-map,
 .eo-event-venue-map {
-  height: 75vh; }
+  height: 75vmin; }
   .venue-map .eo-venue-map,
   .eo-event-venue-map .eo-venue-map {
     height: 100% !important; }
