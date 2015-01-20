@@ -11,7 +11,7 @@
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/phidias/phidias.js"></script>
 		<meta name="theme-color" content="#000000">
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-		<link rel="icon" type="image/ico" href="<?php bloginfo('template_url'); ?>/img/icon.png"/>
+		<link rel="icon" type="image/ico" href="<?php bloginfo('template_url'); ?>/img/logo-crop.png"/>
 		<?php wp_head(); ?>
 	</head>
 	<body>
