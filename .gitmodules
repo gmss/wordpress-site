@@ -6,4 +6,4 @@
 	url = http://github.com/andrew-t/phidias.git
 [submodule "wp-content/plugins/imitation-game"]
 	path = wp-content/plugins/imitation-game
-	url = https://github.com/andrew-t/imitation-game.git
+	url = http://github.com/andrew-t/imitation-game.git
