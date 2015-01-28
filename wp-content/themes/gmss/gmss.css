@@ -387,6 +387,7 @@ header.page > nav.subtabs {
 .comments-area ol li .reply::after, .comments-area .comment-reply-title small::after, .comments-area form .comment-form-author::after,
 .comments-area form .comment-form-email::after,
 .comments-area form .comment-form-url::after,
+.comments-area form .comment-form-captcha::after,
 .comments-area form .comment-form-comment::after, .comments-area form .form-submit::after {
   content: ' ';
   clear: both;
@@ -462,6 +463,7 @@ header.page > nav.subtabs {
   .comments-area form .comment-form-author label,
   .comments-area form .comment-form-email label,
   .comments-area form .comment-form-url label,
+  .comments-area form .comment-form-captcha label,
   .comments-area form .comment-form-comment label {
     display: inline-block;
     padding: .5em 0;
@@ -471,6 +473,8 @@ header.page > nav.subtabs {
   .comments-area form .comment-form-email textarea,
   .comments-area form .comment-form-url input,
   .comments-area form .comment-form-url textarea,
+  .comments-area form .comment-form-captcha input,
+  .comments-area form .comment-form-captcha textarea,
   .comments-area form .comment-form-comment input,
   .comments-area form .comment-form-comment textarea {
     font-size: 1em;
@@ -489,6 +493,8 @@ header.page > nav.subtabs {
     .comments-area form .comment-form-email textarea:focus,
     .comments-area form .comment-form-url input:focus,
     .comments-area form .comment-form-url textarea:focus,
+    .comments-area form .comment-form-captcha input:focus,
+    .comments-area form .comment-form-captcha textarea:focus,
     .comments-area form .comment-form-comment input:focus,
     .comments-area form .comment-form-comment textarea:focus {
       box-shadow: 0 0 0.4em #f00, 0 0 1em #ff0; }
@@ -497,6 +503,8 @@ header.page > nav.subtabs {
     .comments-area form .comment-form-email textarea:focus,
     .comments-area form .comment-form-url input:focus,
     .comments-area form .comment-form-url textarea:focus,
+    .comments-area form .comment-form-captcha input:focus,
+    .comments-area form .comment-form-captcha textarea:focus,
     .comments-area form .comment-form-comment input:focus,
     .comments-area form .comment-form-comment textarea:focus {
       outline: none; }
