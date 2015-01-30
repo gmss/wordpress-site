@@ -12,9 +12,7 @@
 
 	<article <?php post_class(); ?>>
 		<header class="full">
-			<a href="<?php the_permalink(); ?>">
-				<h1><?php the_title(); ?></h1>
-			</a>
+			<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 			<div class="meta">
 				<?php eo_get_template_part('event-meta','event-single'); ?>
 			</div>

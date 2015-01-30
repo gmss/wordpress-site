@@ -4,9 +4,7 @@
 
 	<article <?php post_class(); ?>>
 		<header>
-			<a href="<?php the_permalink(); ?>">
-				<h1><?php the_title(); ?></h1>
-			</a>
+			<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 		</header>
 		<?php the_content(); ?>
 	</article>
