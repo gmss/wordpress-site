@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php $isEvent = true; get_header(); ?>
 
 <?php while (have_posts()) :
 	the_post();

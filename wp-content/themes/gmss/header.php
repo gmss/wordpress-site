@@ -29,19 +29,41 @@
 				<li class="google-plus"><a href="https://plus.google.com/114046965465550439802" rel="publisher">Google+</a></li>
 			</ul>
 		</nav></header>
-		<nav class="tabs"><ul><?php
+
+		<?php function makeTabs($tabs) {
 			$found = false;
-			foreach (array(
-							(object) array('url' => '/about', 'name' => 'About',
-								'active' => preg_match('/^\/about($|\/)/i', $_SERVER['REQUEST_URI'])),
-							(object) array('url' => '/upcoming-events', 'name' => 'Events',
-								'active' => preg_match('/^\/((upcoming|other)-)?events($|\/)/i', $_SERVER['REQUEST_URI'])),
-							//(object) array('url' => '/podcast', 'name' => 'Podcast', 'active' => false),
-							(object) array('url' => '/', 'name' => 'Blog', 'active' => true)
-						) as $tab) {
+			foreach ($tabs as $tab) {
 				$active = $tab->active && !$found;
 				$found = $found || $active;
-				echo '<li><a href="' . $tab->url . '"' . ($active ? ' class="active"' : '') . '>' . $tab->name . '</a></li>';
+				echo '<li><a href="' . $tab->url . '"' . ($active ? ' class="active"' : '') . '>' .
+					$tab->name . '</a></li>';
 			}
-		?><li class="non-tab search-box"><form method="GET" action="/"><input type="text" name="s"></form></li></ul></nav>
+		} ?>
+
+		<nav class="tabs"><ul>
+			<?php makeTabs(array(
+				(object) array('url' => '/about', 'name' => 'About',
+					'active' => preg_match('/^\/about($|\/)/i', $_SERVER['REQUEST_URI'])),
+				(object) array('url' => '/upcoming-events', 'name' => 'Events',
+					'active' => preg_match('/^\/((upcoming|other)-)?events($|\/)/i', $_SERVER['REQUEST_URI'])),
+				//(object) array('url' => '/podcast', 'name' => 'Podcast', 'active' => false),
+				(object) array('url' => '/', 'name' => 'Blog', 'active' => true)
+			)); ?>
+			<li class="non-tab search-box"><form method="GET" action="/"><input type="text" name="s"></form></li>
+		</ul></nav>
+
+		<?php if (preg_match('/^\/([a-z]+-)?events($|\/)/i', $_SERVER['REQUEST_URI']) ||
+				  isset($isEvent)) { ?><nav class="subtabs"><ul>
+			<?php makeTabs(array(
+				(object) array('url' => '/upcoming-events', 'name' => 'Upcoming',
+					'active' => preg_match('/^\/upcoming-events($|\/)/i', $_SERVER['REQUEST_URI'])),
+				(object) array('url' => '/other-events', 'name' => 'Other',
+					'active' => preg_match('/^\/other-events($|\/)/i', $_SERVER['REQUEST_URI'])),
+				(object) array('url' => '/events', 'name' => 'All', 
+					'active' => preg_match('/^\/events(\/(page\/[0-9]+\/?)?)?$/i', $_SERVER['REQUEST_URI'])),
+			)); ?>
+			<li class="non-tab"><a href="webcal://www.gmss.uk/feed/eo-events/" title="Subscribe to our events as an iCal feed">iCal</a></li>
+			<li class="non-tab"><a href="http://www.google.com/calendar/render?cid=http%3A%2F%2Fwww.gmss.uk%2Ffeed%2Feo-events%2F" title="Subscribe to our events feed in Google Calendar">Google</a></li>
+		</ul></nav></header><?php } ?>
+
 		<div class="body">

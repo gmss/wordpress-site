@@ -1,5 +1,5 @@
-.tabs,
-header.page > nav.subtabs {
+nav.tabs,
+nav.subtabs {
 	@extend %all-caps;
 	position: relative;
 	line-height: 1;
@@ -55,7 +55,6 @@ header.page > nav.subtabs {
 
 $subtab-font-size: 1.5rem;
 .subtabs {
-	@extend %full-width;
 	ul {
 		font-size: 0;
 		li {
@@ -63,7 +62,6 @@ $subtab-font-size: 1.5rem;
 		}
 	}
 	background: $orange;
-	top: -1em;
 }
 
 .search-box input {
