@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Event Organiser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-31 11:49+0000\n"
+"POT-Creation-Date: 2015-01-28 00:04+0000\n"
 "PO-Revision-Date: 2014-09-05 01:10:35+0000\n"
 "Last-Translator: Soohyun Park <zeros2ge@gmail.com>\n"
 "Language-Team: \n"
@@ -193,7 +193,7 @@ msgstr "イベントカテゴリ"
 
 #: classes/class-eo-widget-categories.php:28 event-organiser-manage.php:35
 #: includes/event-organiser-cpt.php:103
-#: includes/event-organiser-event-functions.php:1494
+#: includes/event-organiser-event-functions.php:1496
 #: templates/event-meta-event-single.php:69
 msgid "Categories"
 msgstr "カテゴリ"
@@ -233,7 +233,7 @@ msgstr "会場"
 msgid "Select Venue"
 msgstr "会場を選択"
 
-#: classes/class-eventorganiser-shortcodes.php:377
+#: classes/class-eventorganiser-shortcodes.php:376
 msgid "There is no excerpt because this is a protected post."
 msgstr "保護されている投稿なので抜粋はありません。"
 
@@ -259,26 +259,26 @@ msgstr "さらに見る"
 msgid "Calendar View"
 msgstr "カレンダー表示"
 
-#: event-organiser-calendar.php:58 includes/event-organiser-register.php:57
+#: event-organiser-calendar.php:58 includes/event-organiser-register.php:58
 msgid "today"
 msgstr "今日"
 
-#: event-organiser-calendar.php:59 includes/event-organiser-register.php:58
-#: includes/event-organiser-register.php:247
+#: event-organiser-calendar.php:59 includes/event-organiser-register.php:59
+#: includes/event-organiser-register.php:248
 msgid "day"
 msgstr "日"
 
-#: event-organiser-calendar.php:60 includes/event-organiser-register.php:59
-#: includes/event-organiser-register.php:249
+#: event-organiser-calendar.php:60 includes/event-organiser-register.php:60
+#: includes/event-organiser-register.php:250
 msgid "week"
 msgstr "週"
 
-#: event-organiser-calendar.php:61 includes/event-organiser-register.php:60
-#: includes/event-organiser-register.php:251
+#: event-organiser-calendar.php:61 includes/event-organiser-register.php:61
+#: includes/event-organiser-register.php:252
 msgid "month"
 msgstr "月"
 
-#: event-organiser-calendar.php:62 includes/event-organiser-register.php:61
+#: event-organiser-calendar.php:62 includes/event-organiser-register.php:62
 msgid "go to date"
 msgstr "日付を指定"
 
@@ -316,7 +316,7 @@ msgid "24 hour time"
 msgstr "24時間表示"
 
 #: event-organiser-calendar.php:240
-#: includes/event-organiser-event-functions.php:1441
+#: includes/event-organiser-event-functions.php:1443
 msgid "Loading&#8230;"
 msgstr "読み込み中..."
 
@@ -520,7 +520,7 @@ msgstr ""
 
 #: event-organiser-edit.php:185
 #: includes/event-organiser-event-functions.php:819
-#: includes/event-organiser-register.php:264
+#: includes/event-organiser-register.php:265
 msgid "until"
 msgstr "まで"
 
@@ -528,12 +528,12 @@ msgstr "まで"
 msgid "Include/Exclude occurrences"
 msgstr "繰り返し日を追加／削除"
 
-#: event-organiser-edit.php:198 includes/event-organiser-register.php:241
+#: event-organiser-edit.php:198 includes/event-organiser-register.php:242
 msgid "Show dates"
 msgstr "日付を表示する"
 
 #: event-organiser-edit.php:230
-#: includes/event-organiser-venue-functions.php:988
+#: includes/event-organiser-venue-functions.php:1008
 msgid "Select a venue"
 msgstr "会場を選択"
 
@@ -1019,10 +1019,9 @@ msgstr "会場が<strong>削除</strong>されました"
 
 #: event-organiser-venues.php:255 event-organiser-venues.php:294
 #: includes/event-organiser-cpt.php:219
-#, fuzzy
 msgctxt "post"
 msgid "Add New"
-msgstr "新規追加"
+msgstr ""
 
 #: event-organiser-venues.php:258
 #, php-format
@@ -1061,31 +1060,31 @@ msgstr "iCal ファイルが読み込めませんでした"
 msgid "Feed not found"
 msgstr "フィードが見つかりません"
 
-#: includes/class-eo-ical-parser.php:274
+#: includes/class-eo-ical-parser.php:278
 #, php-format
 msgid "There was an error fetching the feed. Response code: %s."
 msgstr ""
 
-#: includes/class-eo-ical-parser.php:294
+#: includes/class-eo-ical-parser.php:298
 msgid "There was an error opening the ICAL file."
 msgstr "iCalファイルの展開でエラー発生しました。"
 
-#: includes/class-eo-ical-parser.php:495 includes/class-eo-ical-parser.php:520
+#: includes/class-eo-ical-parser.php:499 includes/class-eo-ical-parser.php:524
 #, php-format
 msgid "[Lines %1$d-%2$d]"
 msgstr "[%1$d-%2$d行]"
 
-#: includes/class-eo-ical-parser.php:502 includes/class-eo-ical-parser.php:527
+#: includes/class-eo-ical-parser.php:506 includes/class-eo-ical-parser.php:531
 #, php-format
 msgid "[Line %1$d]"
 msgstr "[%1$d行]"
 
-#: includes/class-eo-ical-parser.php:885
+#: includes/class-eo-ical-parser.php:943
 #, php-format
 msgid "Invalid date \"%s\". Date expected in YYYYMMDD format."
 msgstr "正しくない日付: \"%s\"。日付形式は YYYYMMDD です。"
 
-#: includes/class-eo-ical-parser.php:923
+#: includes/class-eo-ical-parser.php:981
 #, php-format
 msgid ""
 "Invalid datetime \"%s\". Date expected in YYYYMMDDTHHiissZ or "
@@ -1233,7 +1232,7 @@ msgid "Break this series"
 msgstr "このシリーズを消去する"
 
 #: includes/event-organiser-ajax.php:672
-#: includes/event-organiser-event-functions.php:1399
+#: includes/event-organiser-event-functions.php:1401
 msgid "All Day"
 msgstr "全日程"
 
@@ -1282,19 +1281,17 @@ msgid "Venue Location"
 msgstr "会場位置"
 
 #: includes/event-organiser-cpt.php:46
-#, fuzzy
 msgid "Venue:"
-msgstr "会場"
+msgstr ""
 
 #: includes/event-organiser-cpt.php:47
 msgid "No Venue"
 msgstr "会場がありません"
 
 #: includes/event-organiser-cpt.php:93
-#, fuzzy
 msgctxt "taxonomy singular name"
 msgid "Category"
-msgstr "カテゴリ"
+msgstr ""
 
 #: includes/event-organiser-cpt.php:94
 msgid "Search Categories"
@@ -1309,9 +1306,8 @@ msgid "Parent Category"
 msgstr "親カテゴリ"
 
 #: includes/event-organiser-cpt.php:97
-#, fuzzy
 msgid "Parent Category:"
-msgstr "親カテゴリ"
+msgstr ""
 
 #: includes/event-organiser-cpt.php:98
 msgid "Edit Category"
@@ -1334,10 +1330,9 @@ msgid "No categories found"
 msgstr "カテゴリが見つかりません"
 
 #: includes/event-organiser-cpt.php:147
-#, fuzzy
 msgctxt "taxonomy singular name"
 msgid "Tag"
-msgstr "タグ"
+msgstr ""
 
 #: includes/event-organiser-cpt.php:148
 msgid "Search Tags"
@@ -1376,7 +1371,7 @@ msgid "Choose from the most used tags"
 msgstr "よく使うタグから選ぶ"
 
 #: includes/event-organiser-cpt.php:157
-#: includes/event-organiser-event-functions.php:1501
+#: includes/event-organiser-event-functions.php:1503
 #: templates/event-meta-event-single.php:74
 msgid "Tags"
 msgstr "タグ"
@@ -1641,27 +1636,27 @@ msgid "Assign the category a colour."
 msgstr "カテゴリの色を設定します。"
 
 #: includes/event-organiser-event-functions.php:740
-#: includes/event-organiser-register.php:265
+#: includes/event-organiser-register.php:266
 msgid "last"
 msgstr "最後の"
 
 #: includes/event-organiser-event-functions.php:740
-#: includes/event-organiser-register.php:265
+#: includes/event-organiser-register.php:266
 msgid "first"
 msgstr "1回"
 
 #: includes/event-organiser-event-functions.php:740
-#: includes/event-organiser-register.php:265
+#: includes/event-organiser-register.php:266
 msgid "second"
 msgstr "2回"
 
 #: includes/event-organiser-event-functions.php:740
-#: includes/event-organiser-register.php:265
+#: includes/event-organiser-register.php:266
 msgid "third"
 msgstr "3回"
 
 #: includes/event-organiser-event-functions.php:740
-#: includes/event-organiser-register.php:265
+#: includes/event-organiser-register.php:266
 msgid "fourth"
 msgstr "4回"
 
@@ -1674,34 +1669,34 @@ msgid "custom reoccurrence"
 msgstr "カスタム周期"
 
 #: includes/event-organiser-event-functions.php:760
-#: includes/event-organiser-register.php:255
+#: includes/event-organiser-register.php:256
 msgid "every day"
 msgstr "毎日"
 
 #: includes/event-organiser-event-functions.php:762
-#: includes/event-organiser-register.php:256
+#: includes/event-organiser-register.php:257
 #, php-format
 msgid "every %d days"
 msgstr "%d日ごと"
 
 #: includes/event-organiser-event-functions.php:768
-#: includes/event-organiser-register.php:257
+#: includes/event-organiser-register.php:258
 msgid "every week on"
 msgstr "毎週"
 
 #: includes/event-organiser-event-functions.php:770
-#: includes/event-organiser-register.php:258
+#: includes/event-organiser-register.php:259
 #, php-format
 msgid "every %d weeks on"
 msgstr "%d週ごと"
 
 #: includes/event-organiser-event-functions.php:781
-#: includes/event-organiser-register.php:259
+#: includes/event-organiser-register.php:260
 msgid "every month on the"
 msgstr "毎月の"
 
 #: includes/event-organiser-event-functions.php:783
-#: includes/event-organiser-register.php:260
+#: includes/event-organiser-register.php:261
 #, php-format
 msgid "every %d months on the"
 msgstr "%d月ごとの"
@@ -1715,64 +1710,64 @@ msgstr "毎年"
 msgid "every %d years"
 msgstr "%d年ごと"
 
-#: includes/event-organiser-register.php:55
+#: includes/event-organiser-register.php:56
 msgid "Show More"
 msgstr "もっと"
 
-#: includes/event-organiser-register.php:56
+#: includes/event-organiser-register.php:57
 msgid "Show Less"
 msgstr "隠す"
 
-#: includes/event-organiser-register.php:242
+#: includes/event-organiser-register.php:243
 msgid "Hide dates"
 msgstr "日を隠す"
 
-#: includes/event-organiser-register.php:245
+#: includes/event-organiser-register.php:246
 msgid "Hour"
 msgstr "時間"
 
-#: includes/event-organiser-register.php:246
+#: includes/event-organiser-register.php:247
 msgid "Minute"
 msgstr "分"
 
-#: includes/event-organiser-register.php:248
+#: includes/event-organiser-register.php:249
 msgid "days"
 msgstr "日"
 
-#: includes/event-organiser-register.php:250
+#: includes/event-organiser-register.php:251
 msgid "weeks"
 msgstr "週"
 
-#: includes/event-organiser-register.php:252
+#: includes/event-organiser-register.php:253
 msgid "months"
 msgstr "月"
 
-#: includes/event-organiser-register.php:253
+#: includes/event-organiser-register.php:254
 msgid "year"
 msgstr "年"
 
-#: includes/event-organiser-register.php:254
+#: includes/event-organiser-register.php:255
 msgid "years"
 msgstr "年"
 
-#: includes/event-organiser-register.php:261
+#: includes/event-organiser-register.php:262
 msgid "every year on the"
 msgstr "毎年の"
 
-#: includes/event-organiser-register.php:262
+#: includes/event-organiser-register.php:263
 #, php-format
 msgid "every %d years on the"
 msgstr "%d年ごとの"
 
-#: includes/event-organiser-register.php:263
+#: includes/event-organiser-register.php:264
 msgid "This event will repeat"
 msgstr "このイベントは繰り返し行われます"
 
-#: includes/event-organiser-register.php:364
+#: includes/event-organiser-register.php:365
 msgid "Settings"
 msgstr "設定"
 
-#: includes/event-organiser-register.php:667
+#: includes/event-organiser-register.php:668
 #, php-format
 msgid ""
 "<h4>City & State Fields Added</h4>City and state / province fields for "
@@ -1781,7 +1776,7 @@ msgid ""
 "details aftewards."
 msgstr ""
 
-#: includes/event-organiser-register.php:674
+#: includes/event-organiser-register.php:675
 msgid ""
 "<h4>The Default Templates Have Changed</h4>Don't panic! If you've set up "
 "your own templates in your theme you won't notice any change. </br> If you "
@@ -1789,59 +1784,59 @@ msgid ""
 "com/blog/new-default-templates-in-1-7'>see this post<a/>."
 msgstr ""
 
-#: includes/event-organiser-register.php:710
+#: includes/event-organiser-register.php:711
 msgid "Dismiss this notice"
 msgstr "通知を閉じる"
 
-#: includes/event-organiser-register.php:711
+#: includes/event-organiser-register.php:712
 msgid "Dismiss"
 msgstr "閉じる"
 
-#: includes/event-organiser-venue-functions.php:953
+#: includes/event-organiser-venue-functions.php:973
 msgid "Address"
 msgstr "番地"
 
-#: includes/event-organiser-venue-functions.php:954
+#: includes/event-organiser-venue-functions.php:974
 msgid "City"
 msgstr "市区町村"
 
-#: includes/event-organiser-venue-functions.php:955
+#: includes/event-organiser-venue-functions.php:975
 msgid "State / Province"
 msgstr "都道府県"
 
-#: includes/event-organiser-venue-functions.php:956
+#: includes/event-organiser-venue-functions.php:976
 msgid "Post Code"
 msgstr "郵便番号"
 
-#: includes/event-organiser-venue-functions.php:957
+#: includes/event-organiser-venue-functions.php:977
 msgid "Country"
 msgstr "国"
 
-#: includes/event.php:573
+#: includes/event.php:575
 msgid "Schedule not recognised."
 msgstr "スケジュールが承認されていません。"
 
-#: includes/event.php:582
+#: includes/event.php:584
 msgid "Start date not provided."
 msgstr "開始日は設定されていません。"
 
-#: includes/event.php:600
+#: includes/event.php:602
 msgid "Start date occurs after end date."
 msgstr "開始日が終了日よりあとに設定されています。"
 
-#: includes/event.php:603
+#: includes/event.php:605
 msgid "Schedule end date is before is before the start date."
 msgstr "スケジュール終了日より開始日が後に設定されています。"
 
-#: includes/event.php:686
+#: includes/event.php:688
 msgid "Invalid monthly schedule (invalid ordinal)"
 msgstr ""
 
-#: includes/event.php:806
+#: includes/event.php:808
 msgid "Event does not contain any dates."
 msgstr "イベントに日程が入っていません。"
 
-#: includes/event.php:947
+#: includes/event.php:949
 msgid "Occurrence not deleted. Occurrence not found."
 msgstr ""
 
@@ -1945,6 +1940,3 @@ msgstr "イベント会場: %s"
 #: templates/taxonomy-event-venue.php:118
 msgid "Apologies, but no events were found for the requested venue. "
 msgstr "ごめんなさい。指定された会場は見つかりませんでした。"
-
-#~ msgid "Add Venue"
-#~ msgstr "会場を追加"

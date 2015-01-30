@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Event Organiser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-31 11:49+0000\n"
+"POT-Creation-Date: 2015-01-28 00:04+0000\n"
 "PO-Revision-Date: 2014-04-28 11:40:00+0000\n"
 "Last-Translator: Panagiotis <ngf7mmp@hotmail.com>\n"
 "Language-Team: \n"
@@ -196,7 +196,7 @@ msgstr "Κατηγορίες Event"
 
 #: classes/class-eo-widget-categories.php:28 event-organiser-manage.php:35
 #: includes/event-organiser-cpt.php:103
-#: includes/event-organiser-event-functions.php:1494
+#: includes/event-organiser-event-functions.php:1496
 #: templates/event-meta-event-single.php:69
 msgid "Categories"
 msgstr "Κατηγορίες"
@@ -236,7 +236,7 @@ msgstr "Χώροι"
 msgid "Select Venue"
 msgstr "Επιλογή τόπου"
 
-#: classes/class-eventorganiser-shortcodes.php:377
+#: classes/class-eventorganiser-shortcodes.php:376
 msgid "There is no excerpt because this is a protected post."
 msgstr "There is no excerpt because this is a protected post."
 
@@ -264,26 +264,26 @@ msgstr "Δείτε περισσότερα..."
 msgid "Calendar View"
 msgstr "Εμφάνιση Ημερολόγιου."
 
-#: event-organiser-calendar.php:58 includes/event-organiser-register.php:57
+#: event-organiser-calendar.php:58 includes/event-organiser-register.php:58
 msgid "today"
 msgstr "Σήμερα"
 
-#: event-organiser-calendar.php:59 includes/event-organiser-register.php:58
-#: includes/event-organiser-register.php:247
+#: event-organiser-calendar.php:59 includes/event-organiser-register.php:59
+#: includes/event-organiser-register.php:248
 msgid "day"
 msgstr "Ημέρα"
 
-#: event-organiser-calendar.php:60 includes/event-organiser-register.php:59
-#: includes/event-organiser-register.php:249
+#: event-organiser-calendar.php:60 includes/event-organiser-register.php:60
+#: includes/event-organiser-register.php:250
 msgid "week"
 msgstr "Εβδομάδα"
 
-#: event-organiser-calendar.php:61 includes/event-organiser-register.php:60
-#: includes/event-organiser-register.php:251
+#: event-organiser-calendar.php:61 includes/event-organiser-register.php:61
+#: includes/event-organiser-register.php:252
 msgid "month"
 msgstr "Μήνας"
 
-#: event-organiser-calendar.php:62 includes/event-organiser-register.php:61
+#: event-organiser-calendar.php:62 includes/event-organiser-register.php:62
 msgid "go to date"
 msgstr "Πήγαινε στην ημερομηνία"
 
@@ -321,7 +321,7 @@ msgid "24 hour time"
 msgstr "24 ώρες"
 
 #: event-organiser-calendar.php:240
-#: includes/event-organiser-event-functions.php:1441
+#: includes/event-organiser-event-functions.php:1443
 msgid "Loading&#8230;"
 msgstr "Φόρτωση ..."
 
@@ -541,7 +541,7 @@ msgstr "Ημέρα της Εβδομάδος"
 
 #: event-organiser-edit.php:185
 #: includes/event-organiser-event-functions.php:819
-#: includes/event-organiser-register.php:264
+#: includes/event-organiser-register.php:265
 msgid "until"
 msgstr "Μέχρι"
 
@@ -549,12 +549,12 @@ msgstr "Μέχρι"
 msgid "Include/Exclude occurrences"
 msgstr "Συμπερίληψη/Εξαίρεση περιστατικών"
 
-#: event-organiser-edit.php:198 includes/event-organiser-register.php:241
+#: event-organiser-edit.php:198 includes/event-organiser-register.php:242
 msgid "Show dates"
 msgstr "Εμφάνιση Ημέρων"
 
 #: event-organiser-edit.php:230
-#: includes/event-organiser-venue-functions.php:988
+#: includes/event-organiser-venue-functions.php:1008
 msgid "Select a venue"
 msgstr "Διάλεξε Τοποθεσία"
 
@@ -1065,10 +1065,9 @@ msgstr "Χώρος <strong>διαγραμένος</strong>"
 
 #: event-organiser-venues.php:255 event-organiser-venues.php:294
 #: includes/event-organiser-cpt.php:219
-#, fuzzy
 msgctxt "post"
 msgid "Add New"
-msgstr "Προσθήκη νέου"
+msgstr ""
 
 #: event-organiser-venues.php:258
 #, php-format
@@ -1107,32 +1106,32 @@ msgstr "Αδυναμία ανάγνωσης του αρχείου iCal"
 msgid "Feed not found"
 msgstr "Το feed δεν βρέθηκε"
 
-#: includes/class-eo-ical-parser.php:274
+#: includes/class-eo-ical-parser.php:278
 #, php-format
 msgid "There was an error fetching the feed. Response code: %s."
 msgstr "Προέκυψε σφάλμα κατά τη λήψη του feed. Response code: %s."
 
-#: includes/class-eo-ical-parser.php:294
+#: includes/class-eo-ical-parser.php:298
 msgid "There was an error opening the ICAL file."
 msgstr "Προέκυψε σφάλμα κατά την ανάγνωση του αρχείου ICAL."
 
-#: includes/class-eo-ical-parser.php:495 includes/class-eo-ical-parser.php:520
+#: includes/class-eo-ical-parser.php:499 includes/class-eo-ical-parser.php:524
 #, php-format
 msgid "[Lines %1$d-%2$d]"
 msgstr "[Γραμμές %1$d-%2$d]"
 
-#: includes/class-eo-ical-parser.php:502 includes/class-eo-ical-parser.php:527
+#: includes/class-eo-ical-parser.php:506 includes/class-eo-ical-parser.php:531
 #, php-format
 msgid "[Line %1$d]"
 msgstr "[Γραμμή %1$d]"
 
-#: includes/class-eo-ical-parser.php:885
+#: includes/class-eo-ical-parser.php:943
 #, php-format
 msgid "Invalid date \"%s\". Date expected in YYYYMMDD format."
 msgstr ""
 "Μη έγκυρη ημερομηνία \"%s\". Η ημερομηνία πρέπει να είναι σε YYYYMMDD format."
 
-#: includes/class-eo-ical-parser.php:923
+#: includes/class-eo-ical-parser.php:981
 #, php-format
 msgid ""
 "Invalid datetime \"%s\". Date expected in YYYYMMDDTHHiissZ or "
@@ -1278,7 +1277,7 @@ msgid "Break this series"
 msgstr "Break this series"
 
 #: includes/event-organiser-ajax.php:672
-#: includes/event-organiser-event-functions.php:1399
+#: includes/event-organiser-event-functions.php:1401
 msgid "All Day"
 msgstr "Ολοήμερο"
 
@@ -1327,19 +1326,17 @@ msgid "Venue Location"
 msgstr "Τοποθεσία χώρου"
 
 #: includes/event-organiser-cpt.php:46
-#, fuzzy
 msgid "Venue:"
-msgstr "Τοποθεσία"
+msgstr ""
 
 #: includes/event-organiser-cpt.php:47
 msgid "No Venue"
 msgstr "Χωρίς τοποθεσία"
 
 #: includes/event-organiser-cpt.php:93
-#, fuzzy
 msgctxt "taxonomy singular name"
 msgid "Category"
-msgstr "Κατηγορίες"
+msgstr ""
 
 #: includes/event-organiser-cpt.php:94
 msgid "Search Categories"
@@ -1354,9 +1351,8 @@ msgid "Parent Category"
 msgstr "Μητρική κατηγορία"
 
 #: includes/event-organiser-cpt.php:97
-#, fuzzy
 msgid "Parent Category:"
-msgstr "Μητρική κατηγορία"
+msgstr ""
 
 #: includes/event-organiser-cpt.php:98
 msgid "Edit Category"
@@ -1379,10 +1375,9 @@ msgid "No categories found"
 msgstr "Δεν βρέθηκαν κατηγορίες"
 
 #: includes/event-organiser-cpt.php:147
-#, fuzzy
 msgctxt "taxonomy singular name"
 msgid "Tag"
-msgstr "Ετικέτες"
+msgstr ""
 
 #: includes/event-organiser-cpt.php:148
 msgid "Search Tags"
@@ -1421,7 +1416,7 @@ msgid "Choose from the most used tags"
 msgstr "Επιλέξτε απο τις πιο δημοφιλής ετικέτες"
 
 #: includes/event-organiser-cpt.php:157
-#: includes/event-organiser-event-functions.php:1501
+#: includes/event-organiser-event-functions.php:1503
 #: templates/event-meta-event-single.php:74
 msgid "Tags"
 msgstr "Ετικέτες"
@@ -1730,27 +1725,27 @@ msgid "Assign the category a colour."
 msgstr "Ορισε στην κατηγορία ένα χρώμα"
 
 #: includes/event-organiser-event-functions.php:740
-#: includes/event-organiser-register.php:265
+#: includes/event-organiser-register.php:266
 msgid "last"
 msgstr "τελεταίο"
 
 #: includes/event-organiser-event-functions.php:740
-#: includes/event-organiser-register.php:265
+#: includes/event-organiser-register.php:266
 msgid "first"
 msgstr "πρώτα"
 
 #: includes/event-organiser-event-functions.php:740
-#: includes/event-organiser-register.php:265
+#: includes/event-organiser-register.php:266
 msgid "second"
 msgstr "δεύτερο"
 
 #: includes/event-organiser-event-functions.php:740
-#: includes/event-organiser-register.php:265
+#: includes/event-organiser-register.php:266
 msgid "third"
 msgstr "τρίτο"
 
 #: includes/event-organiser-event-functions.php:740
-#: includes/event-organiser-register.php:265
+#: includes/event-organiser-register.php:266
 msgid "fourth"
 msgstr "τέταρτο"
 
@@ -1763,34 +1758,34 @@ msgid "custom reoccurrence"
 msgstr "custom reoccurrence"
 
 #: includes/event-organiser-event-functions.php:760
-#: includes/event-organiser-register.php:255
+#: includes/event-organiser-register.php:256
 msgid "every day"
 msgstr "Καθημερινά"
 
 #: includes/event-organiser-event-functions.php:762
-#: includes/event-organiser-register.php:256
+#: includes/event-organiser-register.php:257
 #, fuzzy, php-format
 msgid "every %d days"
 msgstr "κάθε &d μέρες"
 
 #: includes/event-organiser-event-functions.php:768
-#: includes/event-organiser-register.php:257
+#: includes/event-organiser-register.php:258
 msgid "every week on"
 msgstr "Εβδομαδιαία στις "
 
 #: includes/event-organiser-event-functions.php:770
-#: includes/event-organiser-register.php:258
+#: includes/event-organiser-register.php:259
 #, fuzzy, php-format
 msgid "every %d weeks on"
 msgstr "κάθε 7d βδομάδες "
 
 #: includes/event-organiser-event-functions.php:781
-#: includes/event-organiser-register.php:259
+#: includes/event-organiser-register.php:260
 msgid "every month on the"
 msgstr "Κάθε μήνα στις"
 
 #: includes/event-organiser-event-functions.php:783
-#: includes/event-organiser-register.php:260
+#: includes/event-organiser-register.php:261
 #, php-format
 msgid "every %d months on the"
 msgstr "κάθε %d μήνα στις"
@@ -1804,64 +1799,64 @@ msgstr "Κάθε χρόνο"
 msgid "every %d years"
 msgstr "κάθε %d χρόνια"
 
-#: includes/event-organiser-register.php:55
+#: includes/event-organiser-register.php:56
 msgid "Show More"
 msgstr "Δείξε Περισσότερα"
 
-#: includes/event-organiser-register.php:56
+#: includes/event-organiser-register.php:57
 msgid "Show Less"
 msgstr "Δείξε Λιγότερα"
 
-#: includes/event-organiser-register.php:242
+#: includes/event-organiser-register.php:243
 msgid "Hide dates"
 msgstr "Κρύψε Ημερομηνίες"
 
-#: includes/event-organiser-register.php:245
+#: includes/event-organiser-register.php:246
 msgid "Hour"
 msgstr "Ώρα"
 
-#: includes/event-organiser-register.php:246
+#: includes/event-organiser-register.php:247
 msgid "Minute"
 msgstr "Λεπτό"
 
-#: includes/event-organiser-register.php:248
+#: includes/event-organiser-register.php:249
 msgid "days"
 msgstr "Ημέρες"
 
-#: includes/event-organiser-register.php:250
+#: includes/event-organiser-register.php:251
 msgid "weeks"
 msgstr "Εβδομάδες"
 
-#: includes/event-organiser-register.php:252
+#: includes/event-organiser-register.php:253
 msgid "months"
 msgstr "Μήνες"
 
-#: includes/event-organiser-register.php:253
+#: includes/event-organiser-register.php:254
 msgid "year"
 msgstr "Χρόνος"
 
-#: includes/event-organiser-register.php:254
+#: includes/event-organiser-register.php:255
 msgid "years"
 msgstr "χρόνια"
 
-#: includes/event-organiser-register.php:261
+#: includes/event-organiser-register.php:262
 msgid "every year on the"
 msgstr "Κάθε χρόνο στις"
 
-#: includes/event-organiser-register.php:262
+#: includes/event-organiser-register.php:263
 #, php-format
 msgid "every %d years on the"
 msgstr "Κάθε %d χρόνια στις"
 
-#: includes/event-organiser-register.php:263
+#: includes/event-organiser-register.php:264
 msgid "This event will repeat"
 msgstr "Αυτο το event θα επαναληφθεί"
 
-#: includes/event-organiser-register.php:364
+#: includes/event-organiser-register.php:365
 msgid "Settings"
 msgstr "Ρυθμίσεις"
 
-#: includes/event-organiser-register.php:667
+#: includes/event-organiser-register.php:668
 #, php-format
 msgid ""
 "<h4>City & State Fields Added</h4>City and state / province fields for "
@@ -1874,7 +1869,7 @@ msgstr ""
 "href='%s'>attempt to auto-fill them</a>. You can always manually change the "
 "details aftewards."
 
-#: includes/event-organiser-register.php:674
+#: includes/event-organiser-register.php:675
 msgid ""
 "<h4>The Default Templates Have Changed</h4>Don't panic! If you've set up "
 "your own templates in your theme you won't notice any change. </br> If you "
@@ -1886,59 +1881,59 @@ msgstr ""
 "haven't and want the old templates back, <a href='http://wp-event-organiser."
 "com/blog/new-default-templates-in-1-7'>see this post<a/>."
 
-#: includes/event-organiser-register.php:710
+#: includes/event-organiser-register.php:711
 msgid "Dismiss this notice"
 msgstr "Απόρριψη σημειώματος"
 
-#: includes/event-organiser-register.php:711
+#: includes/event-organiser-register.php:712
 msgid "Dismiss"
 msgstr "Απόρριψη"
 
-#: includes/event-organiser-venue-functions.php:953
+#: includes/event-organiser-venue-functions.php:973
 msgid "Address"
 msgstr "Διέυθυνση"
 
-#: includes/event-organiser-venue-functions.php:954
+#: includes/event-organiser-venue-functions.php:974
 msgid "City"
 msgstr "Πόλη"
 
-#: includes/event-organiser-venue-functions.php:955
+#: includes/event-organiser-venue-functions.php:975
 msgid "State / Province"
 msgstr "Περιοχή"
 
-#: includes/event-organiser-venue-functions.php:956
+#: includes/event-organiser-venue-functions.php:976
 msgid "Post Code"
 msgstr "Ταχυδρομικός Κώδικας"
 
-#: includes/event-organiser-venue-functions.php:957
+#: includes/event-organiser-venue-functions.php:977
 msgid "Country"
 msgstr "Χώρα"
 
-#: includes/event.php:573
+#: includes/event.php:575
 msgid "Schedule not recognised."
 msgstr "Δεν αναγνωρίζεται το πρόγραμμα"
 
-#: includes/event.php:582
+#: includes/event.php:584
 msgid "Start date not provided."
 msgstr "Δεν ορίσθηκε η μέρα έναρξης"
 
-#: includes/event.php:600
+#: includes/event.php:602
 msgid "Start date occurs after end date."
 msgstr "Η ημέρα έναρξης είναι μετα της λήξης"
 
-#: includes/event.php:603
+#: includes/event.php:605
 msgid "Schedule end date is before is before the start date."
 msgstr "Η προγραμματισμένη μέρα λήξης είναι πριν την ημέρα έναρξης"
 
-#: includes/event.php:686
+#: includes/event.php:688
 msgid "Invalid monthly schedule (invalid ordinal)"
 msgstr "Λάθος μηνιαίο πρόγραμμα"
 
-#: includes/event.php:806
+#: includes/event.php:808
 msgid "Event does not contain any dates."
 msgstr "Το event δεν περιέχει ημερομηνίες."
 
-#: includes/event.php:947
+#: includes/event.php:949
 msgid "Occurrence not deleted. Occurrence not found."
 msgstr "Το αντικείμενο δεν διαγράφηκε. Το αντικείμενο δεν βρέθηκε."
 
@@ -2043,6 +2038,3 @@ msgstr "Γεγονότα στα: %s"
 #: templates/taxonomy-event-venue.php:118
 msgid "Apologies, but no events were found for the requested venue. "
 msgstr "Συγνώμη, αλλά δεν βρέθηκαν γεγονότα για το αιτούμενο χώρο."
-
-#~ msgid "Add Venue"
-#~ msgstr "Προσθήκη χώρου"

@@ -3,8 +3,8 @@ Contributors: stephenharris
 Donate link: http://www.wp-event-organiser.com/donate
 Tags: events, event, event categories, event organizer, events calendar, event management, ical, locations, google map, widget, venues, maps, gigs, shows,
 Requires at least: 3.3
-Tested up to: 4.0.0
-Stable tag: 2.9.2
+Tested up to: 4.1.0
+Stable tag: 2.11.1
 License: GPLv3
 
 Create and maintain events, including complex reoccurring patterns, venue management (with Google maps), calendars and customisable event lists
@@ -101,6 +101,7 @@ A big thank you to those who have provided translations for Event Organiser. If 
 * Italian - Emilio Frusciante, Pio Muto, Daniele Piccoli
 * Japanese - ogawa, tkj, takeshi terai, haya.
 * Latvian - Kristaps
+* Macedonian - Aleksandar 
 * Norwegian - Erlend Birkedal
 * Norweign (Bokmål) - DagC
 * Persian (Iran, Islamic Republic of) -
@@ -218,7 +219,32 @@ More information on shortcodes is [available here](http://wp-event-organiser.com
 
 == Changelog ==
 
-= 2.9.2 - 31st October 2014
+= 2.11.1 - 28th January 2015 =
+* Fixes UI issue with adding/removing occurences
+* Improves highlight of "active" components
+* Sets max-width of venue/category drop-downs so long venue/category names don't break the admin calendar layout 
+
+= 2.11.0 - 24th January 2015 =
+* Update jQuery UI stylesheet
+* Removed support for old classic (blue) WordPress admin
+* Adds a fix for fullcalendar with themes setting max-width of links
+* Add 'sanity check' for datetime instances in event class function
+* Add comment_status & context to eo_insert_event / eo_update_event post data
+* Updated Spanish, French, Latvian, Swedish & Turkish translations. 
+* Added Macedonian translation.
+
+= 2.10.0 - 22nd December 2014 =
+* Tested against WordPress 4.1
+* Allow google map styles to be set via API 
+* Added `eventorganiser_venue_map_options` filter
+* Support RTL languages (added stylesheet)
+* Added `eventorganiser_ical_property_{property_lowercased}` action
+* Added `eventorganiser_pre_ical_property_{property_lowercased}` filter
+* Added venue admin page hook for `<form>` tag.
+* Fixed incorrect text domain.
+* Fixed 'color' property name typo on frontend.js fullCalendar
+
+= 2.9.2 - 31st October 2014 =
 * Fixes plug-in textarea options, where saved value does not appear.
 
 = 2.9.1 - 14th October 2014 =

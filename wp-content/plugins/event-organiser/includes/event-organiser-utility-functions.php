@@ -328,24 +328,11 @@ function eventorganiser_php2xdate( $phpformat="" ){
 }
 
 
-
 /**
- * Very basic class to convert php date format into jQuery UI date format used for javascript.
- * @ignore
- * @deprecated 2.1.3 Use 
- * @since 1.7
- */
-function eventorganiser_php2jquerydate( $phpformat="" ){
-	return eo_php2jquerydate( $phpformat );
-}
-
-
-/**
- * Very basic class to convert php date format into jQuery UI date format used for javascript.
+ * Converts php date format into jQuery UI date format.
  *
- * Similar to `{@see eventorganiser_php2xdate()}` - but the format is slightly different for jQuery UI  
  * Takes a php date format and converts it to {@link http://docs.jquery.com/UI/Datepicker/formatDate} so
- * that it can b used in javascript (notably by the datepicker).
+ * that it can b used in javascript (i.e. by the datepicker).
  * 
  * **Please note that this function does not convert time formats**
  *
@@ -354,36 +341,43 @@ function eventorganiser_php2jquerydate( $phpformat="" ){
  *@param string $phpformat Format according to https://php.net/manual/en/function.date.php
  *@return string The format translated to xdate format: http://docs.jquery.com/UI/Datepicker/formatDate
  */
-function eo_php2jquerydate($phpformat=""){
-	$php2jquerydate = array(
-			'Y'=>'yy','y'=>'y','L'=>''/*Not Supported*/,'o'=>'',/*Not Supported*/
-			'j'=>'d','d'=>'dd','D'=>'D','DD'=>'dddd','N'=>'',/*NS*/ 'S' => ''/*NS*/,
-			'w'=>'', /*NS*/ 'z'=>'o',/*NS*/ 'W'=>'w',
-			'F'=>'MM','m'=>'mm','M'=>'M','n'=>'m','t'=>'',/*NS*/
-			'a'=>''/*NS*/,'A'=>''/*NS*/,
-			'B'=>'',/*NS*/'g'=>''/*NS*/,'G'=>''/*NS*/,'h'=>''/*NS*/,'H'=>''/*NS*/,'u'=>'fff',
-			'i'=>''/*NS*/,'s'=>''/*NS*/,
-			'O'=>''/*NS*/, 'P'=>''/*NS*/,
+function eo_php2jquerydate( $phpformat ){
+
+	$map = array(
+		//Day
+		'j' => 'd', 'd' => 'dd', 'D' => 'D', 'l' => 'DD', 'z' => 'o',
+		//Month
+		'F' => 'MM', 'm' => 'mm', 'M' => 'M', 'n' => 'm',
+		//Year
+		'Y' => 'yy', 'y' => 'y', 'o' => 'gggg',
+		//Full date
+		'U' => '@',
 	);
-
-	$jqueryformat="";
-
-	for($i=0;  $i< strlen($phpformat); $i++){
-
-		//Handle backslash excape
-		if($phpformat[$i]=="\\"){
-			$jqueryformat .= "\\".$phpformat[$i+1];
-			$i++;
-			continue;
-		}
-
-		if(isset($php2jquerydate[$phpformat[$i]])){
-			$jqueryformat .= $php2jquerydate[$phpformat[$i]];
-		}else{
-			$jqueryformat .= $phpformat[$i];
-		}
+	
+	$regexp  = '/(j|d|D|l|z|F|m|M|n|Y|y|o|U|.)/';
+	$matches = array();
+	
+	preg_match_all( $regexp, $phpformat, $matches );
+	
+	if ( !$matches || false === is_array( $matches ) ){
+		return $format;
 	}
-	return $jqueryformat;
+	
+	$php_tokens = array_keys( $map );
+	$jquery_format = '';
+	
+	foreach ( $matches[0] as $id => $match ){
+		// if there is a matching php token in token list
+		if ( in_array( $match, $php_tokens ) ){
+			// use the php token instead
+			$string = $map[ $match ];
+		}else{
+			$string = $match;
+		}
+		$jquery_format .= $string;
+	}
+	
+	return $jquery_format;
 }
 
 
@@ -926,24 +920,27 @@ function eventorganiser_checkbox_field($args=array()){
 			'checked'=>'', 'echo'=>true,'multiselect'=>false
 		));
 
-	$id = ( !empty($args['id']) ? $args['id'] : $args['label_for']);
-	$name = isset($args['name']) ?  $args['name'] : '';
+	$id    = ( !empty($args['id']) ? $args['id'] : $args['label_for']);
+	$name  = isset($args['name']) ?  $args['name'] : '';
 	$class = ( $args['class'] ? "class='".sanitize_html_class($args['class'])."'"  :"" );
-
+	$attr  = array( $class );
+	
 	/* $options and $checked are either both arrays or they are both strings. */
 	$options =  isset($args['options']) ? $args['options'] : false;
 	$checked =  isset($args['checked']) ? $args['checked'] : 1;
 	
 	//Custom data-* attributes
-	$data = '';
 	if( !empty( $args['data'] ) && is_array( $args['data'] ) ){
-		foreach( $args['data'] as $key => $attr_value ){
-			$data .= sprintf( 'data-%s="%s"', esc_attr( $key ), esc_attr( $attr_value ) );
+		foreach( $args['data'] as $key => $data_value ){
+			$attr[] = sprintf( 'data-%s="%s"', esc_attr( $key ), esc_attr( $data_value ) );
 		}
 	}
+	
+	$attr = implode( " ", array_filter( $attr ) );
 
 	$html ='';
 	if( is_array($options) ){
+		
 		foreach( $options as $value => $opt_label ){
 			$html .= sprintf(
 				'<label for="%1$s">
@@ -953,19 +950,19 @@ function eventorganiser_checkbox_field($args=array()){
 				esc_attr( $id.'_'.$value ),
 				esc_attr( trim( $name ) . '[]' ),
 				esc_attr( $value ),
+				$attr,
 				checked( in_array( $value, $checked ), true, false ),
-				$class,
 				esc_attr( $opt_label )
 			);
 		}
 	}else{
 		$html .= sprintf('<input type="checkbox" id="%1$s" name="%2$s" %3$s %4$s value="%5$s">',
-							esc_attr($id),
-							esc_attr($name),
-							checked( $checked, $options, false ),
-							$class,
-							esc_attr($options)
-							);
+			esc_attr( $id ),
+			esc_attr( $name ),
+			$attr,
+			checked( $checked, $options, false ),
+			esc_attr( $options )
+		);
 	}
 	
 	if(!empty($args['help'])){
