@@ -1,43 +1,29 @@
 <?php
 
-global $eo_event_loop,$eo_event_loop_args;
+include 'event-setup.php';
 
-//Date % Time format for events
-$date_format = get_option('date_format');
-$time_format = get_option('time_format');
+if( $eo_event_loop->have_posts() ): ?>
 
-//The list ID / classes
-$id = ( $eo_event_loop_args['id'] ? 'id="'.$eo_event_loop_args['id'].'"' : '' );
-$classes = $eo_event_loop_args['class'];
+	<?php while( $eo_event_loop->have_posts() ):
+			$eo_event_loop->the_post(); 
+			$eo_event_classes = eo_get_event_classes();
+			$format = (eo_is_all_day() ? $date_format : $date_format.' '.$time_format);
+		?>
 
-?>
+		<article class="<?php echo esc_attr(implode(' ',$eo_event_classes)); ?>">
+			<header class="compact">
+				<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+				<div class="date">
+					<time itemprop="startDate" datetime="<?php eo_the_start($microformat); ?>">
+						<?php eo_the_start($format); ?>
+					</time>
+					<?php echo eo_get_event_meta_list(); ?>
+				</div>
+			</header>
+			<?php the_excerpt(); ?>
+		</article>
 
-<?php if( $eo_event_loop->have_posts() ): ?>
-
-		<?php while( $eo_event_loop->have_posts() ): $eo_event_loop->the_post(); ?>
-
-			<?php 
-				//Generate HTML classes for this event
-				$eo_event_classes = eo_get_event_classes(); 
-
-				//For non-all-day events, include time format
-				$format = ( eo_is_all_day() ? $date_format : $date_format.' '.$time_format );
-			?>
-
-	<article class="<?php echo esc_attr(implode(' ',$eo_event_classes)); ?>">
-		<header class="compact">
-			<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-			<div class="date">
-				<time itemprop="startDate" datetime="<?php eo_the_start($microformat); ?>">
-					<?php eo_the_start($format); ?>
-				</time>
-				<?php echo eo_get_event_meta_list(); ?>
-			</div>
-		</header>
-		<?php the_excerpt(); ?>
-	</article>
-
-		<?php endwhile; ?>
+	<?php endwhile; ?>
 
 <?php elseif( ! empty($eo_event_loop_args['no_events']) ): ?>
 
