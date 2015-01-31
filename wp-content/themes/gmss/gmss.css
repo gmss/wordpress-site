@@ -72,6 +72,8 @@ header.site {
     margin: 0;
     display: inline-block;
     vertical-align: top; }
+  header.site .hidden {
+    display: none; }
   header.site .logo {
     text-decoration: none;
     background: url("img/logo.png") no-repeat 100% 50%;

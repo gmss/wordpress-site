@@ -15,7 +15,7 @@
 		<?php wp_head(); ?>
 	</head>
 	<body>
-		<header class="site"><a href="/" class="logo"><h1>
+		<header itemscope class="site" itemtype="http://schema.org/Organization"><a href="/" class="logo"><h1 itemprop="name">
 			<span class="greater">Greater</span>
 			<span class="manchester">Manchester</span>
 			<span class="skeptics">Skeptics</span>
@@ -28,7 +28,20 @@
 				<li class="twitter"><a href="http://www.twitter.com/GMSkeptics">Twitter</a></li>
 				<li class="google-plus"><a href="https://plus.google.com/114046965465550439802" rel="publisher">Google+</a></li>
 			</ul>
-		</nav></header>
+		</nav><div class="hidden">
+			<span itemprop="logo">http://www.gmss.uk/wp-content/themes/gmss/img/full-size/full-logo.jpg</span>
+			<span itemprop="url">http://www.gmss.uk</span>
+			<span itemprop="email">web@gmss.uk</span>
+			<div itemprop="brand">
+				<span itemprop="name">Manchester Skeptics in the Pub</span>
+				<span itemprop="description">
+					A monthly speaker event and a monthly pub social.
+				</span>
+			</div>
+			<span itemprop="description">
+				A friendly group of skeptical thinkers organising events in the Manchester area.
+			</span>
+		</div></header>
 
 		<?php function makeTabs($tabs) {
 			$found = false;

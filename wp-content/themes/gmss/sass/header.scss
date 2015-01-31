@@ -57,6 +57,9 @@ header.site {
 		display: inline-block;
 		vertical-align: top;
 	}
+	.hidden {
+		display: none;
+	}
 	.logo {
 		text-decoration: none;
 		background: url('img/logo.png') no-repeat 100% 50%;
