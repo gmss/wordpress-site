@@ -338,10 +338,8 @@ nav.subtabs {
 
 .subtabs {
   background: #ff8f61; }
-  .subtabs ul {
-    font-size: 0; }
-    .subtabs ul li {
-      font-size: 1.5rem; }
+  .subtabs ul li {
+    font-size: 1.5em; }
 
 .search-box input {
   border-radius: .5em;

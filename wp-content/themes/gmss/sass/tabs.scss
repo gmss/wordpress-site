@@ -53,10 +53,9 @@ nav.subtabs {
 	background: $red;
 }
 
-$subtab-font-size: 1.5rem;
+$subtab-font-size: 1.5em;
 .subtabs {
 	ul {
-		font-size: 0;
 		li {
 			font-size: $subtab-font-size;
 		}
