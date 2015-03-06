@@ -1,0 +1,79 @@
+.two-columns {
+	display: block;
+	width: 100%;
+	margin: 0;
+	> .column {
+		display: block;
+		width: calc(50% - .5em);
+		vertical-align: top;
+		&:first-child {
+			float: left;
+		}
+		&:last-child {
+			float: right;
+		}
+		.listing-item, article {
+			border-radius: .5em;
+			margin: 1em 0;
+			padding: 1em;
+			box-shadow: 0 .5em 1em $black;
+			background: $orange;
+			.title, h1 {
+				display: block;
+				text-transform: uppercase;
+				font-size: 1.5em;
+				line-height: 1.2em;
+				text-align: left;
+				a {
+					color: $white !important;
+					&:hover {
+						color: $black !important;
+					}
+				}
+			}
+			.title {
+				color: $white !important;
+				&:hover {
+					color: $black !important;
+				}
+			}
+			.date {
+				display: block;
+				text-align: left;
+				li {
+					display: block;
+					&:before {
+						display: none;
+					}
+					a {
+						color: $white;
+						font-weight: lighter !important;
+						&:hover {
+							color: $black;
+						}
+					}
+				}
+			}
+			.excerpt-dash {
+				display: none;
+			}
+			.excerpt, p {
+				display: block;
+				margin: .5em 0 0 0;
+				padding: 0;
+				a {
+					color: $white;
+					font-weight: lighter !important;
+					&:hover {
+						color: $black;
+					}
+				}
+			}
+		}
+	}
+	&:after {
+		clear: both;
+		content: ' ';
+		display: block;
+	}
+}

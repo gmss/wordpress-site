@@ -54,13 +54,25 @@
 		} ?>
 
 		<nav class="tabs"><ul>
-			<?php makeTabs(array(
-				(object) array('url' => '/about', 'name' => 'About',
-					'active' => preg_match('/^\/about($|\/)/i', $_SERVER['REQUEST_URI'])),
-				(object) array('url' => '/upcoming-events', 'name' => 'Events',
-					'active' => preg_match('/^\/((upcoming|other)-)?events($|\/)/i', $_SERVER['REQUEST_URI'])),
-				//(object) array('url' => '/podcast', 'name' => 'Podcast', 'active' => false),
-				(object) array('url' => '/', 'name' => 'Blog', 'active' => true)
+			<?php 
+				$staticHome = (get_option('show_on_front') == 'page');
+				makeTabs(array(
+					(object) array(
+						'url' => '/about',
+						'name' => 'About',
+						'active' => preg_match('/^\/about($|\/)/i', $_SERVER['REQUEST_URI'])),
+					(object) array(
+						'url' => '/upcoming-events',
+						'name' => 'Events',
+						'active' => preg_match('/^\/((upcoming|other)-)?events($|\/)/i', $_SERVER['REQUEST_URI'])),
+					//(object) array('url' => '/podcast', 'name' => 'Podcast', 'active' => false),
+					(object) array(
+						'url' => $staticHome
+							? get_permalink(get_option('page_for_posts'))
+							: '/',
+						'name' => 'Blog',
+						'active' => (!$staticHome) or
+							(preg_match('/^\/(blog|posts)($|\/)/i', $_SERVER['REQUEST_URI'])))
 			)); ?>
 			<li class="non-tab search-box"><form method="GET" action="/"><input type="text" name="s"></form></li>
 		</ul></nav>

@@ -529,6 +529,66 @@ nav.subtabs {
       border-top: 0.1em solid #ff8f61;
       border-bottom: 0 solid #fa4900; }
 
+.two-columns {
+  display: block;
+  width: 100%;
+  margin: 0; }
+  .two-columns > .column {
+    display: block;
+    width: calc(50% - .5em);
+    vertical-align: top; }
+    .two-columns > .column:first-child {
+      float: left; }
+    .two-columns > .column:last-child {
+      float: right; }
+    .two-columns > .column .listing-item, .two-columns > .column article {
+      border-radius: .5em;
+      margin: 1em 0;
+      padding: 1em;
+      box-shadow: 0 0.5em 1em #000;
+      background: #ff8f61; }
+      .two-columns > .column .listing-item .title, .two-columns > .column .listing-item h1, .two-columns > .column article .title, .two-columns > .column article h1 {
+        display: block;
+        text-transform: uppercase;
+        font-size: 1.5em;
+        line-height: 1.2em;
+        text-align: left; }
+        .two-columns > .column .listing-item .title a, .two-columns > .column .listing-item h1 a, .two-columns > .column article .title a, .two-columns > .column article h1 a {
+          color: #fff !important; }
+          .two-columns > .column .listing-item .title a:hover, .two-columns > .column .listing-item h1 a:hover, .two-columns > .column article .title a:hover, .two-columns > .column article h1 a:hover {
+            color: #000 !important; }
+      .two-columns > .column .listing-item .title, .two-columns > .column article .title {
+        color: #fff !important; }
+        .two-columns > .column .listing-item .title:hover, .two-columns > .column article .title:hover {
+          color: #000 !important; }
+      .two-columns > .column .listing-item .date, .two-columns > .column article .date {
+        display: block;
+        text-align: left; }
+        .two-columns > .column .listing-item .date li, .two-columns > .column article .date li {
+          display: block; }
+          .two-columns > .column .listing-item .date li:before, .two-columns > .column article .date li:before {
+            display: none; }
+          .two-columns > .column .listing-item .date li a, .two-columns > .column article .date li a {
+            color: #fff;
+            font-weight: lighter !important; }
+            .two-columns > .column .listing-item .date li a:hover, .two-columns > .column article .date li a:hover {
+              color: #000; }
+      .two-columns > .column .listing-item .excerpt-dash, .two-columns > .column article .excerpt-dash {
+        display: none; }
+      .two-columns > .column .listing-item .excerpt, .two-columns > .column .listing-item p, .two-columns > .column article .excerpt, .two-columns > .column article p {
+        display: block;
+        margin: .5em 0 0 0;
+        padding: 0; }
+        .two-columns > .column .listing-item .excerpt a, .two-columns > .column .listing-item p a, .two-columns > .column article .excerpt a, .two-columns > .column article p a {
+          color: #fff;
+          font-weight: lighter !important; }
+          .two-columns > .column .listing-item .excerpt a:hover, .two-columns > .column .listing-item p a:hover, .two-columns > .column article .excerpt a:hover, .two-columns > .column article p a:hover {
+            color: #000; }
+  .two-columns:after {
+    clear: both;
+    content: ' ';
+    display: block; }
+
 body {
   background: #000;
   overflow-x: hidden; }
