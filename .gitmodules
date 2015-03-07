@@ -1,9 +1,9 @@
-[submodule "wp-content/themes/gmss/mudguard"]
-	path = wp-content/themes/gmss/mudguard
+[submodule "platform/wp-content/themes/gmss/mudguard"]
+	path = platform/wp-content/themes/gmss/mudguard
 	url = http://github.com/andrew-t/mudguard.git
-[submodule "wp-content/themes/gmss/phidias"]
-	path = wp-content/themes/gmss/phidias
+[submodule "platform/wp-content/themes/gmss/phidias"]
+	path = platform/wp-content/themes/gmss/phidias
 	url = http://github.com/andrew-t/phidias.git
-[submodule "wp-content/plugins/imitation-game"]
-	path = wp-content/plugins/imitation-game
+[submodule "platform/wp-content/plugins/imitation-game"]
+	path = platform/wp-content/plugins/imitation-game
 	url = http://github.com/andrew-t/imitation-game.git

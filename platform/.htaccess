@@ -1,8 +1,4 @@
 
-RewriteEngine On
-RewriteBase /
-RewriteRule ^wp-content/(.*)$ /platform/wp-content/$1 [L]
-
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
