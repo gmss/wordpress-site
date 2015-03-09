@@ -16,7 +16,7 @@ remove_action('wp_head', 'feed_links_extra', 3);
 add_action('wp_head', 'feed_links_if', 1);
 function feed_links_if($a) {
 	$id = get_the_ID();
-	if ($id == 468 || $id = 484)
+	if ($id == 468 || $id == 484)
 		echo '<link rel="alternate" type="application/rss+xml" title="Greater Manchester Skeptics Society" href="/feed/">';
 	else feed_links_extra($a);
 }
