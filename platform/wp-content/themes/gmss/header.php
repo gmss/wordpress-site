@@ -13,6 +13,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 		<link rel="icon" type="image/ico" href="<?php bloginfo('template_url'); ?>/img/logo-crop.png"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="Skepticism,skeptics,Scepticism,sceptics,Science,Greater Manchester,Greater,Manchester,Stockport,Lancashire,Wigan,Bolton,Oldham,Chorley,Trafford,Salford,Alternative Medicine,Complementary Medicine,Medicine,UFO,Ghost,Quantum Touch,Energy Healing,Crystals,Urban Myths,Homeopathy,1023,Ten23,QED,humanism" />
 		<?php wp_head(); ?>
 	</head>
 	<body>
