@@ -14,4 +14,4 @@ gzip -k9 platform/wp-content/themes/gmss/mudguard.min.css
 mv platform/wp-content/themes/gmss/mudguard/mudguard.scss platform/wp-content/themes/gmss/mudguard/mudguard.css
 
 # phidias.js
-uglifyjs -c -m -o platform/wp-content/themes/phidias.min.js -- platform/wp-content/themes/gmss/phidias/phidias.js
+uglifyjs -c -m -o platform/wp-content/themes/gmss/phidias.min.js -- platform/wp-content/themes/gmss/phidias/phidias.js
