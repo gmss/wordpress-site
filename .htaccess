@@ -5,6 +5,7 @@ RewriteRule ^wp-content/(.*)$ /platform/wp-content/$1 [L]
 
 RewriteCond %{HTTP:Accept-Encoding} gzip 
 RewriteCond %{REQUEST_FILENAME}.gz -f 
+RewriteCond %{PATH_INFO}.gz -f 
 RewriteRule ^(.*)$ $1.gz [L] 
 
 # BEGIN WordPress
