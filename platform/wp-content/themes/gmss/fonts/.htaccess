@@ -1,0 +1,2 @@
+Header set Cache-Control "public, max-age=8640000"
+Header set ETag: af607105
