@@ -58,7 +58,7 @@
 
 
 	<?php if( eo_get_venue() ): ?>
-		<div class="eo-event-venue-map mudguard">
+		<div class="eo-event-venue-map kickstand">
 			<?php echo eo_get_venue_map(eo_get_venue()); ?>
 		</div>
 	<?php endif; ?>

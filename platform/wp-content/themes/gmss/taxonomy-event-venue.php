@@ -10,7 +10,7 @@
 			 echo '<div class="venue-archive-meta">'.$venue_description.'</div>';
 		} ?>
 		
-		<div class="mudguard venue-map">
+		<div class="kickstand venue-map">
 			<?php echo eo_get_venue_map( $venue_id ); ?>
 		</div>
 	</header>
