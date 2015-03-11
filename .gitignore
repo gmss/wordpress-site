@@ -9,3 +9,4 @@ platform/wp-content/themes/twentythirteen
 credentials.txt
 platform/wp-content/themes/gmss/.sass-cache
 gmss.sql
+.sass-cache

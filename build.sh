@@ -1,0 +1,1 @@
+sass -t compressed platform/wp-content/themes/gmss/gmss.scss platform/wp-content/themes/gmss/gmss.css
