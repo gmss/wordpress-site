@@ -7,8 +7,8 @@
 		?></title>
 		<link rel="stylesheet" type="text/css"
 		      href="<?php bloginfo('template_url'); ?>/gmss.css">
-		<script async type="text/javascript" src="<?php bloginfo('template_url'); ?>/mudguard/guard.js"></script>
-		<script async type="text/javascript" src="<?php bloginfo('template_url'); ?>/phidias/phidias.js"></script>
+		<script async type="text/javascript" src="<?php bloginfo('template_url'); ?>/mudguard.min.js"></script>
+		<script async type="text/javascript" src="<?php bloginfo('template_url'); ?>/phidias.min.js"></script>
 		<meta name="theme-color" content="#000000">
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 		<link rel="icon" type="image/ico" href="<?php bloginfo('template_url'); ?>/img/logo-crop.png"/>
