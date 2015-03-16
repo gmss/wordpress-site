@@ -1,4 +1,4 @@
-footer {
+body > footer {
 	@extend %fixed-width-background;
 	display: flex;
 	section {
