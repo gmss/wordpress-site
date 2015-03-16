@@ -6,6 +6,7 @@ platform/wp-config.php
 platform/wp-content/themes/twentytwelve
 platform/wp-content/themes/twentyfourteen
 platform/wp-content/themes/twentythirteen
+platform/wp-content/cache
 credentials.txt
 platform/wp-content/themes/gmss/.sass-cache
 gmss.sql
