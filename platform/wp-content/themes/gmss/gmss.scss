@@ -5,6 +5,7 @@
 @import 'sass/tabs';
 @import 'sass/events';
 @import 'sass/comments';
+@import 'sass/footer';
 @import 'sass/home';
 
 $body-margin: 2rem;
@@ -16,7 +17,6 @@ body {
 		@extend %fixed-width-background;
 		background: $white;
 		color: $black;
-		min-height: 100vh;
 		padding-top: 1em;
 		padding-bottom: 1em;
 		a:not(.button) {

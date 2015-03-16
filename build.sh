@@ -2,6 +2,7 @@
 sass -t compressed platform/wp-content/themes/gmss/gmss.scss platform/wp-content/themes/gmss/gmss.css
 rm -f platform/wp-content/themes/gmss/gmss.css.gz
 gzip -k9 platform/wp-content/themes/gmss/gmss.css
+uglifyjs -cm -o platform/wp-content/themes/gmss/home-cards.min.js -- platform/wp-content/themes/gmss/home-cards.js
 
 # mudguard.js
 uglifyjs -cm -o platform/wp-content/themes/gmss/mudguard.min.js -- platform/wp-content/themes/gmss/mudguard/mudguard.js

@@ -1,0 +1,30 @@
+footer {
+	@extend %fixed-width-background;
+	display: flex;
+	section {
+		h1 {
+			color: red;
+			font-size: 1.2em;
+			line-height: 1;
+		}
+		display: inline-block;
+		margin: 0;
+		width: 45%;
+		flex: 1;
+		ul {
+			padding: 0;
+			font-weight: lighter;
+			li {
+				margin: .5em 0;
+				a, a:active, a:visited {
+					color: $orange;
+					text-decoration: none;
+					@include hover-text-glow(.5em);
+					&:hover {
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+}

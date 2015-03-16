@@ -16,8 +16,8 @@ $default-delay: .5s;
     text-shadow: 0 0 ($radius / 2.5) $red, 0 0 $radius $yellow;
 }
 %no-glow {
-    box-shadow: none;
-    text-shadow: none;
+    box-shadow: none !important;
+    text-shadow: none !important;
 }
 
 @mixin glow-transition($delay) {
