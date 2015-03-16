@@ -20,6 +20,12 @@
 					<li><a href="http://pintofscience.co.uk/events/manchester/">Pint of Science Manchester</a></li>
 				</ul>
 			</section>
+			<section>
+				<h1>Site Links</h1>
+				<ul>
+					<li><a href="/contact">Contact us</a></li>
+				</ul>
+			</section>
 		</footer>
 		<?php wp_footer(); ?>
 	</body>

@@ -1,6 +1,7 @@
 body > footer {
 	@extend %fixed-width-background;
 	display: flex;
+	font-size: .7em;
 	section {
 		h1 {
 			color: red;
@@ -9,7 +10,7 @@ body > footer {
 		}
 		display: inline-block;
 		margin: 0;
-		width: 45%;
+		width: 30%;
 		flex: 1;
 		ul {
 			padding: 0;
