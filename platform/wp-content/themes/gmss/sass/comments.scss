@@ -9,6 +9,9 @@
 	@extend %fixed-width-background;
 	background: $black;
 	padding-top: 1em;
+	margin-top: -1em;
+	position: relative;
+	top: 1.5em;
 	padding-bottom: 1em;
 	font-size: 1.3333em;
 	h1 {
