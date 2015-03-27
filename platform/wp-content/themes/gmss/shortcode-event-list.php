@@ -12,7 +12,7 @@ if( $eo_event_loop->have_posts() ): ?>
 
 		<article class="<?php echo esc_attr(implode(' ',$eo_event_classes)); ?>">
 			<header class="compact">
-				<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+				<h1 itemprop="summary"><a itemprop="url" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 				<div class="date">
 					<time itemprop="startDate" datetime="<?php eo_the_start($microformat); ?>">
 						<?php eo_the_start($format); ?>
