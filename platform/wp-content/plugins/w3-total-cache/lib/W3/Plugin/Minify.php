@@ -139,6 +139,7 @@ class W3_Plugin_Minify extends W3_Plugin {
                 if (function_exists('is_feed') && !is_feed()) {
                     w3_require_once(W3TC_INC_DIR . '/functions/extract.php');
                     $head_prepend = '';
+                    $head_append = '';
                     $body_prepend = '';
                     $body_append = '';
                     $embed_extsrcjs = false;
@@ -213,7 +214,7 @@ class W3_Plugin_Minify extends W3_Plugin {
 
                             if ($style) {
                                 if ($this->_custom_location_does_not_exist('/<!-- W3TC-include-css -->/', $buffer, $style))
-                                    $head_prepend .= $style;
+                                    $head_append .= $style;
 
                                 $this->remove_styles_group($buffer, 'include');
                             }
@@ -229,7 +230,7 @@ class W3_Plugin_Minify extends W3_Plugin {
                                     $embed_extsrcjs = $embed_type == 'extsrc' || $embed_type == 'asyncsrc'?true:$embed_extsrcjs;
 
                                     if ($this->_custom_location_does_not_exist('/<!-- W3TC-include-js-head -->/', $buffer, $script))
-                                        $head_prepend .= $script;
+                                        $body_append .= $script;
 
                                      $this->remove_scripts_group($buffer, 'include');
                                 }
@@ -267,6 +268,10 @@ class W3_Plugin_Minify extends W3_Plugin {
 
                     if ($head_prepend != '') {
                         $buffer = preg_replace('~<head(\s+[^<>]+)*>~Ui', '\\0' . $head_prepend, $buffer, 1);
+                    }
+
+                    if ($head_append != '') {
+                        $buffer = preg_replace('~<\\/head>~', $head_append . '\\0', $buffer, 1);
                     }
 
                     if ($body_prepend != '') {
