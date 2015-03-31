@@ -28,6 +28,8 @@
 				</ul>
 			</section>
 		</footer>
+		<!-- W3TC-include-js-body-end -->
+		<!-- W3TC-include-css -->
 		<?php wp_footer(); ?>
 	</body>
 </html>
