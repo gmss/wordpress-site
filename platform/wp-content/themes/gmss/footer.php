@@ -30,6 +30,11 @@
 		</footer>
 		<!-- W3TC-include-js-body-end -->
 		<!-- W3TC-include-css -->
+		<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/gmss.css">
+		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/home-cards.min.js"></script>
+		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/phidias.min.js"></script>
+		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/kickstand.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/mudguard.min.css">
 		<?php wp_footer(); ?>
 	</body>
 </html>
