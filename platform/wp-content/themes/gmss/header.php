@@ -22,6 +22,7 @@
 			<ul>
 				<li class="facebook long"><a href="http://www.facebook.com/GMSkeptics">Facebook Page</a><br>
 					and <a href="https://www.facebook.com/groups/725096960872233">Group</a></li>
+				<li class="meetup"><a href="http://www.meetup.com/GMSkeptics-Meetup">Meetup</a></li>
 				<li class="twitter"><a href="http://www.twitter.com/GMSkeptics">Twitter</a></li>
 				<li class="google-plus"><a href="https://plus.google.com/114046965465550439802" rel="publisher">Google+</a></li>
 			</ul>
