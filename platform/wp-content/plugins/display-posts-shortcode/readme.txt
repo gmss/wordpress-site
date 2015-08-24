@@ -3,8 +3,8 @@ Contributors: billerickson
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MQKRBRFVRUV8C
 Tags: shortcode, pages, posts, page, query, display, list
 Requires at least: 3.0
-Tested up to: 3.9
-Stable tag: 2.4
+Tested up to: 4.3
+Stable tag: 2.5.1
 
 Display a listing of posts using the [display-posts] shortcode
 
@@ -28,6 +28,18 @@ See the [WordPress Codex](http://codex.wordpress.org/Class_Reference/WP_Query) f
 
 
 == Changelog ==
+
+**Version 2.5.1**
+
+* Fix an issue with manually specified excerpts
+
+**Version 2.5**
+
+* Add support for date queries
+* Exclude child pages with post_parent="0"
+* Query by current taxonomy terms. Ex: [display-posts taxonomy="category" tax_term="current"]
+* Display the post's categories with [display-posts category_display="true"]
+* Many more fixes. See GitHub for a full list of changes.
 
 **Version 2.4**
 

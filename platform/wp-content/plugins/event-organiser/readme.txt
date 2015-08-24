@@ -3,8 +3,8 @@ Contributors: stephenharris
 Donate link: http://www.wp-event-organiser.com/donate
 Tags: events, event, event categories, event organizer, events calendar, event management, ical, locations, google map, widget, venues, maps, gigs, shows,
 Requires at least: 3.3
-Tested up to: 4.1.1
-Stable tag: 2.12.3
+Tested up to: 4.3.0
+Stable tag: 2.13.6
 License: GPLv3
 
 Create and maintain events, including complex reoccurring patterns, venue management (with Google maps), calendars and customisable event lists
@@ -218,6 +218,53 @@ More information on shortcodes is [available here](http://wp-event-organiser.com
 6. View of a venue page on the front-end (in a theme based on WordPress TwentyEleven)
 
 == Changelog ==
+
+= 2.13.6 - 9th August 2015 =
+* Fixes incompatability with WordPress 4.3 on venue admin screen 
+
+= 2.13.5 - 25th July 2015 =
+* Register database tables early
+* Fix bug where 'schedule_last' is used instead of 'until' in parsing iCal feed.
+
+= 2.13.4 - 13th June 2015 =
+* Correct escaped characters in time format not being displayed as literal text. Fixes [#273](https://github.com/stephenharris/Event-Organiser/issues/273).
+
+= 2.13.3 - 2nd June 2015 =
+* Fixed incomptability with WordPress 3.4. **Please note that from Event Organiser 3.0.0 onwards, the minimum requirement is being increased to WordPress 3.8**  
+
+= 2.13.2 - 23rd May 2015 =
+* Fixed a bug with the drop-down venue/category filters on the events admin screen with WordPress 4.2.
+* Fixed issue with google map when selecting a venue on the event admin screen.  Props to @r-a-y.
+* The times of newly created events are now rounded (forward) to the half hour. Props to @r-a-y.
+* Reoccurence label is changed from 'once' to 'none'. Props to @r-a-y.
+* Updated translations.
+ 
+
+= 2.13.1 - 7th May 2015 =
+* Fixes bug where use of `%event_duration%` tag modifies end date
+* Fixes bug where `schedule_last` is set to 'false'. (Fixes conflict with FES)
+
+= 2.13.0 - 1st May 2015 =
+* Added `eo_get_the_occurrence_id()` for use 'inside the Loop'
+* Added `eo_get_permalink()` for use by themes/extensions
+* Added filter event calendar query: `eventorganiser_fullcalendar_query`
+* Added `eventorganiser_additional_event_meta` action
+* Added	`eventorganiser_updated_event` hook
+* `schedule_last` argument for `eo_insert_event()` and `eo_update_event()` deprecated in favour of `until`. (`schedule_last` is still
+  supported)
+* Fixed bug where including/excluding dates may change 'until' recurrence date.
+* Fixed bug with importing included/excluded dates in 'foreign' timezone to site timezone 
+* Bump fullCalendar CSS to 1.6.4 inline with fullcalendar.js. Fixes issue with event overlap in week view
+* Fix bug in iCal parsing with feeds containing weekly events without a byday component to the RRule 
+
+= 2.12.5 - 21st April 2015 =
+* Fixes XSS vulnerability
+* Fixes a bug with editing an event date/time after including additional dates.
+* Fixes warnings produced by `eo_break_occurrence()`
+
+= 2.12.4 - 19th March 2015 =
+* Fixes bug with incorrect "Invalid datetime" errors when parsing iCal exdate or rdate dates
+* Decode HTML entities for X-ALT-DESC 
 
 = 2.12.3 - 13th March 2015 =
 * Fixes bug with iCal parser not correctly handling excluded date-times (bug introduced 2.12.0)
@@ -872,28 +919,10 @@ Minor bug fixes and readme update.
 = 1.0.0 =
 Initial release
 
-== Upgrade Notice ==
+== Upgrade Notice == 
 
-= 2.1.1 =
-If you upgraded to 2.1, please upgrade immediately to 2.1.1. This updates includes the updated minified scripts.
+= 2.13.4 =
+Advance notice: As of 3.0.0 Event Organiser shall require WordPress 3.8 or better.
 
-= 2.0 =
-Event Organiser Pro has [launched](http://wp-event-organiser.com/pro-features/)!
-
-= 1.8.3 =
-Please note this is an important update, fixing problems related to cross-post-type queries and the event feed introduced in 1.8+.
-
-= 1.8.2 =
-If you have upgrade to 1.8 or 1.8.1 please upgrade to 1.8.2. This update includes fixes to bugs introduced in 1.8.
-
-= 1.5 =
-1.5 is a big update, so please back-up before upgrading.
-
-= 1.3.2 =
-This fixes permalink bug introduced in 1.3.1. If you upgraded to 1.3.1, you should upgrade to 1.3.2. You're advised to 'flush rewrite rules' by simplying visiting your permalinks setting page.
-
-= 1.3 =
-This a fairly big update and includes converting venues into a custom taxonomy. As a result some venue slugs *may* change. See the [plug-in website](http://www.harriswebsolutions.co.uk/event-organiser/uncategorized/2012/whats-new-in-1-3/) for more details.
-
-= 1.0.4 =
-The templates have been adapted to work as is in for more themes. Error messages now display for unsupported versions.
+= 2.12.5 =
+2.12.5 addresses a security vulnerability. Please update (see [this announcement for details]( http://wp-event-organiser.com/blog/announcements/xss-vulnerability-event-organiser-extensions).)

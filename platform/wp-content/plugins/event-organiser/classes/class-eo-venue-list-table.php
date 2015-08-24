@@ -62,27 +62,41 @@ class EO_Venue_List_Table extends WP_List_Table {
      * @param array $item A singular item (one full row's worth of data)
      * @return string Text to be placed inside the column <td>
      */
-    function column_name($item){
+	function column_name( $item ){
 		$term_id = (int) $item->term_id;
 		
 		$delete_url = add_query_arg( 'action', 'delete', get_edit_term_link( $term_id, 'event-venue', 'event' ) );
 
-        //Build row actions
-        $actions = array(
-            'edit'		=> sprintf( '<a href="%s">'.__('Edit').'</a>', get_edit_term_link( $term_id, 'event-venue', 'event' ) ),
-            'delete'    => sprintf( '<a href="%s">'.__('Delete').'</a>', wp_nonce_url( $delete_url, 'eventorganiser_delete_venue_'.$item->slug ) ),
-            'view'		=> sprintf( '<a href="%s">'.__('View').'</a>',  eo_get_venue_link($term_id) )
-        );
-        
-        //Return the title contents
-        return sprintf('<a href="%1$s" class="row-title">%2$s</a>%3$s',
-            /*$1%s*/ get_edit_term_link( $term_id, 'event-venue', 'event' ),
-            /*$2%s*/ esc_html( $item->name ),
-            /*$3%s*/ $this->row_actions( $actions )
-        );
-    }
-    
-    /*
+		//Build row actions
+		$actions = array(
+			'edit' => sprintf( 
+				'<a href="%s">%s</a>', 
+				esc_url( get_edit_term_link( $term_id, 'event-venue', 'event' ) ),
+				esc_html__( 'Edit', 'eventorganiser' )
+			),
+			'delete' => sprintf(
+				'<a href="%s">%s</a>',
+				esc_url( wp_nonce_url( $delete_url, 'eventorganiser_delete_venue_'.$item->slug ) ),
+				esc_html__( 'Delete', 'eventorganiser' )
+			),
+			'view' => sprintf(
+				'<a href="%s">%s</a>',
+				esc_url( eo_get_venue_link( $term_id ) ),
+				esc_html__( 'View', 'eventorganiser' )
+			)
+		);
+
+		//Return the title contents
+		return sprintf(
+			'<a href="%1$s" class="row-title">%2$s</a>%3$s',
+			/*$1%s*/ esc_url( get_edit_term_link( $term_id, 'event-venue', 'event' ) ),
+			/*$2%s*/ esc_html( $item->name ),
+			/*$3%s*/ $this->row_actions( $actions )
+		);
+	}
+
+	
+	/*
      * Checkbox column for Bulk Actions.
      * 
      * @see WP_List_Table::::single_row_columns()
@@ -143,6 +157,18 @@ class EO_Venue_List_Table extends WP_List_Table {
 		echo '</tr>';
 	}
 
+	function get_columns(){
+		return get_column_headers( 'event_page_venues' );
+	}
+	
+	/**
+	 *
+	 * @return bool
+	 */
+	public function ajax_user_can() {
+		return current_user_can( 'manage_venues' );
+	}
+	
     /*
      * Prepare venues for display
      * 
@@ -158,37 +184,35 @@ class EO_Venue_List_Table extends WP_List_Table {
         //Retrieve page number for pagination
          $current_page = (int) $this->get_pagenum();
 
-	//First, lets decide how many records per page to show
-	$screen = get_current_screen();
-	$per_page = $this->get_items_per_page( 'edit_event_venue_per_page' );
+		//First, lets decide how many records per page to show
+		$screen = get_current_screen();
+		$per_page = $this->get_items_per_page( 'edit_event_venue_per_page' );
 
-	//Get the columns, the hidden columns an sortable columns
-	$columns = get_column_headers('event_page_venues');
-	$hidden = get_hidden_columns('event_page_venues');
-	$sortable = $this->get_sortable_columns();
-	$this->_column_headers = array($columns, $hidden, $sortable);
-	$taxonomy ='event-venue';
+		//Get the columns, the hidden columns an sortable columns
+		$columns  = $this->get_columns();
+		$hidden   = get_hidden_columns('event_page_venues');
+		$sortable = $this->get_sortable_columns();
+		$this->_column_headers = array($columns, $hidden, $sortable);
+		$taxonomy ='event-venue';
 
-	$search = (!empty( $_REQUEST['s'] ) ? trim( stripslashes( $_REQUEST['s'] ) ) : '');
-	$orderby =( !empty( $_REQUEST['orderby'] )  ? trim( stripslashes($_REQUEST['orderby'])) : '');
-	$order =( !empty( $_REQUEST['order'] )  ? trim( stripslashes($_REQUEST['order'])) : '');
+		$search = (!empty( $_REQUEST['s'] ) ? trim( stripslashes( $_REQUEST['s'] ) ) : '');
+		$orderby =( !empty( $_REQUEST['orderby'] )  ? trim( stripslashes($_REQUEST['orderby'])) : '');
+		$order =( !empty( $_REQUEST['order'] )  ? trim( stripslashes($_REQUEST['order'])) : '');
 
-	//Display result
-	$this->items = get_terms('event-venue',array(
-			'hide_empty'=>false,
-			'search'=>$search,
-			'offset'=> ($current_page-1)*$per_page,
-			'number'=>$per_page,
-			 'orderby'=>$orderby,
-			 'order'=>$order			
-		)
-	);
+		//Display result
+		$this->items = get_terms( 'event-venue', array(
+			'hide_empty' => false,
+			'search'     => $search,
+			'offset'     => ($current_page-1)*$per_page,
+			'number'     => $per_page,
+			 'orderby'   => $orderby,
+			 'order'     => $order			
+		));
 
-	$this->set_pagination_args( array(
-		'total_items' => wp_count_terms('event-venue', compact( 'search', 'orderby' ) ),
-		'per_page' => $per_page,
-	) );     
-
+		$this->set_pagination_args( array(
+			'total_items' => wp_count_terms('event-venue', compact( 'search', 'orderby' ) ),
+			'per_page'    => $per_page,
+		) );
     }
     
 	function no_items() {

@@ -68,8 +68,9 @@ function eventorganiser_event_fill_columns( $column_name, $id ) {
 	$series_id = ( empty( $post->event_id) ? $id :'' );
 
 	$phpFormat = 'M, j Y';
-	if ( !eo_is_all_day( $series_id ) )
+	if ( !eo_is_all_day( $series_id ) ){
 		$phpFormat .= '\<\/\b\r\>'. get_option( 'time_format' );
+	}
 	
 	switch ( $column_name ) {
 		case 'venue':
@@ -77,7 +78,7 @@ function eventorganiser_event_fill_columns( $column_name, $id ) {
 			$venue_slug = eo_get_venue_slug( $post->ID );
 			
 			if( $venue_id ){
-				echo '<a href="'. add_query_arg( 'event-venue', $venue_slug ) .'">'.esc_html( eo_get_venue_name( $venue_id ) ) . '</a>';
+				echo '<a href="'. esc_url( add_query_arg( 'event-venue', $venue_slug ) ) .'">'.esc_html( eo_get_venue_name( $venue_id ) ) . '</a>';
 				echo '<input type="hidden" value="'.$venue_id.'"/>';
 			}
 			break;
@@ -95,17 +96,17 @@ function eventorganiser_event_fill_columns( $column_name, $id ) {
 			break;
 
 		case 'eventcategories':
-		    	$terms = get_the_terms( $post->ID, 'event-category' );
- 			
+			$terms = get_the_terms( $post->ID, 'event-category' );
+
 			if ( !empty( $terms) ) {
-       	 		foreach ( $terms as $term )
-			            $post_terms[] = '<a href="'.add_query_arg( 'event-category', $term->slug ).'">'.esc_html( sanitize_term_field( 'name', $term->name, $term->term_id, 'event-category', 'display' ) ).'</a>';
-			        echo join( ', ', $post_terms );
+				$post_terms = array();
+				foreach ( $terms as $term ){
+					$post_terms[] = '<a href="'.esc_url( add_query_arg( 'event-category', $term->slug ) ).'">'.esc_html( sanitize_term_field( 'name', $term->name, $term->term_id, 'event-category', 'display' ) ).'</a>';
+				}
+				echo join( ', ', $post_terms );
 			}
 			break;
 
-	default:
-		break;
 	} // end switch
 }
 
@@ -120,7 +121,12 @@ function eventorganiser_restrict_events_by_category() {
 	$category_tax = get_taxonomy( 'event-category' );
 	
 	if( 'event' == $typenow && $category_tax && wp_count_terms( 'event-category' ) > 0 ){
-		eo_event_category_dropdown( array( 'hide_empty' => false, 'show_option_all' => $category_tax->labels->view_all_items ) );
+		eo_taxonomy_dropdown( array( 
+			'taxonomy'        => 'event-category',
+			'selected'        => get_query_var( 'event-category' ),
+			'hide_empty'      => false, 
+			'show_option_all' => $category_tax->labels->view_all_items, 
+		) );
 	}
 }
 
@@ -136,7 +142,12 @@ function eventorganiser_restrict_events_by_venue() {
 	
 	//Only add if CPT is event
 	if( 'event' == $typenow && $venue_tax && wp_count_terms( 'event-venue' ) > 0  ){
-		 eo_event_venue_dropdown( array( 'hide_empty' => false, 'show_option_all' => $venue_tax->labels->view_all_items ) );
+		eo_taxonomy_dropdown( array(
+				'taxonomy'        => 'event-venue',
+				'selected'        => get_query_var( 'event-venue' ),
+				'hide_empty'      => false,
+				'show_option_all' => $venue_tax->labels->view_all_items,
+		) );
 	}
 }
 
@@ -221,7 +232,6 @@ function eventorganiser_bulk_edit_box( $column_name, $post_type ) {
  */
 add_action( 'save_post', 'eventorganiser_quick_edit_save' );
 function eventorganiser_quick_edit_save( $post_id ) {
-	global $wpdb;
 
 	//make sure data came from our quick/bulk box
 	if ( !isset( $_REQUEST['_eononce'] ) || !wp_verify_nonce( $_REQUEST['_eononce'], 'eventorganiser_event_quick_edit_'.get_current_blog_id() ) ) return;

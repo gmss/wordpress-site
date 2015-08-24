@@ -66,17 +66,30 @@ function eventorganiser_public_fullcalendar() {
 	}
 
 	//Retrieve events		
-	$query    = array_merge( $request, $presets );
+	$query = array_merge( $request, $presets );
+
+	/**
+	 * Filters the query before it is sent to the calendar.
+	 *
+	 * The returned $query array is used to generate the cache key. The `$query`
+	 * array can contain any keys supported by `eo_get_events()`, and so also
+	 * `get_posts()` and `WP_Query()`.
+	 *
+	 * @package fullCalendar
+	 * @since 2.13.0
+	 * @param array  $query An query array (as given to `eo_get_events()`)
+	 */
+	$query = apply_filters( 'eventorganiser_fullcalendar_query', $query );
 	
 	//In case polylang is enabled with events as translatable. Include locale in cache key.
 	$options = get_option( 'polylang' );
 	if( defined( 'POLYLANG_VERSION' ) && !empty( $options['post_types']  ) && in_array( 'event', $options['post_types'] ) ){
-		$key = "eo_fc_".md5( serialize( $query ). $time_format . get_locale() );
+		$key = 'eo_fc_'.md5( serialize( $query ). $time_format . get_locale() );
 	}else{
-		$key = "eo_fc_".md5( serialize( $query ). $time_format );
+		$key = 'eo_fc_'.md5( serialize( $query ). $time_format );
 	}
 	
-	$calendar = get_transient( "eo_full_calendar_public{$priv}");
+	$calendar = get_transient( "eo_full_calendar_public{$priv}" );
 	if( $calendar && is_array( $calendar ) && isset( $calendar[$key] ) ){
 		$events_array = $calendar[$key];
 		/**
@@ -138,17 +151,17 @@ function eventorganiser_public_fullcalendar() {
 			 * @param int    $event_id      The event's post ID.
 			 * @param int    $occurrence_id The event's occurrence ID.
 			 */
-			$link = apply_filters('eventorganiser_calendar_event_link',$link,$post->ID,$post->occurrence_id);
+			$link = apply_filters( 'eventorganiser_calendar_event_link', $link, $post->ID, $post->occurrence_id );
 			$event['url'] = $link;
 			
 			//All day or not?
 			$event['allDay'] = eo_is_all_day();
 	
 			//Get Event Start and End date, set timezone to the blog's timzone
-			$event_start = new DateTime($post->StartDate.' '.$post->StartTime, $tz);
-			$event_end = new DateTime($post->EndDate.' '.$post->FinishTime, $tz);
-			$event['start']= $event_start->format('Y-m-d\TH:i:s\Z');
-			$event['end']= $event_end->format('Y-m-d\TH:i:s\Z');	
+			$event_start    = new DateTime( $post->StartDate.' '.$post->StartTime, $tz );
+			$event_end      = new DateTime( $post->EndDate.' '.$post->FinishTime, $tz );
+			$event['start'] = $event_start->format( 'Y-m-d\TH:i:s' );
+			$event['end']   = $event_end->format( 'Y-m-d\TH:i:s' );
 
 			//Don't use get_the_excerpt as this adds a link
 			$excerpt_length = apply_filters('excerpt_length', 55);
@@ -442,27 +455,31 @@ function eventorganiser_admin_calendar() {
 						'action'=>'delete_occurrence'
 					),$admin_url);
 
-					$delete_url  = wp_nonce_url( $delete_url , 'eventorganiser_delete_occurrence_'.$post->occurrence_id);
+					$delete_url  = wp_nonce_url( $delete_url , 'eventorganiser_delete_occurrence_'.$post->occurrence_id );
 
-					$summary .= "<span class='delete'>
-					<a class='submitdelete' style='color:red;float:right' title='".__('Delete this occurrence','eventorganiser')."' href='".$delete_url."'> ".__('Delete this occurrence','eventorganiser')."</a>
-					</span>";
+					$summary .= sprintf(
+						'<span class="delete"><a class="submitdelete" style="color:red;float:right" title="%1$s" href="%2$s">%1$s</a></span>',
+						esc_attr__( 'Delete this occurrence', 'eventorganiser' ),
+						$delete_url
+					);
 
-					if( $schedule['schedule'] !='once'){
+					if( $schedule['schedule'] != 'once' ){
 						$break_url = add_query_arg(array(
-							'post_type'=>'event',
-							'page'=>'calendar',
-							'series'=>$post->ID,
-							'event'=>$post->occurrence_id,
-							'action'=>'break_series'
+							'post_type' => 'event',
+							'page'      => 'calendar',
+							'series'    => $post->ID,
+							'event'     => $post->occurrence_id,
+							'action'    => 'break_series',
 						),$admin_url);
-						$break_url  = wp_nonce_url( $break_url , 'eventorganiser_break_series_'.$post->occurrence_id);
+						
+						$break_url  = wp_nonce_url( $break_url, 'eventorganiser_break_series_'.$post->occurrence_id );
 
-						$summary .= "<span class='break'>
-						<a class='submitbreak' style='color:red;float:right;padding-right: 2em;' title='".__('Break this series','eventorganiser')."' href='".$break_url."'> ".__('Break this series','eventorganiser')."</a>
-						</span>";
+						$summary .= sprintf(
+							'<span class="break"><a class="submitbreak" style="color:red;float:right;padding-right:2em;" title="%1$s" href="%2$s">%1$s</a></span>',
+							esc_attr__( 'Break this series', 'eventorganiser' ),
+							$break_url
+						);
 					}
-
 				}
 
 				//Event categories
