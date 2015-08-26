@@ -20,6 +20,12 @@ $default-delay: .5s;
     text-shadow: none !important;
 }
 
+@mixin card {
+	padding: 1em;
+	box-shadow: 0 .1em .2em $black;
+	background: darken($white, 5);
+}
+
 @mixin glow-transition($delay) {
 	transition: color $delay, border $delay, text-shadow $delay, box-shadow $delay, background $delay;
 	-webkit-transition: color $delay, border $delay, text-shadow $delay, box-shadow $delay, background $delay;
