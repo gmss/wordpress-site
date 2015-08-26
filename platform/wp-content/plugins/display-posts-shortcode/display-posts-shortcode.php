@@ -1,25 +1,9 @@
 <?php
 /**
- * Plugin Name: Display Posts Shortcode
- * Plugin URI: http://www.billerickson.net/shortcode-to-display-posts/
+ * Plugin Name: FORKED Display Posts Shortcode
+ * Plugin URI: http://www.gmss.uk
  * Description: Display a listing of posts using the [display-posts] shortcode
  * Version: 2.5.1
- * Author: Bill Erickson
- * Author URI: http://www.billerickson.net
- *
- * This program is free software; you can redistribute it and/or modify it under the terms of the GNU 
- * General Public License version 2, as published by the Free Software Foundation.  You may NOT assume 
- * that you can use any other version of the GPL.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without 
- * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- *
- * @package Display Posts
- * @version 2.5
- * @author Bill Erickson <bill@billerickson.net>
- * @copyright Copyright (c) 2011, Bill Erickson
- * @link http://www.billerickson.net/shortcode-to-display-posts/
- * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
  
  
@@ -438,6 +422,10 @@ function be_display_posts_shortcode( $atts ) {
 		}
 		
 		$class = array( 'listing-item' );
+
+		// For external blogposts.
+		if (in_category(37))
+			array_push($class, 'ext');
 
 		/**
 		 * Filter the post classes for the inner wrapper element of the current post.

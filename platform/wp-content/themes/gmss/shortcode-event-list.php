@@ -10,9 +10,11 @@ if( $eo_event_loop->have_posts() ): ?>
 			$format = (eo_is_all_day() ? $date_format : $date_format.' '.$time_format);
 		?>
 
-		<article class="<?php echo esc_attr(implode(' ',$eo_event_classes)); ?>">
+		<article class="<?php echo esc_attr(implode(' ',$eo_event_classes));
+				?><?php in_category(30) ? ' ext' : '' ?>">
 			<header class="compact">
-				<h1 itemprop="summary"><a itemprop="url" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+				<h1 itemprop="summary"><a itemprop="url" href="<?php
+					the_permalink(); ?>"><?php the_title(); ?></a></h1>
 				<div class="date">
 					<time itemprop="startDate" datetime="<?php eo_the_start($microformat); ?>">
 						<?php eo_the_start($format); ?>
