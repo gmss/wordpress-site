@@ -14,6 +14,7 @@
 			$header = __('Events: ','eventorganiser').' '.eo_get_event_archive_date('Y');
 		if ($header)
 			echo '<h1>' . $header . '</h1>';
+		else echo '<p>This page includes events run outside of Manchester Skeptics which may be of interest to our members. <a href="/events/category/gmss">To show only Skeptics events click here</a> and <a href="/events/category/ext">to see only other events, click here</a>.</p>';
 	?>
 </header>
 
