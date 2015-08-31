@@ -10,9 +10,11 @@
 			</div>
 		</header>
 		<?php the_content(); ?>
-		<footer>
-			<a href="<?php the_permalink(); ?>">This post</a> has <?php comments_number('no comments', 'one comment', '% comments'); ?>.
-		</footer>
+		<?php if (!in_category(37)): ?>
+			<footer>
+				<a href="<?php the_permalink(); ?>">This post</a> has <?php comments_number('no comments', 'one comment', '% comments'); ?>.
+			</footer>
+		<?php endif ?>
 	</article>
 
 <?php endwhile; ?>
