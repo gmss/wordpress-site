@@ -586,8 +586,10 @@ body > footer {
         background: #fff; }
       .two-columns > .column .listing-item.ext, .two-columns > .column .listing-item.eo-event-cat-ext, .two-columns > .column article.ext, .two-columns > .column article.eo-event-cat-ext {
         font-size: .65em; }
-        .two-columns > .column .listing-item.ext .title a, .two-columns > .column .listing-item.ext h1 a, .two-columns > .column .listing-item.eo-event-cat-ext .title a, .two-columns > .column .listing-item.eo-event-cat-ext h1 a, .two-columns > .column article.ext .title a, .two-columns > .column article.ext h1 a, .two-columns > .column article.eo-event-cat-ext .title a, .two-columns > .column article.eo-event-cat-ext h1 a {
+        .two-columns > .column .listing-item.ext .title, .two-columns > .column .listing-item.ext h1, .two-columns > .column .listing-item.eo-event-cat-ext .title, .two-columns > .column .listing-item.eo-event-cat-ext h1, .two-columns > .column article.ext .title, .two-columns > .column article.ext h1, .two-columns > .column article.eo-event-cat-ext .title, .two-columns > .column article.eo-event-cat-ext h1 {
           font-weight: lighter; }
+          .two-columns > .column .listing-item.ext .title a, .two-columns > .column .listing-item.ext h1 a, .two-columns > .column .listing-item.eo-event-cat-ext .title a, .two-columns > .column .listing-item.eo-event-cat-ext h1 a, .two-columns > .column article.ext .title a, .two-columns > .column article.ext h1 a, .two-columns > .column article.eo-event-cat-ext .title a, .two-columns > .column article.eo-event-cat-ext h1 a {
+            font-weight: lighter; }
       .two-columns > .column .listing-item .title, .two-columns > .column .listing-item h1, .two-columns > .column article .title, .two-columns > .column article h1 {
         display: block;
         text-transform: uppercase;
