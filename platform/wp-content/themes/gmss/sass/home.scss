@@ -20,7 +20,7 @@
 			&:hover {
 				background: $white;
 			}
-			&.ext {
+			&.ext, &.eo-event-cat-pubhd {
 				font-size: .65em;
 				.title, h1 {
 					font-weight: lighter;
