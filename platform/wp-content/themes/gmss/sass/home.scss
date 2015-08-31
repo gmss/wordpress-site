@@ -23,7 +23,9 @@
 			&.ext, &.eo-event-cat-ext {
 				font-size: .65em;
 				.title, h1 {
-					font-weight: lighter !important;
+					a {
+						font-weight: lighter;
+					}
 				}
 			}
 			.title, h1 {
