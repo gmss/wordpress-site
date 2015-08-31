@@ -2,7 +2,7 @@
 
 <!-- Page header, display category title-->
 <header class="page-header">
-	<?php if (!is_tax('ext') && !is_tax('gmss')): ?>
+	<?php if (!is_category('ext') && !is_category('gmss')): ?>
 		<h1 class="page-title"><?php
 			printf( __( 'Event Category Archives: %s', 'eventorganiser' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 		?></h1>
