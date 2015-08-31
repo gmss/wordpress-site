@@ -2,9 +2,13 @@
 
 <!-- Page header, display category title-->
 <header class="page-header">
-	<h1 class="page-title"><?php
-		printf( __( 'Event Category Archives: %s', 'eventorganiser' ), '<span>' . single_cat_title( '', false ) . '</span>' );
-	?></h1>
+	<?php
+		$category_id = category_id();
+		if (($category_id == 30) || ($category_id == 38)): ?>
+			<h1 class="page-title"><?php
+				printf( __( 'Event Category Archives: %s', 'eventorganiser' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+			?></h1>
+	<?php endif; ?>
 
 	<!-- If the category has a description display it-->
 	<?php
