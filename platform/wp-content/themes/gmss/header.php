@@ -82,7 +82,7 @@
 					'active' => preg_match('/^\/upcoming-events($|\/)/i', $_SERVER['REQUEST_URI'])),
 				(object) array('url' => '/other-events', 'name' => 'Other',
 					'active' => preg_match('/^\/other-events($|\/)/i', $_SERVER['REQUEST_URI'])),
-				(object) array('url' => '/events/gmss', 'name' => 'All', 
+				(object) array('url' => '/events/category/gmss', 'name' => 'All', 
 					'active' => preg_match('/^\/events(\/(page\/[0-9]+\/?)?)?$/i', $_SERVER['REQUEST_URI'])),
 			)); ?>
 			<li class="non-tab"><a href="webcal://www.gmss.uk/feed/eo-events/" title="Subscribe to our events as an iCal feed">iCal</a></li>
