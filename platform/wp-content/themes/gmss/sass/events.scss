@@ -19,7 +19,7 @@
 		height: 100% !important;
 		z-index: 1;
 	}
-	time {
+	.event-map-overlay {
 		@extend %fixed-width;
 		position: absolute;
 		z-index: 1000;

@@ -17,11 +17,11 @@
 			<time itemprop="startDate" datetime="<?php eo_the_start($microformat); ?>">
 				<?php eo_the_start($date_format); ?>
 			</time>
+			<p><?php
+				echo get_the_term_list( get_the_ID(),'event-category', '', ', ', '' ); ?> event
+				at <a href="<?php eo_venue_link(); ?>"><?php eo_venue_name();
+			?></a></p>
 		<?php endif; ?>
-		<p><?php
-			echo get_the_term_list( get_the_ID(),'event-category', '', ', ', '' ); ?> event
-			at <a href="<?php eo_venue_link(); ?>"><?php eo_venue_name();
-		?></a></p>
 
 		<?php if( get_the_terms(get_the_ID(),'event-tag') && !is_wp_error( get_the_terms(get_the_ID(),'event-tag') )) { ?>
 			<strong><?php _e('Tags','eventorganiser'); ?>:</strong>
@@ -61,9 +61,15 @@
 
 	<?php if( eo_get_venue() ): ?>
 		<div class="event-meta-map">
-			<time itemprop="startDate" datetime="<?php eo_the_start($microformat); ?>">
-				<?php eo_the_start($date_format); ?>
-			</time>
+			<div class="event-map-overlay">
+				<p><?php
+					echo get_the_term_list( get_the_ID(),'event-category', '', ', ', '' ); ?> event
+					at <a href="<?php eo_venue_link(); ?>"><?php eo_venue_name();
+				?></a></p>
+				<time itemprop="startDate" datetime="<?php eo_the_start($microformat); ?>">
+					<?php eo_the_start($date_format); ?>
+				</time>
+			</div>
 			<div class="eo-event-venue-map kickstand">
 				<?php echo eo_get_venue_map(eo_get_venue()); ?>
 			</div>
