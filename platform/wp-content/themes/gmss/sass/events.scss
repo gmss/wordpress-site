@@ -17,8 +17,8 @@
 	height: 75vmin;
 	.eo-venue-map, .eo-event-venue-map {
 		height: 100% !important;
+		z-index: 1;
 	}
-	z-index: 1;
 	time {
 		@extend %fixed-width;
 		position: absolute;
