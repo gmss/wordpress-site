@@ -12,11 +12,10 @@
 }
 
 .event-meta-map,
-.venue-map,
-.eo-event-venue-map {
+.venue-map {
 	@extend %full-width;
 	height: 75vmin;
-	.eo-venue-map {
+	.eo-venue-map, .eo-event-venue-map {
 		height: 100% !important;
 	}
 	z-index: 1;
