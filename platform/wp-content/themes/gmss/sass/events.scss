@@ -11,12 +11,20 @@
 	}
 }
 
+.event-meta-map,
 .venue-map,
 .eo-event-venue-map {
 	@extend %full-width;
 	height: 75vmin;
 	.eo-venue-map {
 		height: 100% !important;
+	}
+	time {
+		@extend %fixed-width;
+		background: white;
+		box-shadow: 0 0.5em .5em black;
+		top: .5em;
+		padding 1em;
 	}
 }
 
