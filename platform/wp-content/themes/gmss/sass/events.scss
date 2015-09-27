@@ -19,8 +19,11 @@
 	.eo-venue-map {
 		height: 100% !important;
 	}
+	z-index: 1;
 	time {
 		@extend %fixed-width;
+		position: absolute;
+		z-index: 1000;
 		background: white;
 		box-shadow: 0 0.5em .5em black;
 		top: .5em;
