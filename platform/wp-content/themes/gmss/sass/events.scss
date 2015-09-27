@@ -15,6 +15,8 @@
 .venue-map {
 	@extend %full-width;
 	height: 75vmin;
+	font-size: 1.5em;
+	margin-top: 1em;
 	.eo-venue-map, .eo-event-venue-map {
 		height: 100% !important;
 		z-index: 1;
@@ -27,6 +29,9 @@
 		box-shadow: 0 0.5em .5em black;
 		top: .5em;
 		padding: 1em;
+		p {
+			margin: 0;
+		}
 	}
 }
 
