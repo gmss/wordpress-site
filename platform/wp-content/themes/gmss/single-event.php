@@ -3,10 +3,10 @@
 <?php while (have_posts()) :
 	the_post();
 	if (eo_is_all_day()) {
-		$format = 'd F Y';
+		$format = 'l, d F Y';
 		$microformat = 'Y-m-d';
 	} else {
-		$format = 'd F Y '.get_option('time_format');
+		$format = 'l, d F Y '.get_option('time_format');
 		$microformat = 'c';
 	} ?>
 
