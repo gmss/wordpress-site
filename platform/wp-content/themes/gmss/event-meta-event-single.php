@@ -1,6 +1,6 @@
 <div class="entry-meta eventorganiser-event-meta">
 
-	<?php $date_format = eo_is_all_day() ? 'j F Y' : ('j F Y ' . get_option('time_format'));
+	<?php $date_format = eo_is_all_day() ? 'l, j F Y' : ('l, j F Y ' . get_option('time_format'));
 		$microformat = 'Y-m-d'; ?>
 
 	<?php
