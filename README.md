@@ -12,6 +12,8 @@ git remote add github ...
 # To remove hi-res photos from a clone...
 ```
 git branch -r -d github/master
+rm .git/refs/remotes/github/master
+git gc --aggressive
 vi .git/config
 ```
 and change the line
