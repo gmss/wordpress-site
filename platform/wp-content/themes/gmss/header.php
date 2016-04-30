@@ -25,11 +25,7 @@
 				<?php // <li class="meetup"><a href="http://www.meetup.com/GMSkeptics-Meetup">Meetup</a></li> ?>
 				<li class="twitter"><a href="http://www.twitter.com/GMSkeptics">Twitter</a></li>
 				<li class="google-plus"><a href="https://plus.google.com/114046965465550439802" rel="publisher">Google+</a></li>
-				<?php if (is_user_logged_in()) { ?>
-					<li class="settings"><a href="/platform/wp-admin/profile.php">Settings</a></li>
-				<?php } else { ?>
-					<li class="join"><a href="/platform/wp-login.php?action=register">Join</a></li>
-				<?php } ?>
+				<li class="join"><a href="/membership">Membership</a></li>
 			</ul>
 		</nav><div class="hidden">
 			<span itemprop="logo">http://www.gmss.uk/wp-content/themes/gmss/img/full-size/full-logo.jpg</span>
