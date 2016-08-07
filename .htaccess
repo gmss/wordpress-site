@@ -1,6 +1,6 @@
 RewriteEngine On
 
-RewriteRule ^wp- - [L,R=404]
+RewriteRule ^wp-.*$ - [L,R=404]
 
 RewriteCond %{HTTP:Accept-Encoding} gzip 
 RewriteCond %{REQUEST_FILENAME}.gz -f 
