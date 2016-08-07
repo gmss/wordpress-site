@@ -1,5 +1,7 @@
 RewriteEngine On
 
+RewriteRule ^wp- - [L,R=404]
+
 RewriteCond %{HTTP:Accept-Encoding} gzip 
 RewriteCond %{REQUEST_FILENAME}.gz -f 
 RewriteRule ^(.*)$ $1.gz [L] 
@@ -16,8 +18,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
-
-RewriteRule ^wp- - [L,R=404]
 
 # END WordPress
 
