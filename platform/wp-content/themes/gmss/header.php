@@ -14,7 +14,7 @@
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:site" content="@GMSkeptics">
 		<meta name="twitter:creator" content="@GMSkeptics">
-		<meta name="twitter:title" content="<?php wp_title('|', true, 'right'); ?>">
+		<meta name="twitter:title" content="<?php wp_title('', true, 'right'); ?>">
 		<meta name="twitter:description" content="From the Greater Manchester Skeptics Society">
 		<meta name="twitter:image" content="http://www.gmss.uk/card.jpg">
 
