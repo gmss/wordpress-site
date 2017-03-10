@@ -10,6 +10,14 @@
 		<link rel="icon" type="image/ico" href="<?php bloginfo('template_url'); ?>/img/logo-crop.png"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="keywords" content="Skepticism,skeptics,Scepticism,sceptics,Science,Greater Manchester,Greater,Manchester,Stockport,Lancashire,Wigan,Bolton,Oldham,Chorley,Trafford,Salford,Alternative Medicine,Complementary Medicine,Medicine,UFO,Ghost,Quantum Touch,Energy Healing,Crystals,Urban Myths,Homeopathy,1023,Ten23,QED,humanism" />
+
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@GMSkeptics">
+		<meta name="twitter:creator" content="@GMSkeptics">
+		<meta name="twitter:title" content="<?php wp_title('|', true, 'right'); ?>">
+		<meta name="twitter:description" content="From the Greater Manchester Skeptics Society">
+		<meta name="twitter:image" content="http://www.gmss.uk/card.jpg">
+
 		<?php wp_head(); ?>
 	</head>
 	<body>
