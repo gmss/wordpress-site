@@ -22,8 +22,8 @@
 		?>">
 		<meta name="twitter:description" content="<?php
 			echo empty($tc_title)
-				? 'From the Greater Manchester Skeptics Society'
-				: 'Promoting critical thinking in and around Manchester';
+				? 'Promoting critical thinking in and around Manchester'
+				: 'From the Greater Manchester Skeptics Society';
 		?>">
 		<meta name="twitter:image" content="http://www.gmss.uk/card.jpg">
 
