@@ -19,5 +19,12 @@
 
 <?php endwhile; ?>
 
+<?php if ( $wp_query->max_num_pages > 1 ) : ?>
+	<nav id="nav-below">
+		<div class="nav-next nav-later"><?php next_posts_link( __( 'Next <span class="meta-nav">&rarr;</span>' , 'eventorganiser' ) ); ?></div>
+		<div class="nav-previous nav-newer"><?php previous_posts_link( __( ' <span class="meta-nav">&larr;</span> Previous', 'eventorganiser' ) ); ?></div>
+	</nav><!-- #nav-below -->
+<?php endif; ?>
+
 
 <?php get_footer(); ?>
