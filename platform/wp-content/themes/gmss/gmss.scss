@@ -21,7 +21,7 @@ body {
 		padding-bottom: 1em;
 		a:not(.button) {
 			text-decoration: none;
-			font-weight: bold;
+			@extend %bold;
 			color: $red;
 			@include hover-text-glow(.5em);
 			&:hover {
@@ -44,7 +44,7 @@ article {
 	}
 	line-height: 1.5;
 	text-align: justify;
-	font-weight: lighter;
+	font-weight: 300;
 
 	// This is mainly for the constitution, minutes etc.
 	// It may well come in handy elsewhere.
