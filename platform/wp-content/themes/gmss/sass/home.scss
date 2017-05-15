@@ -24,7 +24,7 @@
 				font-size: .65em;
 				.title, h1 a {
 					font-family: "Calibri", sans-serif;
-					font-weight: lighter;
+					font-weight: 300;
 				}
 			}
 			.title, h1 {
@@ -52,7 +52,7 @@
 						color: $red;
 						font-weight: lighter !important;
 						&:hover {
-							color: $black;
+							color: 300;
 						}
 					}
 				}
@@ -66,7 +66,7 @@
 				padding: 0;
 				a {
 					color: $red;
-					font-weight: lighter !important;
+					font-weight: 300 !important;
 					&:hover {
 						color: $black;
 					}
