@@ -19,12 +19,14 @@
 					<li><a href="http://www.mathsjam.com/index.php?city=manchester">Manchester MathsJam</a></li>
 					<li><a href="http://brightclubmcr.org.uk/">Bright Club Manchester</a></li>
 					<li><a href="http://pintofscience.co.uk/events/manchester/">Pint of Science Manchester</a></li>
+					<li><a href="https://www.facebook.com/NWPsych/">Psychology in the Pub NW</a></li>
 				</ul>
 			</section>
 			<section>
 				<h1>Site Links</h1>
 				<ul>
 					<li><a href="/contact">Contact us</a></li>
+					<li><a href="/manchester-skeptics-in-the-pub">Manchester Skeptics in the Pub</a></li>
 				</ul>
 			</section>
 		</footer>
