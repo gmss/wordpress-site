@@ -20,6 +20,7 @@
 					<li><a href="http://brightclubmcr.org.uk/">Bright Club Manchester</a></li>
 					<li><a href="http://pintofscience.co.uk/events/manchester/">Pint of Science Manchester</a></li>
 					<li><a href="https://www.facebook.com/NWPsych/">Psychology in the Pub NW</a></li>
+					<li><a href="http://manchesterfuturists.com/">MCRFuturists</a></li>
 				</ul>
 			</section>
 			<section>
