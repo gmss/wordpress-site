@@ -17,6 +17,10 @@
 
 %all-caps {
     text-transform: uppercase;
+    @extend %bold;
+}
+
+%bold {
     font-family: 'Calibri Web', 'Calibri', sans-serif;
     font-weight: bold;
 }

@@ -117,7 +117,7 @@ header.site {
 		}
 		a {
 			text-decoration: none;
-			font-weight: bold;
+			@extend %bold;
 			color: $orange;
 			@include hover-text-glow(.6rem);
 			&:hover {
